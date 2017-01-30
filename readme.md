@@ -3,7 +3,6 @@ This project is a prototype for a library support system for a specific primary 
 
 # Contributors
 * Daan de Waard
-
 * Dyon Altena
 * Geffrey de Winter
 * Jesper Rober

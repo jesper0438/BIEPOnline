@@ -27,6 +27,7 @@ Route::resource ( 'category', 'CategoryController');
 Auth::routes();
 
 Route::get      ( '/home','HomeController@index');
+Route::get      ( '/help','HelpController@index');
 Route::get      ( '/logout', function(){
     Auth::logout();
     return redirect()->route('login');

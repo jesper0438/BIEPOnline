@@ -32,7 +32,7 @@
                     <td class="table-text">{{ $book->id }}</td>
                     <td class="table-text">{{ $book->isbn }}</td>
                     <td class="table-text">{{ $book->title }}</td>
-                    <td class="table-text">{{ $book->author->name }}</td>
+                    <td class="table-text">{{ $book->author }}</td>
                 </tr>
                 </tbody>
             </table>

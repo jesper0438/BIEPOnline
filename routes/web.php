@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    return view('welcome');
 });
 
 Route::resource ( 'user', 'UserController');
@@ -23,16 +23,6 @@ Route::resource ( 'author', 'AuthorController');
 Route::resource ( 'book', 'BookController');
 Route::resource ( 'copy', 'CopyController');
 Route::resource ( 'category', 'CategoryController');
-/* zelf aangepast */
-Route::resource ( 'student', 'StudentController');
-Route::resource ( 'admin', 'AdminController');
-Route::resource ( 'bookadd', 'AdminController@bookadd');
-Route::resource ( 'registerbooks', 'AdminController@registerbooks');
-Route::resource ( 'allstudents', 'AdminController@allstudents');
-Route::resource ( 'approvestudents', 'AdminController@approvestudents');
-Route::resource ( 'returnbooks', 'AdminController@returnbooks');
-Route::resource ( 'issuedbooks', 'AdminController@issuedbooks');
-
 
 Auth::routes();
 
@@ -41,7 +31,6 @@ Route::get      ( '/logout', function(){
     Auth::logout();
     return redirect()->route('login');
 });
-
 
 
 //'Auth\LoginController@logout'

@@ -15,11 +15,11 @@
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('title', 'Titel', ['class' => 'control-label']) !!}
-					{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'De titel hier']) !!}
+					{!! Form::text('title', $book->title, ['class' => 'form-control', 'placeholder' => 'De titel hier', 'readonly' => true]) !!}
 				</div>
 				<div class="col-sm-6">
-					{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
-					{!! Form::select('author_id', $authors, null, ['class' => 'form-control']) !!}
+					{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
+					{!! Form::text('author', $book->author, ['class' => 'form-control', 'placeholder' => 'De auteur hier', 'readonly' => true]) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}
@@ -36,6 +36,24 @@
 		</div>
     </div>
 {!! Form::close() !!}
+@endsection
 
-
+@section('scripts')
+<script type="text/javascript">
+	$("#isbn").on('change', function() {
+		var isbn = $(this).val();
+		if (isbn.length > 9 && isbn.length < 14) {
+			console.log(isbn);		
+			getBookData(isbn);
+		}
+	});
+	function getBookData(isbn) {
+		$.ajax({
+        url: "https://www.googleapis.com/books/v1/volumes?q="+isbn
+    }).then(function(data) {
+       $('#title').val(data.items[0].volumeInfo.title);
+       $('#author').val(data.items[0].volumeInfo.authors);
+    });
+	}
+</script>
 @endsection

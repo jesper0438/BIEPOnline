@@ -13,15 +13,13 @@
 	@if (count($categories) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-1">Id</th>
-				<th class="col-sm-4">Naam</th>
+				<th class="col-sm-2">Naam</th>
 				<th class="col-sm-2">Kleur</th>
 			</thead>
 			<tbody>
 				@foreach ($categories as $row)
 				<tr class="row-link" style="cursor: pointer;"
 					data-href="{{action('CategoryController@show', ['id' => $row->id]) }}">
-					<td class="table-text">{{ $row->id }}</td>
 					<td class="table-text">{{ $row->name }}</td>
 					<td class="table-text">{{ $row->color }}</td>
 				</tr>

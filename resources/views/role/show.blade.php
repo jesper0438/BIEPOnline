@@ -22,16 +22,14 @@
 @if (count($role->users) > 0)
 	<table class="table table-striped table-hover">
 		<thead>
-		<th class="col-sm-1">Id</th>
-		<th class="col-sm-4">Naam</th>
-		<th class="col-sm-2">E-mail</th>
+		<th class="col-sm-3">Naam</th>
+		<th class="col-sm-3">E-mail</th>
 		</thead>
 		<tbody>
 		{{-- table which shows all users associated with the role --}}
 		@foreach ($role->users as $user)
 			<tr class="row-link" style="cursor: pointer;"
 				data-href="{{action('UserController@show', ['id' => $user->id]) }}">
-				<td class="table-text">{{ $user->id }}</td>
 				<td class="table-text">{{ $user->name }}</td>
 				<td class="table-text"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
 			</tr>

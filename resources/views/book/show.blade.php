@@ -3,7 +3,7 @@
 @section('title')
 <div class="row">
 	<div class="col-sm-10">
-		({{$book->id}}) {{$book->title}}
+		{{$book->title}}
 	</div>
 	<div class="col-sm-1">
 		 <a class="btn btn-default" href="{{action('BookController@edit', $book->id)}}">Bewerken</a>
@@ -21,15 +21,13 @@
         <h2>Informatie over dit boek:</h2>
             <table class="table table-striped table-hover">
                 <thead>
-                <th class="col-sm-1">ID</th>
-                <th class="col-sm-4">ISBN</th>
-                <th class="col-sm-2">Titel</th>
-                <th class="col-sm-2">Auteur</th>
+                <th class="col-sm-2">ISBN</th>
+                <th class="col-sm-3">Titel</th>
+                <th class="col-sm-3">Auteur</th>
                 </thead>
                 <tbody>
                 <tr class="row-link" style="cursor: pointer;"
                     data-href="{{action('BookController@show', ['id' => $book->id]) }}">
-                    <td class="table-text">{{ $book->id }}</td>
                     <td class="table-text">{{ $book->isbn }}</td>
                     <td class="table-text">{{ $book->title }}</td>
                     <td class="table-text">{{ $book->author }}</td>
@@ -43,7 +41,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Nummer</th>
                             <th>Staat van het exemplaar</th>
                         </tr>
                     </thead>

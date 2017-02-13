@@ -11,15 +11,15 @@
 			<div class="form-group">
 				<div class="col-sm-6">
 					{!! Form::label('ISBN', 'ISBN', ['class' => 'control-label']) !!}
-					{!! Form::text('ISBN', $book->isbn, ['class' => 'form-control', 'placeholder' => 'ISBN nummer']) !!}
+					{!! Form::text('ISBN', $book->isbn, ['class' => 'form-control', 'placeholder' => 'ISBN Nummer']) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('title', 'Titel', ['class' => 'control-label']) !!}
-					{!! Form::text('title', $book->title, ['class' => 'form-control', 'placeholder' => 'De titel hier', 'readonly' => true]) !!}
+					{!! Form::text('title', $book->title, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevult', 'readonly' => true]) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-					{!! Form::text('author', $book->author, ['class' => 'form-control', 'placeholder' => 'De auteur hier', 'readonly' => true]) !!}
+					{!! Form::text('author', $book->author, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevult', 'readonly' => true]) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}

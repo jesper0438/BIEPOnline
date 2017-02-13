@@ -13,7 +13,6 @@
 	@if (count($locations) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-1">Id</th>
 				<th class="col-sm-4">Naam</th>
 
 			</thead>
@@ -21,7 +20,6 @@
 				@foreach ($locations as $location)
 				<tr class="row-link" style="cursor: pointer;"
 					data-href="{{action('LocationController@show', ['id' => $location->id]) }}">
-					<td class="table-text">{{ $location->id }}</td>
 					<td class="table-text">{{ $location->name}}</td>
 				</tr>
 				@endforeach

@@ -26,11 +26,7 @@
 					<td class="table-text">{{ $book->id }}</td>
 					<td class="table-text">{{ $book->isbn }}</td>
 					<td class="table-text">{{ $book->title }}</td>
-					<td class="table-text">
-						@if (isset($book->author))
-						{{ $book->author->name }}
-						@endif
-					</td>
+					<td class="table-text">{{ $book->author }}</td>
 					<td class="table-text">
 						@if (isset($book->category))
 							{{ $book->category->name }}

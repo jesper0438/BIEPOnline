@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     protected $fillable = [
-        'title', 'isbn', 'copies'
+        'title', 'author', 'isbn', 'copies'
     ];
 
     protected function copies()
@@ -16,13 +16,8 @@ class Book extends Model
     }
 
     /**
-     * Get the author of the book.
+     * Get the category of the book.
      */
-
-    public function author()
-    {
-        return $this->belongsTo('App\Author');
-    }
 
     public function category()
     {

@@ -7,21 +7,13 @@
 
 	<title>BIEPOnline</title>
 	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<style>
-	.top-right {
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		color: white;
-	}
-	</style>
+	<link href="/css/app.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
-<body onload="updateClock(); setInterval('updateClock()', 1000 )" style="padding-top: 70px;">
+<body style="padding-top: 70px;">
 <div class="container-fluid">
-	<nav class="navbar navbar-inverse  navbar-fixed-top">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,26 +22,35 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-
-				<a class="navbar-brand logo" href="{{ url('/') }}"><i class="fa fa-book"></i>&nbspBIEPOnline</a>
-				<div class="top-right"><span id="clock">&nbsp;</span> <?php
-				echo date('d/m/Y', time()); ?>
+				<a class="navbar-brand logo" href="{{ url('/home') }}">&nbspBIEPOnline</a>
 			</div>
-
 			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					@yield('ul-navbar-left')
-				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					@yield('ul-navbar-right')
+					@if (Auth::guest())
+						<li><a href="{{ url('/login') }}">Login</a></li>
+						<li><a href="{{ url('/register') }}">Register</a></li>
+					@else
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="{{ url('/logout') }}">
+										Log uit
+									</a>
+								</li>
+							</ul>
+						</li>
+					@endif
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- include the content -->
 	<div class="row">
-		<div class="col-sm-3 col-md-2 sidebar">
-			<div class="nav nav-sidebar">
+		<div class="col-sm-3 col-md-2 ">
+			<div class="nav">
 				<ul class="nav nav-pills nav-stacked">
 					@include('common.menu')
 				</ul>
@@ -62,32 +63,12 @@
 			{{-- error section --}}
 			@include('common.errors')
 			@include('common.success')
-
 			@yield('content')
-
 		</div>
 	</div>
 </div>
 @yield('modals')
-<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript">
-function updateClock ( )
-{
-  var currentTime = new Date ( );
-
-  var currentHours = currentTime.getHours ( );
-  var currentMinutes = currentTime.getMinutes ( );
-  var currentSeconds = currentTime.getSeconds ( );
-
-  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-
-  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " ;
-
-  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
-}
-</script>
+<script src="/js/app.js"></script>
 <!-- include additional scripts -->
 @yield('scripts')
 </body>

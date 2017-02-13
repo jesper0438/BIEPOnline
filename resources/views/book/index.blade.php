@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Boekenadministratie
+	<i class="fa fa-book"></i>&nbsp&nbspBoekenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('book/create') !!}">
 			Toevoegen...

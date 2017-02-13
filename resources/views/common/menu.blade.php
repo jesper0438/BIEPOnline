@@ -3,8 +3,28 @@
 @else
 
 <li>
+	<a href="{!! url('book') !!}">
+		<i class="fa fa-book fa-fw"></i>&nbspBoeken
+	</a>
+</li>
+<li>
+	<a href="{!! url('category') !!}">
+		<i class="fa fa-university fa-fw"></i>&nbspCategorie&euml;n
+	</a>
+</li>
+<li>
+	<a href="{!! url('copy') !!}">
+		<i class="fa fa-tags fa-fw"></i>&nbspExemplaren
+	</a>
+</li>
+<li>
 	<a href="{!! url('user') !!}">
 		<i class="fa fa-users fa-fw"></i>&nbspGebruikers
+	</a>
+</li>
+<li>
+	<a href="{!! url('location') !!}">
+		<i class="fa fa-map-pin  fa-fw"></i>&nbspLocaties
 	</a>
 </li>
 <li>
@@ -15,26 +35,6 @@
 <li>
 	<a href="{!! url('loan') !!}">
 		<i class="fa fa-arrow-circle-right fa-fw"></i>&nbspUitlenen
-	</a>
-</li>
-<li>
-	<a href="{!! url('category') !!}">
-		<i class="fa fa-university fa-fw"></i>&nbspCategorie&euml;n
-	</a>
-</li>
-<li>
-	<a href="{!! url('book') !!}">
-		<i class="fa fa-book fa-fw"></i>&nbspBoeken
-	</a>
-</li>
-<li>
-	<a href="{!! url('copy') !!}">
-		<i class="fa fa-tags fa-fw"></i>&nbspExemplaren
-	</a>
-</li>
-<li>
-	<a href="{!! url('location') !!}">
-		<i class="fa fa-map-pin  fa-fw"></i>&nbspLocaties
 	</a>
 </li>
 

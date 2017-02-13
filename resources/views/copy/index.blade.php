@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Exemplarenadministratie
+	<i class="fa fa-tags"></i>&nbsp&nbspExemplarenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
 			Toevoegen...

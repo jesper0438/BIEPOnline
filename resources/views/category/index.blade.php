@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Categorieënadministratie
+	<i class="fa fa-university"></i>&nbsp&nbspCategorieënadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('category/create') !!}">
 			Toevoegen...

@@ -19,7 +19,6 @@ Route::resource ( 'user', 'UserController');
 Route::resource ( 'role', 'RoleController');
 Route::resource ( 'location', 'LocationController');
 Route::resource ( 'loan', 'LoanController');
-Route::resource ( 'author', 'AuthorController');
 Route::resource ( 'book', 'BookController');
 Route::resource ( 'copy', 'CopyController');
 Route::resource ( 'category', 'CategoryController');

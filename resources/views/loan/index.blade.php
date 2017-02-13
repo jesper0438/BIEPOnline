@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Uitleenadministratie
+	<i class="fa fa-arrow-circle-right"></i>&nbsp&nbspUitleenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('loan/create') !!}">
 			Toevoegen...

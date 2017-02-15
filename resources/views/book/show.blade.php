@@ -50,6 +50,7 @@
                         <tr>
                             <th>Nummer</th>
                             <th>Staat van het exemplaar</th>
+														<th>Locatie</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +58,7 @@
                         <tr>
                             <td> {{$copy->id}} </td>
                             <td> {{$copy->state}} </td>
+														<td> {{$copy->location->name}} </td>
                         </tr>
                     @endforeach
                     </tbody>

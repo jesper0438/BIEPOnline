@@ -1,4 +1,4 @@
-![00f2c1ff4aa31ab3beb48fde8325216f.png](https://gallery.jzegers.nl/i/00f2c1ff4aa31ab3beb48fde8325216f.png)
+![BIEPOnline](https://gallery.jzegers.nl/i/ab794071e90bc0ca2cff21213e2e9785.png)
 
 # Development Branch
 This project is a prototype for a library support system for a specific primary school

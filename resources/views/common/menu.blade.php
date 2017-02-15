@@ -1,13 +1,13 @@
 @if (Auth::check())
 
 <li>
-	<a href="{!! url('loan') !!}">
+	<a href="{!! url('book') !!}">
 		<i class="fa fa-book fa-2x fa-fw"></i>&nbspBoekoverzicht
 	</a>
 </li>
 <li>
 	<a href="{!! url('book') !!}">
-		<i class="fa fa-plus"></i>&nbspBoek toevoegen
+		<i class="fa fa-book fa-2x fa-fw"></i>&nbspBoeken
 	</a>
 </li>
 <li>

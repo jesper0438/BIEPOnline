@@ -24,6 +24,7 @@
                 <th class="col-sm-2">ISBN</th>
                 <th class="col-sm-3">Titel</th>
                 <th class="col-sm-3">Auteur</th>
+								<th class="col-sm-3">Categorie</th>
                 </thead>
                 <tbody>
                 <tr class="row-link" style="cursor: pointer;"
@@ -31,6 +32,12 @@
                     <td class="table-text">{{ $book->isbn }}</td>
                     <td class="table-text">{{ $book->title }}</td>
                     <td class="table-text">{{ $book->author }}</td>
+										<td class="table-text">
+											@if (isset($book->category))
+												{{ $book->category->name }}
+
+											@endif
+										</td>
                 </tr>
                 </tbody>
             </table>

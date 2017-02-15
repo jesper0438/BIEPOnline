@@ -3,7 +3,7 @@
 @section('title')
 <div class="row">
 	<div class="col-sm-10">
-			({{$role->id}}) {{$role->name}}
+			{{$role->name}}
 	</div>
 	<div class="col-sm-1">
 		 <a class="btn btn-default" href="{{action('RoleController@edit', $role->id)}}">Bewerken</a>

@@ -7,7 +7,7 @@
 </li>
 <li>
 	<a href="{!! url('book') !!}">
-		<i class="fa fa-book fa-2x fa-fw"></i>&nbspBoeken
+		<i class="fa fa-plus"></i>&nbspBoek toevoegen
 	</a>
 </li>
 <li>

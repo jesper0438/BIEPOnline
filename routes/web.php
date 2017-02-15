@@ -12,14 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('home');
 });
 
 Route::resource ( 'user', 'UserController');
 Route::resource ( 'role', 'RoleController');
 Route::resource ( 'location', 'LocationController');
 Route::resource ( 'loan', 'LoanController');
-Route::resource ( 'author', 'AuthorController');
 Route::resource ( 'book', 'BookController');
 Route::resource ( 'copy', 'CopyController');
 Route::resource ( 'category', 'CategoryController');
@@ -27,10 +26,9 @@ Route::resource ( 'category', 'CategoryController');
 Auth::routes();
 
 Route::get      ( '/home','HomeController@index');
+Route::get      ( '/help','HelpController@index');
+
 Route::get      ( '/logout', function(){
     Auth::logout();
     return redirect()->route('login');
 });
-
-
-//'Auth\LoginController@logout'

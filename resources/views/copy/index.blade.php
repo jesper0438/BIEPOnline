@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Exemplarenadministratie
+	<i class="fa fa-tags"></i>&nbsp&nbspExemplarenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
 			Toevoegen...
@@ -14,9 +14,8 @@
 		<table class="table table-striped table-hover">
 			<thead>
 
-				<th class="col-sm-1">Id</th>
-				<th class="col-sm-2">Boek</th>
-				<th class="col-sm-4">Datum gekocht</th>
+				<th class="col-sm-4">Boek</th>
+				<th class="col-sm-2">Datum gekocht</th>
 				<th class="col-sm-2">Staat</th>
 				<th class="col-sm-2">Locatie</th>
 
@@ -25,7 +24,6 @@
 			@foreach ($copies as $copy)
 				<tr class="row-link" style="cursor: pointer;"
 					data-href="{{action('CopyController@show', ['id' => $copy->id]) }}">
-					<td class="table-text">{{ $copy->id }}</td>
 					<td class="table-text">
 						@if (isset($copy->book))
 							{{ $copy->book->title }}

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>BIEPOnline</title>
-	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+	<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 	<link href="/css/app.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
@@ -18,9 +18,7 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+					<span><i class="fa fa-bars"></i></span>
 				</button>
 				<a class="navbar-brand logo" href="{{ url('/home') }}">&nbspBIEPOnline</a>
 			</div>
@@ -28,13 +26,18 @@
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="{{ url('/login') }}">Login</a></li>
-						<li><a href="{{ url('/register') }}">Register</a></li>
+						<li><a href="{{ url('/register') }}">Registreer</a></li>
 					@else
 						<li class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								<i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="{{ url('/help') }}">
+										Help
+									</a>
+								</li>
 								<li>
 									<a href="{{ url('/logout') }}">
 										Log uit

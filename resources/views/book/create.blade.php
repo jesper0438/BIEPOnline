@@ -22,12 +22,12 @@
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
 		{!! Form::label('title', 'Titel', ['class' => 'control-label']) !!}
-		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'De titel hier', 'readonly' => true]) !!}
+		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevult', 'readonly' => true]) !!}
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
 		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De auteur hier', 'readonly' => true]) !!}
+		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevult', 'readonly' => true]) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}

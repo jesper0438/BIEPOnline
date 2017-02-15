@@ -16,12 +16,12 @@
 {!! Form::open(['route' => ['user.store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
 <div class="form-group">
 	<div class="col-sm-6">
-		{!! Form::label('name', 'Naam*', ['class' => 'control-label']) !!}
+		{!! Form::label('name', 'Naam', ['class' => 'control-label']) !!}
 		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'De naam hier']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('email', 'Email', ['class' => 'control-label']) !!}
-		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Het e-mailadres hier']) !!}
+		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Het emailadres hier']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('role_id', 'Rol', ['class' => 'control-label']) !!}

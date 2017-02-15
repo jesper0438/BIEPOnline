@@ -1,6 +1,4 @@
-@if (Auth::guest())
-
-@else
+@if (Auth::check())
 
 <li>
 	<a href="{!! url('book') !!}">
@@ -37,5 +35,7 @@
 		<i class="fa fa-arrow-circle-right fa-2x fa-fw"></i>&nbspUitlenen
 	</a>
 </li>
+
+@else
 
 @endif

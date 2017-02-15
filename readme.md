@@ -1,4 +1,4 @@
-![BIEPOnline](https://gallery.jzegers.nl/i/ab794071e90bc0ca2cff21213e2e9785.png)
+![BIEPOnline](https://github.com/Joery/BIEPOnline/raw/staging/public/img/Logo.png)
 
 # Development Branch
 This project is a prototype for a library support system for a specific primary school

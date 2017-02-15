@@ -20,7 +20,7 @@
 					<span class="sr-only">Toggle navigation</span>
 					<span><i class="fa fa-bars"></i></span>
 				</button>
-				<a class="navbar-brand logo" href="{{ url('/home') }}">&nbspBIEPOnline</a>
+				<a class="navbar-brand logo" href="{{ url('/home') }}"><img id="header-logo" src="img/Logo.png"></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

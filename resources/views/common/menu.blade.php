@@ -2,6 +2,11 @@
 
 <li>
 	<a href="{!! url('book') !!}">
+		<i class="fa fa-book fa-2x fa-fw"></i>&nbspBoekoverzicht
+	</a>
+</li>
+<li>
+	<a href="{!! url('book') !!}">
 		<i class="fa fa-book fa-2x fa-fw"></i>&nbspBoeken
 	</a>
 </li>

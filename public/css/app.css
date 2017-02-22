@@ -23,3 +23,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 	height: 150px;
 	width: 600px;
 }
+
+#side-nav {
+	color: #636B6F;
+}

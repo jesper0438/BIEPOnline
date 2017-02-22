@@ -25,6 +25,12 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::check())
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Boek, ISBN of Auteur...">
+							</div>
+							<button type="submit" class="btn btn-default">Zoek</button>
+						</form>
 						<li class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								<i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>

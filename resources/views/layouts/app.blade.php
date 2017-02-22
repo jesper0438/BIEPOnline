@@ -33,25 +33,15 @@
 						</form>
 						<li class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-								<i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+								<i class="fa fa-database"></i> Administratie<span class="caret"></span>
 							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li>
-									<a href="{{ url('/userprofile') }}">
-										Gebruikersprofiel
-									</a>
-								</li>
-								<li>
-									<a href="{{ url('/help') }}">
-										Help
-									</a>
-								</li>
-								<li>
-									<a href="{{ url('/logout') }}">
-										Log uit
-									</a>
-								</li>
-							</ul>
+							@include('common.adminmenu')
+						</li>
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<i class="fa fa-user"></i> {{ Auth::user()->name }}<span class="caret"></span>
+							</a>
+							@include('common.usermenu')
 						</li>
 					@else
 						<li><a href="{{ url('/login') }}">Login</a></li>
@@ -66,7 +56,7 @@
 		<div class="col-sm-3 col-md-2 ">
 			<div class="nav">
 				<ul class="nav nav-pills nav-stacked">
-					@include('common.menu')
+					@include('common.leftmenu')
 				</ul>
 			</div>
 		</div>

@@ -12,7 +12,7 @@
 </li>
 <li>
 	<a href="{!! url('category') !!}">
-		<i class="fa fa-university fa-2x fa-fw"></i>&nbspCategorie&euml;n
+		<i class="fa fa-university fa-2x fa-fw"></i>&nbspCategorieën
 	</a>
 </li>
 <li>

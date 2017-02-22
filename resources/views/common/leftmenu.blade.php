@@ -1,5 +1,3 @@
-@if (Auth::check())
-
 <li>
 	<a id="side-nav" href="{!! url('book') !!}">
 		<i class="fa fa-book fa-2x fa-fw"></i> Boeken
@@ -10,7 +8,3 @@
 		<i class="fa fa-arrow-circle-right fa-2x fa-fw"></i> Uitlenen
 	</a>
 </li>
-
-@else
-
-@endif

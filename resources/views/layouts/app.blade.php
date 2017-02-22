@@ -56,7 +56,10 @@
 		<div class="col-sm-3 col-md-2 ">
 			<div class="nav">
 				<ul class="nav nav-pills nav-stacked">
-					@include('common.leftmenu')
+					@if (Auth::check())
+						@include('common.leftmenu')
+					@else
+					@endif
 				</ul>
 			</div>
 		</div>
@@ -73,7 +76,6 @@
 </div>
 @yield('modals')
 <script src="/js/app.js"></script>
-<!-- include additional scripts -->
 @yield('scripts')
 </body>
 </html>

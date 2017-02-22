@@ -24,10 +24,7 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/login') }}">Login</a></li>
-						<li><a href="{{ url('/register') }}">Registreer</a></li>
-					@else
+					@if (Auth::check())
 						<li class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								<i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
@@ -50,6 +47,9 @@
 								</li>
 							</ul>
 						</li>
+					@else
+						<li><a href="{{ url('/login') }}">Login</a></li>
+						<li><a href="{{ url('/register') }}">Registreer</a></li>
 					@endif
 				</ul>
 			</div>

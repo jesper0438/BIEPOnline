@@ -24,6 +24,11 @@
 			</a>
 	</li>
 	<li>
+		<a id="side-nav" href="{!! url('author') !!}">
+			<i class="fa fa-address-card"></i> Auteurs
+		</a>
+</li>
+	<li>
 		<a id="side-nav" href="{!! url('role') !!}">
 			<i class="fa fa-map fa-fw"></i> Rollen
 		</a>

@@ -14,7 +14,7 @@
 		<table class="table table-striped table-hover">
 			<thead>
 				<th class="col-sm-3">Naam</th>
-      
+
 			</thead>
 			<tbody>
 				@foreach ($authors as $row)

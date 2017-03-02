@@ -8,10 +8,21 @@
 	<div class="col-sm-1">
 		 <a class="btn btn-default" href="{{action('BookController@edit', $book->id)}}">Bewerken</a>
 	</div>
+		<script>
+			function confirmDelete() {
+		var result = confirm('Weet je zeker dat je dit boek wilt verwijderen?');
+		if (result) {
+		        return true;
+		    } else {
+		        return false;
+		    }
+		}
+			</script>
 	<div class="col-sm-1">
-			{!! Form::open(['route' => ['book.destroy', $book->id], 'method'=>'DELETE']) !!}
-			{!! Form::submit('Verwijderen', array('class'=>'btn btn-danger')) !!}
-			{!! Form::close() !!}
+		{!! Form::open(['method' => 'DELETE', 'route' => ['book.destroy', $book->id], 'onsubmit' => 'return confirmDelete()']) !!}
+	<button type="submit" name="button" class="btn btn-default btn-sm">
+			<i class="fa fa-trash-o"></i>
+	</button>
 	</div>
 </div>
 @endsection

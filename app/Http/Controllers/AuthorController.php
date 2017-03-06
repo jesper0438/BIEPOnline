@@ -86,7 +86,6 @@ class AuthorController extends Controller
     {
         return view ( 'author/edit', [
             'author' => Author::findOrFail($id),
-            'author' => Author::orderBy ( 'author', 'asc' )->pluck('author'),
         ] );
     }
 
@@ -105,12 +104,12 @@ class AuthorController extends Controller
         ] );
 
         $author = Author::findorfail ( $id );
-        $author->name = $request ['name'];
+        $author->author = $request ['author'];
         // Save the changes in the database
         $author->save ();
 
         // Redirect to the user.index page with a success message.
-        return redirect ( 'author' )->with( 'success', $author->name.' is bijgewerkt.' );
+        return redirect ( 'author' )->with( 'success', $author->author.' is bijgewerkt.' );
     }
 
     /**

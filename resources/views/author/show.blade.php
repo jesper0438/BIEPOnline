@@ -3,7 +3,7 @@
 @section('title')
 <div class="row">
 	<div class="col-sm-10">
-		{{$category->name}}
+		{{$author->name}}
 	</div>
 	<div class="col-sm-1">
 		 <a class="btn btn-default" href="{{action('AuthorController@edit', $author->id)}}">Bewerken</a>
@@ -20,11 +20,11 @@
 <table class="table table-striped table-hover">
 	<thead>
 		<th class="col-sm-2">Naam</th>
-		<
+
 	</thead>
 	<tbody>
-		<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $category->id]) }}">
-			<td class="table-text">{{ $author->name }}</td>
+		<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $author->id]) }}">
+			<td class="table-text">{{ $author->author }}</td>
 		</tr>
 	</tbody>
 </table>

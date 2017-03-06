@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	<i class="fa fa-map-pin"></i>&nbsp&nbspLocatieadministratie
+	<i class="fa fa-map-pin"></i> Locatieadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('location/create') !!}">
 			Toevoegen...

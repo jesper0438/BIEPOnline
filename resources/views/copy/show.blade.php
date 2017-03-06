@@ -3,7 +3,7 @@
 @section('title')
 <div class="row">
 	<div class="col-sm-10">
-			{{$copy->book->title}}
+		{{$copy->book->title}}
 	</div>
 	<div class="col-sm-1">
 		 <a class="btn btn-default" href="{{action('CopyController@edit', $copy->id)}}">Bewerken</a>

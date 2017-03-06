@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	<i class="fa fa-map"></i>&nbsp&nbspRollenadministratie
+	<i class="fa fa-map"></i> Rollenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('role/create') !!}">
 			Toevoegen...

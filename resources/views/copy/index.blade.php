@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	<i class="fa fa-tags"></i>&nbsp&nbspExemplarenadministratie
+	<i class="fa fa-tags"></i> Statusadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
 			Toevoegen...
@@ -13,12 +13,10 @@
 	@if (count($copies) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-
 				<th class="col-sm-4">Boek</th>
 				<th class="col-sm-2">Datum gekocht</th>
 				<th class="col-sm-2">Staat</th>
 				<th class="col-sm-2">Locatie</th>
-
 			</thead>
 			<tbody>
 			@foreach ($copies as $copy)

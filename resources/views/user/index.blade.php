@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	<i class="fa fa-users"></i>&nbsp&nbspGebruikersadministratie
+	<i class="fa fa-users"></i> Gebruikersadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('user/create') !!}">
 			Toevoegen...

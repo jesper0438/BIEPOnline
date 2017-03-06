@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	Auteur toevoegen
+	Nieuwe auteur toevoegen
 @endsection
 
 @section('tools')

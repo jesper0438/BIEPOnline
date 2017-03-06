@@ -18,7 +18,16 @@
 		<a id="side-nav" href="{!! url('location') !!}">
 			<i class="fa fa-map-pin fa-fw"></i> Locaties
 		</a>
+		<li>
+			<a id="side-nav" href="{!! url('copy') !!}">
+				<i class="fa fa-files-o"></i> Exemplaren
+			</a>
 	</li>
+	<li>
+		<a id="side-nav" href="{!! url('author') !!}">
+			<i class="fa fa-address-card"></i> Auteurs
+		</a>
+</li>
 	<li>
 		<a id="side-nav" href="{!! url('role') !!}">
 			<i class="fa fa-map fa-fw"></i> Rollen

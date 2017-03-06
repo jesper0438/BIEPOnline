@@ -22,7 +22,7 @@ Route::resource ( 'loan', 'LoanController');
 Route::resource ( 'book', 'BookController');
 Route::resource ( 'copy', 'CopyController');
 Route::resource ( 'category', 'CategoryController');
-
+Route::resource ( 'author', 'AuthorController');
 Auth::routes();
 
 Route::get      ( '/home','HomeController@index');

@@ -1,7 +1,7 @@
-  @extends('layouts.app')
+@extends('layouts.app')
 
 @section('title')
-    <i class="fa fa-user"></i>&nbsp&nbsp{{ Auth::user()->name }}
+	<i class="fa fa-user"></i> {{ Auth::user()->name }}
 @endsection
 
 @section('content')

@@ -126,6 +126,6 @@ class AuthorController extends Controller
         // Remove the user from the database
         $author->delete ();
         // Redirect to the user.index page with a success message.
-        return redirect ( 'role' )->with( 'success', $author->name.' is verwijderd.' );
+        return redirect ( 'author' )->with( 'success', $author->name.' is verwijderd.' );
     }
 }

@@ -20,7 +20,7 @@
 		</a>
 		<li>
 			<a id="side-nav" href="{!! url('copy') !!}">
-				<i class="fa fa-files-o"></i> Exampleren
+				<i class="fa fa-files-o"></i> Exemplaren
 			</a>
 	</li>
 	<li>

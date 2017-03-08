@@ -3,6 +3,8 @@
 # Development Branch
 This project is a prototype for a library support system for a specific primary school
 
+You don't have the permission to use the application
+
 # Links
 Productieomgeving
 https://bieponline.herokuapp.com/

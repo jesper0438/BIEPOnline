@@ -28,7 +28,7 @@
 
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-2">Boeken</th>
+				<th class="col-sm-2">Titel boek</th>
 				<th class="col-sm-2">Status</th>
 				<th class="col-sm-2">Reserveren</th>
 			</thead>

@@ -20,6 +20,7 @@
 				<tr class="row-link" style="cursor: pointer;"
 					data-href="{{action('AuthorController@show', ['id' => $row->id]) }}">
 					<td class="table-text">{{ $row->author }}</td>
+				
 
 				</tr>
 				@endforeach

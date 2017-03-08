@@ -33,9 +33,9 @@
 				<th class="col-sm-2">Reserveren</th>
 			</thead>
 			<tbody>
-				<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $author->id]) }}">
-					<td class="table-text">{{ $author->author }}</td>
-					<td class="table-text"></td>
+				<tr class="row-link" style="cursor: pointer;" data-href="{{action('BookController@show', ['id' => $book->id]) }}">
+					<td class="table-text">{{ $book->title }}</td>
+					<td class="table-text">{{ }}</td>
 					<td class="table-text"></td>
 				</tr>
 

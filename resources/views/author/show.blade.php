@@ -29,10 +29,14 @@
 		<table class="table table-striped table-hover">
 			<thead>
 				<th class="col-sm-2">Boeken</th>
+				<th class="col-sm-2">Status</th>
+				<th class="col-sm-2">Reserveren</th>
 			</thead>
 			<tbody>
 				<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $author->id]) }}">
 					<td class="table-text">{{ $author->author }}</td>
+					<td class="table-text"></td>
+					<td class="table-text"></td>
 				</tr>
 
 	</tbody>

@@ -7,6 +7,8 @@ So don't use this application in production environments!
 # Warning
 Don't use this application in production environments!
 
+Ik wil een merge conflict!
+
 # Links
 Productieomgeving
 https://bieponline.herokuapp.com/

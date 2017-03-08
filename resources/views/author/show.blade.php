@@ -22,21 +22,24 @@
 		<th class="col-sm-2">Naam</th>
 	</thead>
 	<tbody>
-		<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $author->id]) }}">
-			<td class="table-text">{{ $author->author }}</td>
-		</tr>
 
 		<table class="table table-striped table-hover">
 			<thead>
 				<th class="col-sm-2">Titel boek</th>
+<<<<<<< HEAD
+=======
+				<th class="col-sm-2">Titel boek</th>
+>>>>>>> 23b8ac8ffe9f29e809b8984d332285b2fc521db3
 				<th class="col-sm-2">Status</th>
 				<th class="col-sm-2">Reserveren</th>
+				<th class="col-sm-2">Aantal</th>
 			</thead>
 			<tbody>
 				<tr class="row-link" style="cursor: pointer;" data-href="{{action('BookController@show', ['id' => $book->id]) }}">
 					<td class="table-text">{{ $book->title }}</td>
 					<td class="table-text">{{ }}</td>
-					<td class="table-text"></td>
+					<td class="table-text">{{ }}</td>
+					<td class="table-text">{{ }}</td>
 				</tr>
 
 	</tbody>

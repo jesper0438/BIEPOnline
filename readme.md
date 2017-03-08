@@ -2,6 +2,13 @@
 
 # Development Branch
 This project is a prototype for a library support system for a specific primary school
+So don't use this application in production environments!
+
+# Warning
+Don't use this application in production environments!
+TEST
+
+Ik wil een merge conflict!
 
 You don't have the permission to use the application
 

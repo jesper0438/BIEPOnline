@@ -29,12 +29,14 @@
 				<th class="col-sm-2">Titel boek</th>
 				<th class="col-sm-2">Status</th>
 				<th class="col-sm-2">Reserveren</th>
+				<th class="col-sm-2">Aantal</th>
 			</thead>
 			<tbody>
 				<tr class="row-link" style="cursor: pointer;" data-href="{{action('BookController@show', ['id' => $book->id]) }}">
 					<td class="table-text">{{ $book->title }}</td>
 					<td class="table-text">{{ }}</td>
-					<td class="table-text"></td>
+					<td class="table-text">{{ }}</td>
+					<td class="table-text">{{ }}</td>
 				</tr>
 
 	</tbody>

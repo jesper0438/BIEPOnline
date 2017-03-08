@@ -6,6 +6,7 @@ So don't use this application in production environments!
 
 # Warning
 Don't use this application in production environments!
+TEST
 
 # Links
 Productieomgeving

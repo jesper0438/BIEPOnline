@@ -3,7 +3,7 @@
 	<head>
 		<title>Offline voor onderhoud</title>
 
-		<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 
 		<style>
 			html, body {
@@ -17,7 +17,7 @@
 				color: #B0BEC5;
 				display: table;
 				font-weight: 100;
-				font-family: 'Lato', sans-serif;
+				font-family: 'Source Sans Pro', sans-serif;
 			}
 
 			.container {

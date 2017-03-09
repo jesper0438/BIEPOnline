@@ -6,7 +6,7 @@
 	</li>
 	<li>
 		<a id="side-nav" href="{{ url('/help') }}">
-			Help
+			Ondersteuning
 		</a>
 	</li>
 	<li>

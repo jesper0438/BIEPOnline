@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Exemplaren')
+@section('pagetitle', 'Exemplaren')
 
 @section('title')
 	<i class="fa fa-tags"></i> Statusadministratie

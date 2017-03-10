@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Gebruikersprofiel')
+@section('pagetitle', 'Gebruikersprofiel')
 
 @section('title')
 	<i class="fa fa-user"></i> {{ Auth::user()->name }}

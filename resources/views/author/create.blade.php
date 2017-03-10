@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Auteurs')
+@section('pagetitle', 'Auteurs')
 
 @section('title')
 	Nieuwe auteur toevoegen

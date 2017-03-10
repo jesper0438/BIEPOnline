@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Gebruikers')
+@section('pagetitle', 'Gebruikers')
 
 @section('title')
 	Nieuwe gebruiker toevoegen

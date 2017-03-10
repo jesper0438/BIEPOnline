@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Ondersteuning')
+@section('pagetitle', 'Ondersteuning')
 
 @section('title')
 	<i class="fa fa-question"></i> Ondersteuning

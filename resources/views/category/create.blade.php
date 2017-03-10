@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Categorieën')
+@section('pagetitle', 'Categorieën')
 
 @section('title')
 	Nieuwe categorie toevoegen

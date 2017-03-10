@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Boeken')
+@section('pagetitle', 'Boeken')
 
 @section('title')
 	<i class="fa fa-book"></i> Boekenadministratie

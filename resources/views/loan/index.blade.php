@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Uitlenen')
+@section('pagetitle', 'Uitlenen')
 
 @section('title')
 	<i class="fa fa-arrow-circle-right"></i> Uitleenadministratie

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Boeken')
+@section('pagetitle', 'Boeken')
 
 @section('title')
 	Nieuw boek toevoegen

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Locaties')
+@section('pagetitle', 'Locaties')
 
 @section('title')
 	<i class="fa fa-map-pin"></i> Locatieadministratie

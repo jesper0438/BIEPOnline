@@ -6,13 +6,6 @@ So don't use this application in production environments!
 
 # Warning
 Don't use this application in production environments!
-TEST
-
-
-Ik wil een merge conflict!7184414
-
-
-You don't have the permission to use the application
 
 # Links
 Productieomgeving

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ondersteuning')
 
 @section('title')
 	<i class="fa fa-question"></i> Help

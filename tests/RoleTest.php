@@ -13,8 +13,8 @@ class RoleTest extends TestCase
     private static $URL_PREFIX = '/role';
     private static $TABLE_NAME = 'roles';
 
-    private static $NAME1 = 'Rebel general';
-    private static $NAME2 = 'Imperial stormtrooper';
+    private static $NAME1 = 'Rebel General';
+    private static $NAME2 = 'Imperial Stormtrooper';
 
     private function createDefaultObject()
     {

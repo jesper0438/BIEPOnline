@@ -15,14 +15,18 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-Route::resource ( 'user', 'UserController');
-Route::resource ( 'role', 'RoleController');
-Route::resource ( 'location', 'LocationController');
-Route::resource ( 'loan', 'LoanController');
+// Regular Routes
 Route::resource ( 'book', 'BookController');
-Route::resource ( 'copy', 'CopyController');
-Route::resource ( 'category', 'CategoryController');
+Route::resource ( 'loan', 'LoanController');
+
+// Admin Routes
 Route::resource ( 'author', 'AuthorController');
+Route::resource ( 'category', 'CategoryController');
+Route::resource ( 'user', 'UserController');
+Route::resource ( 'location', 'LocationController');
+Route::resource ( 'copy', 'CopyController');
+Route::resource ( 'role', 'RoleController');
+
 Auth::routes();
 
 Route::get      ( '/home','HomeController@index');

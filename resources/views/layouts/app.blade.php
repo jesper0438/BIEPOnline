@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>@yield('pagetitle') | BIEPOnline</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body style="padding-top: 70px;">
-<div class="container-fluid">
-	<nav class="navbar navbar-default navbar-fixed-top">
+		<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" href="{{ asset('favicon.png') }}">
+		<title>@yield('pagetitle') | {{ config('app.name') }}</title>
+		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+			<button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand logo" href="{{ url('home') }}"><img id="header-logo" src="{{ asset('img/Logo.png') }}"></a>
+			<div class="collapse navbar-collapse">
+				@if (Auth::check())
+				<ul class="navbar-nav mr-auto">
+					<form class="form-inline mt-2 mt-md-0">
+						<input class="form-control mr-sm-2" type="text" placeholder="Boek, ISBN of Auteur...">
+						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoeken</button>
+					</form>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Administratie
+						</a>
+						@include('common.adminmenu')
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user"></i> {{ Auth::user()->name }}
+						</a>
+						@include('common.usermenu')
+					</li>
+				</ul>
+				@else
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('login') }}">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url('register') }}">Registreer</a>
+					</li>
+				</ul>
+				@endif
+			</div>
+		</nav>
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span><i class="fa fa-bars"></i></span>
-				</button>
-				<a class="navbar-brand logo" href="{{ url('/home') }}"><img id="header-logo" src="{{ asset('img/Logo.png') }}"></a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::check())
-						<form class="navbar-form navbar-left" role="search">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Boek, ISBN of Auteur...">
-							</div>
-							<button type="submit" class="btn btn-default">Zoek</button>
-						</form>
-						<li class="dropdown">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-								<i class="fa fa-database"></i> Administratie<span class="caret"></span>
-							</a>
-							@include('common.adminmenu')
-						</li>
-						<li class="dropdown">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-								<i class="fa fa-user"></i> {{ Auth::user()->name }}<span class="caret"></span>
-							</a>
-							@include('common.usermenu')
-						</li>
-					@else
-						<li><a href="{{ url('/login') }}">Login</a></li>
-						<li><a href="{{ url('/register') }}">Registreer</a></li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- include the content -->
-	<div class="row">
-		<div class="col-sm-3 col-md-2 ">
-			<div class="nav">
-				<ul class="nav nav-pills nav-stacked">
-					@if (Auth::check())
+			<div class="row">
+				<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+					<ul class="nav nav-pills flex-column">
 						@include('common.leftmenu')
-					@else
-					@endif
-				</ul>
+					</ul>
+				</nav>
+				<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+					<h1>@yield('title')</h1>
+					@include('common.errors')
+					@include('common.success')
+					@yield('content')
+				</main>
 			</div>
 		</div>
-		<div class="col-sm-8 col-md-9 main">
-			@if (array_key_exists('title', View::getSections()))
-				<div class="page-header"><h1>@yield('title', 'title section here')</h1></div>
-			@endif
-			{{-- error section --}}
-			@include('common.errors')
-			@include('common.success')
-			@yield('content')
-		</div>
-	</div>
-</div>
-@yield('modals')
-<script src="{{ asset('js/app.js') }}"></script>
-@yield('scripts')
-</body>
+		<script src="{{ asset('js/app.js') }}"></script>
+	</body>
 </html>

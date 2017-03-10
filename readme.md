@@ -1,7 +1,7 @@
 ![BIEPOnline](https://github.com/Joery/BIEPOnline/raw/staging/public/img/Logo.png)
 
 # Development Branch
-This project is a prototype for a library support system for a specific primary school
+This repository is a Laravel based prototype for a library support system for a primary school
 
 # Links
 Productieomgeving

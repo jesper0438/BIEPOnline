@@ -1,0 +1,39 @@
+@extends('layouts.app')
+@section('pagetitle', 'status')
+
+@section('title')
+	<i class="fa fa-map-pin"></i> status
+	<div style="float:right">
+		<a class="btn btn-primary" href="{!! url('status/create') !!}">
+			Toevoegen...
+		</a>
+	</div>
+@endsection
+
+@section('content')
+	@if (count($statuses) > 0)
+		<table class="table table-striped table-hover">
+			<thead>
+				<th class="col-sm-4">status</th>
+			</thead>
+			<tbody>
+				@foreach ($statuses as $row)
+				<tr class="row-link" style="cursor: pointer;"
+					data-href="{{action('StatusController@show', ['id' => $status->id]) }}">
+					<td class="table-text">{{ $row->status}}</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	@endif
+@endsection
+@section('scripts')
+<script>
+	jQuery(document).ready(function($) {
+	    $(".row-link").click(function() {
+	        window.document.status = $(this).data("href");
+	    });
+	    $('#cohort-tabs a:first').tab('show') // Select first tab
+	});
+</script>
+@endsection

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     protected $fillable = [
-        'title', 'author', 'isbn', 'copies'
+        'title', 'author', 'isbn',
     ];
 
     protected function copies()
@@ -15,13 +15,8 @@ class Book extends Model
         return $this->hasMany('App\Copy');
     }
 
-    /**
-     * Get the category of the book.
-     */
-
     public function category()
     {
         return $this->belongsTo('App\Category');
     }
-
 }

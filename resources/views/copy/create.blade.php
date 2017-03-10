@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Exemplaren')
 
 @section('title')
     Nieuw exemplaar toevoegen

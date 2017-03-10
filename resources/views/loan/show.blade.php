@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Uitlenen')
 
 @section('title')
 <div class="row">

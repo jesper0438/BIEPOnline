@@ -2,7 +2,7 @@
 @section('title', 'Ondersteuning')
 
 @section('title')
-	<i class="fa fa-question"></i> Help
+	<i class="fa fa-question"></i> Ondersteuning
 @endsection
 
 @section('content')

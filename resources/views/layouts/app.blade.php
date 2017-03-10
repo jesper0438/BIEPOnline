@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>BIEPOnline</title>
+	<title>@yield('title') | BIEPOnline</title>
 	<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-	<link href="/css/app.css" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
@@ -75,7 +75,7 @@
 	</div>
 </div>
 @yield('modals')
-<script src="/js/app.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @yield('scripts')
 </body>
 </html>

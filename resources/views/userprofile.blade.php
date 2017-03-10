@@ -7,7 +7,7 @@
 
 @section('content')
 
-<!-- User info -->
+<!-- User Info -->
 <table class="table">
 	<tbody>
 		<tr>

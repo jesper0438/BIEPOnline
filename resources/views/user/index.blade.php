@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Gebruikers')
 
 @section('title')
 	<i class="fa fa-users"></i> Gebruikersadministratie

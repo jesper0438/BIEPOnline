@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Rollen')
 
 @section('title')
 	<i class="fa fa-map"></i> Rollenadministratie

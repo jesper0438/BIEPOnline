@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Auteurs')
 
 @section('title')
 	<i class="fa fa-address-card"></i> Auteursadministratie

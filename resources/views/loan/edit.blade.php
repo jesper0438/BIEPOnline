@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Uitlenen')
 
 @section('title')
 	Bewerk {{ $loan->id }}

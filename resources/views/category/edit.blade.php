@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Categorieën')
 
 @section('title')
 	Bewerk {{ $category->name }}

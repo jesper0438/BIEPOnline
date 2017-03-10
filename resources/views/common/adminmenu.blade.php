@@ -20,8 +20,8 @@
 		</a>
 	</li>
 	<li>
-		<a id="side-nav" href="{!! url('copy') !!}">
-			<i class="fa fa-tags fa-fw"></i> Statussen
+		<a id="side-nav" href="{!! url('status') !!}">
+			<i class="fa fa-tag fa-fw"></i> Statussen
 		</a>
 	</li>
 	<li>

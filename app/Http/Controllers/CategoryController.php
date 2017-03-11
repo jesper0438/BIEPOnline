@@ -47,8 +47,8 @@ class CategoryController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255',
-            'color' => 'required|max:255'
+            'name' => 'required|max:255|unique:categories',
+            'color' => 'required|max:255|unique:categories'
         ] );
         // Create new Category object with the info in the request
         $category = Category::create ( [
@@ -98,8 +98,8 @@ class CategoryController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255',
-            'color' => 'required|max:255',
+            'name' => 'required|max:255|categories',
+            'color' => 'required|max:255|categories',
         ] );
 
         $category = Category::findorfail ( $id );

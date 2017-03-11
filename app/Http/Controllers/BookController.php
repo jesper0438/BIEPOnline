@@ -38,7 +38,7 @@ class BookController extends Controller
     public function create()
     {
         return view ( 'book/create', [
-            'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'id', 'color'),
+            'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'color'),
 
         ]);
         //een boek toevoegen
@@ -56,7 +56,7 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
-            'isbn' => 'required|min:10|max:13',
+            'isbn' => 'required|min:10|max:13|unique:books',
             'author' => 'required|max:255',
         ] );
         // Create new book object with the info in the request
@@ -100,7 +100,7 @@ class BookController extends Controller
     {
         return view ( 'book/edit', [
             'book' => Book::findOrFail($id),
-            'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'id', 'color'),
+            'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'color'),
         ] );
     }
 
@@ -118,7 +118,7 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
-            'ISBN' => 'required|min:10|max:13',
+            'ISBN' => 'required|min:10|max:13|unique:books',
             'author' => 'required|max:255',
         ] );
 

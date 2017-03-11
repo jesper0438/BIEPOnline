@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Copy;
 use App\Location;
 use App\Book;
+use App\Status;
 
 
 class CopyController extends Controller
@@ -41,7 +42,7 @@ class CopyController extends Controller
 
             'locations' => Location::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
             'books' => Book::orderBy ( 'title', 'asc' )->pluck('title', 'id', 'isbn'),
-
+			'statuses' => Status::orderBy ( 'status', 'asc' )->pluck('status', 'id'),
         ]);
 
     }
@@ -58,17 +59,16 @@ class CopyController extends Controller
         $this->validate ( $request, [
             'id' => 'max:255',
             'datebought' => 'required|date',
-            'state' => 'required|max:255'
         ] );
         // Create new Copy object with the info in the request
         $copy = Copy::create ( [
             'id' => $request ['id'],
             'datebought' => $request ['datebought'],
-            'state' => $request ['state'],
         ] );
 
         $location = Location::find($request ['location_id']);
         $book = Book::find($request ['book_id']);
+		$status = Status::find($request ['status_id']);
         $copy->location()->associate($location);
 
         $copy->book()->associate($book);
@@ -103,7 +103,7 @@ class CopyController extends Controller
             'copy' => Copy::findOrFail($id),
             'locations' => Location::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
             'books' => Book::orderBy ( 'title', 'asc' )->pluck('title', 'id', 'isbn'),
-
+			'statuses' => Status::orderBy ( 'status', 'asc' )->pluck('status', 'id'),
         ] );
     }
 
@@ -120,15 +120,16 @@ class CopyController extends Controller
         $this->validate ( $request, [
             'id' => 'max:255',
             'datebought' => 'required|date',
-            'state' => 'required|max:255'
         ] );
         $copy = Copy::findorfail ( $id );
         $copy->datebought = $request ['datebought'];
         $copy->state = $request['state'];
         $location = Location::find($request ['location_id']);
         $book = Book::find($request ['book_id']);
+		$status = Status::find($request ['status_id']);
         $copy->book()->associate($book);
         $copy->location()->associate($location);
+		$copy->status()->associate($status);
 
         // Save the changes in the database
         $copy->save ();

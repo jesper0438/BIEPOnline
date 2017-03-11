@@ -47,7 +47,7 @@ class RoleController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:roles',
         ] );
         // Create new Role object with the info in the request
         $role = Role::create ( [
@@ -96,7 +96,7 @@ class RoleController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:roles',
         ] );
 
         $role = Role::findorfail ( $id );

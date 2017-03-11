@@ -48,7 +48,7 @@ class StatusController extends Controller
     {
       // Check if the form was correctly filled in
       $this->validate ( $request, [
-          'status' => 'required|max:255',
+          'status' => 'required|max:255|unique:statuses',
       ] );
       // Create new Status object with the info in the request
       $status = Status::create ( [
@@ -97,7 +97,7 @@ class StatusController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'status' => 'required|max:255',
+            'status' => 'required|max:255|unique:statuses',
         ] );
 
         $status = Status::findorfail ( $id );

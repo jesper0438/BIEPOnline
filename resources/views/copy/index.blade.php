@@ -2,7 +2,7 @@
 @section('pagetitle', 'Exemplaren')
 
 @section('title')
-	<i class="fa fa-tags"></i> Statusadministratie
+	<i class="fa fa-tags"></i> Exemplarenadministratie
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
 			Toevoegen...

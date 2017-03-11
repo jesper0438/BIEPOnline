@@ -25,6 +25,10 @@
 		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Het emailadres hier']) !!}
 	</div>
 	<div class="col-sm-6">
+		{!! Form::label('password', 'password', ['class' => 'control-label']) !!}
+		{!! Form::text('password', null, ['class' => 'form-control', 'placeholder' => 'password']) !!}
+	</div>
+	<div class="col-sm-6">
 		{!! Form::label('role_id', 'Rol', ['class' => 'control-label']) !!}
 		{!! Form::select('role_id', $roles, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
 	</div>

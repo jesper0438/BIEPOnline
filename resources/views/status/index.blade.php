@@ -17,10 +17,10 @@
 				<th class="col-sm-4">status</th>
 			</thead>
 			<tbody>
-				@foreach ($statuses as $row)
+				@foreach ($statuses as $status)
 				<tr class="row-link" style="cursor: pointer;"
 					data-href="{{action('StatusController@show', ['id' => $status->id]) }}">
-					<td class="table-text">{{ $row->status}}</td>
+					<td class="table-text">{{ $status->status}}</td>
 				</tr>
 				@endforeach
 			</tbody>

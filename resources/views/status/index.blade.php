@@ -18,8 +18,7 @@
 			</thead>
 			<tbody>
 				@foreach ($statuses as $status)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('StatusController@show', ['id' => $status->id]) }}">
+				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('StatusController@show', ['id' => $status->id]) }}'">
 					<td class="table-text">{{ $status->status}}</td>
 				</tr>
 				@endforeach

@@ -21,8 +21,7 @@
 			</thead>
 			<tbody>
 				@foreach ($users as $user)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('UserController@show', ['id' => $user->id]) }}">
+				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('UserController@show', ['id' => $user->id]) }}'">
 					<td class="table-text">{{ $user->name }}</td>
 					<td class="table-text"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
 

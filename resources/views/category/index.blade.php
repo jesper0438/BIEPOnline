@@ -2,7 +2,7 @@
 @section('pagetitle', 'Categorieën')
 
 @section('title')
-	<i class="fa fa-university"></i> Categorieënadministratie
+	<i class="fa fa-university"></i> Categorieën
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('category/create') !!}">
 			Toevoegen...

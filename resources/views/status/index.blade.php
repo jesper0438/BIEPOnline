@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('pagetitle', 'status')
+@section('pagetitle', 'Statussen')
 
 @section('title')
-	<i class="fa fa-map-pin"></i> status
+	<i class="fa fa-map-pin"></i> Statussen
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('status/create') !!}">
 			Toevoegen...
@@ -14,7 +14,7 @@
 	@if (count($statuses) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-4">status</th>
+				<th class="col-sm-4">Status</th>
 			</thead>
 			<tbody>
 				@foreach ($statuses as $status)

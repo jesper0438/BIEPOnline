@@ -2,7 +2,7 @@
 @section('pagetitle', 'Uitlenen')
 
 @section('title')
-	<i class="fa fa-arrow-circle-right"></i> Uitleenadministratie
+	<i class="fa fa-arrow-circle-right"></i> Uitlenen
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('loan/create') !!}">
 			Toevoegen...

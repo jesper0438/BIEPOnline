@@ -2,7 +2,7 @@
 @section('pagetitle', 'Rollen')
 
 @section('title')
-	<i class="fa fa-map"></i> Rollenadministratie
+	<i class="fa fa-map"></i> Rollen
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('role/create') !!}">
 			Toevoegen...

@@ -2,7 +2,7 @@
 @section('pagetitle', 'Auteurs')
 
 @section('title')
-	<i class="fa fa-address-card"></i> Auteursadministratie
+	<i class="fa fa-address-card"></i> Auteurs
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('author/create') !!}">
 			Toevoegen...

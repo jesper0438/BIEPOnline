@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Status')
+@section('pagetitle', 'Statussen')
 
 @section('title')
 	Bewerk {{ $status->status }}
@@ -11,7 +11,7 @@
 	<div class="form-group">
 		<div class="col-sm-6">
 			{!! Form::label('status', 'Naam', ['class' => 'control-label']) !!}
-			{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De naam hier']) !!}
+			{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De naam van de status']) !!}
 		</div>
 
 	</div>

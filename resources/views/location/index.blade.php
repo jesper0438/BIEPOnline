@@ -2,7 +2,7 @@
 @section('pagetitle', 'Locaties')
 
 @section('title')
-	<i class="fa fa-map-pin"></i> Locatieadministratie
+	<i class="fa fa-map-pin"></i> Locaties
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('location/create') !!}">
 			Toevoegen...

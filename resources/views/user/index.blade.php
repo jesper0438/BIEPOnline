@@ -2,7 +2,7 @@
 @section('pagetitle', 'Gebruikers')
 
 @section('title')
-	<i class="fa fa-users"></i> Gebruikersadministratie
+	<i class="fa fa-users"></i> Gebruikers
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('user/create') !!}">
 			Toevoegen...

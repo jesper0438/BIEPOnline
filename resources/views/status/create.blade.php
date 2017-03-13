@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('pagetitle', 'Statusses')
+@section('pagetitle', 'Statussen')
 
 @section('title')
 	Nieuwe status toevoegen

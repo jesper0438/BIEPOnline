@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Dashboard')
+@section('pagetitle', 'Dashboard')
 
 @section('title')
 	<i class="fa fa-tachometer"></i> Dashboard

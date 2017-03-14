@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Uitlenen')
 
 @section('title')
 	Boek uitlenen

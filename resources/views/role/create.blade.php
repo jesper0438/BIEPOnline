@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Rollen')
 
 @section('title')
 	Nieuwe rol toevoegen

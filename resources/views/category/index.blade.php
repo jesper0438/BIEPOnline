@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('pagetitle', 'Categorieën')
 
 @section('title')
-	<i class="fa fa-university"></i> Categorieënadministratie
+	<i class="fa fa-university"></i> Categorieën
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('category/create') !!}">
 			Toevoegen...
@@ -18,8 +19,7 @@
 			</thead>
 			<tbody>
 				@foreach ($categories as $row)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('CategoryController@show', ['id' => $row->id]) }}">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('CategoryController@show', ['id' => $row->id])}}">
 					<td class="table-text">{{ $row->name }}</td>
 					<td class="table-text">{{ $row->color }}</td>
 				</tr>

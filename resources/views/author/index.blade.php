@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('pagetitle', 'Auteurs')
 
 @section('title')
-	<i class="fa fa-address-card"></i> Auteursadministratie
+	<i class="fa fa-address-card"></i> Auteurs
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('author/create') !!}">
 			Toevoegen...
@@ -13,15 +14,13 @@
   @if (count($authors) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-3">Naam</th>
+				<th class="col-sm-4">Naam</th>
 			</thead>
 			<tbody>
 				@foreach ($authors as $row)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('AuthorController@show', ['id' => $row->id]) }}">
-					<td class="table-text">{{ $row->author }}</td>
-
-				</tr>
+					<tr class="row-link" style="cursor: pointer" data-href="{{action('AuthorController@show', ['id' => $row->id])}}">
+						<td class="table-text">{{ $row->author }}</td>
+					</tr>
 				@endforeach
 			</tbody>
 		</table>

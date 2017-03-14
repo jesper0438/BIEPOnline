@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('pagetitle', 'Exemplaren')
 
 @section('title')
-	<i class="fa fa-tags"></i> Statusadministratie
+	<i class="fa fa-tags"></i> Exemplaren
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
 			Toevoegen...
@@ -20,8 +21,7 @@
 			</thead>
 			<tbody>
 			@foreach ($copies as $copy)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('CopyController@show', ['id' => $copy->id]) }}">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('CopyController@show', ['id' => $copy->id])}}">
 					<td class="table-text">
 						@if (isset($copy->book))
 							{{ $copy->book->title }}

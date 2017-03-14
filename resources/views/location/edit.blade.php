@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Locaties')
 
 @section('title')
 	Bewerk {{ $location->name }}

@@ -49,7 +49,7 @@ class AuthorController extends Controller
      {
          // Check if the form was correctly filled in
          $this->validate ( $request, [
-             'author' => 'required|max:255',
+             'author' => 'required|max:255|unique:authors',
          ] );
          // Create new book object with the info in the request
          $author = Author::create ( [
@@ -100,7 +100,7 @@ class AuthorController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'author' => 'required|max:255',
+            'author' => 'required|max:255|unique:authors',
         ] );
 
         $author = Author::findorfail ( $id );

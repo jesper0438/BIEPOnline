@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_ENV') === 'heroku') {
         $this->app['request']->server->set('HTTPS', true);
 		}
-		Schema::defaultStringLength(191);
+        Schema::defaultStringLength(191);
     }
 
     /**

@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('pagetitle', 'Locaties')
 
 @section('title')
-	<i class="fa fa-map-pin"></i> Locatieadministratie
+	<i class="fa fa-map-pin"></i> Locaties
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('location/create') !!}">
 			Toevoegen...
@@ -14,12 +15,10 @@
 		<table class="table table-striped table-hover">
 			<thead>
 				<th class="col-sm-4">Naam</th>
-
 			</thead>
 			<tbody>
 				@foreach ($locations as $location)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('LocationController@show', ['id' => $location->id]) }}">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('LocationController@show', ['id' => $location->id])}}">
 					<td class="table-text">{{ $location->name}}</td>
 				</tr>
 				@endforeach

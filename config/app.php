@@ -19,7 +19,7 @@ return [
     | Application Version
     |--------------------------------------------------------------------------
     */
-    'version' => '1.0.0-dev',
+    'version' => '2.0.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-    
+
     'locale' => 'nl',
 
     /*
@@ -173,8 +173,8 @@ return [
         /*
          * Package Service Providers...
          */
-
-        //
+        Laravel\Tinker\TinkerServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -184,11 +184,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        /*
-         * LAravel Collective providers
-         */
-        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -209,6 +204,7 @@ return [
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
@@ -237,10 +233,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        /*
-         * Laravel Collective Aliases
-         */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 

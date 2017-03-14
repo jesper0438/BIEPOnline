@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('pagetitle', 'Gebruikers')
 
 @section('title')
-	<i class="fa fa-users"></i> Gebruikersadministratie
+	<i class="fa fa-users"></i> Gebruikers
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('user/create') !!}">
 			Toevoegen...
@@ -20,8 +21,7 @@
 			</thead>
 			<tbody>
 				@foreach ($users as $user)
-				<tr class="row-link" style="cursor: pointer;"
-					data-href="{{action('UserController@show', ['id' => $user->id]) }}">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('UserController@show', ['id' => $user->id])}}">
 					<td class="table-text">{{ $user->name }}</td>
 					<td class="table-text"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
 

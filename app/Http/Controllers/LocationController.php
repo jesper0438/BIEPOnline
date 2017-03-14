@@ -48,7 +48,7 @@ class LocationController extends Controller
     {
       // Check if the form was correctly filled in
       $this->validate ( $request, [
-          'name' => 'required|max:255',
+          'name' => 'required|max:255|unique:locations',
       ] );
       // Create new Location object with the info in the request
       $location = Location::create ( [
@@ -97,7 +97,7 @@ class LocationController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:locations',
         ] );
 
         $location = Location::findorfail ( $id );

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Auteurs')
 
 @section('title')
     Bewerk {{ $author->author }}

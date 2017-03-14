@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Gebruikers')
 
 @section('title')
 	Bewerk {{ $user->name }}

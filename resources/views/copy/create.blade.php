@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('pagetitle', 'Exemplaren')
 
 @section('title')
     Nieuw exemplaar toevoegen
@@ -30,6 +31,10 @@
         <div class="col-sm-6">
           {!! Form::label('book_id', 'Boeken', ['class' => 'control-label']) !!}
           {!! Form::select('book_id', $books, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
+        </div>
+        <div class="col-sm-6">
+          {!! Form::label('status_id', 'Status', ['class' => 'control-label']) !!}
+          {!! Form::select('status_id', $statuses, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
         </div>
     </div>
 

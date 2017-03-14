@@ -113,7 +113,7 @@ class UserController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email|max:255',
+            'email' => 'required|email|max:255',
             'password' => 'confirmed|min:6',
             'role_id' => 'required|max:255',
         ] );

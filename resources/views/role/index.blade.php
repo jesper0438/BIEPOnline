@@ -18,7 +18,7 @@
 			</thead>
 			<tbody>
 				@foreach ($roles as $role)
-				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('RoleController@show', ['id' => $role->id]) }}'">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('RoleController@show', ['id' => $role->id])}}">
 					<td class="table-text">{{ $role->name }}</td>
 				</tr>
 				@endforeach

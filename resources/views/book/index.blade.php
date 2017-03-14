@@ -21,7 +21,7 @@
 			</thead>
 			<tbody>
 				@foreach ($books as $book)
-				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('BookController@show', ['id' => $book->id]) }}'">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('BookController@show', ['id' => $book->id])}}">
 					<td class="table-text">{{ $book->isbn }}</td>
 					<td class="table-text">{{ $book->title }}</td>
 					<td class="table-text">{{ $book->author }}</td>

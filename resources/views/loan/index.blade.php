@@ -23,7 +23,7 @@
 			</thead>
 			<tbody>
 				@foreach ($loans as $loan)
-				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('LoanController@show', ['id' => $loan->id]) }}'">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('LoanController@show', ['id' => $loan->id])}}">
 					<td class="table-text">{{ $loan->startdate }}</td>
 					<td class="table-text">{{ $loan->expirydate }}</td>
 					<td class="table-text">{{ $loan->returndate }}</td>

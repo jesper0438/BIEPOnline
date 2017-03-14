@@ -3,16 +3,27 @@
 
 @section('title')
 <div class="row">
-	<div class="col-sm-10">
-			{{$status->name}}
+	<div class="col-sm-9">
+		{{$status->status}}
 	</div>
-	<div class="col-sm-1">
+	<div class="col-sm-2">
 		 <a class="btn btn-default" href="{{action('StatusController@edit', $status->id)}}">Bewerken</a>
 	</div>
+		<script>
+			function confirmDelete() {
+		var result = confirm('Weet je zeker dat je deze status wilt verwijderen?');
+		if (result) {
+		        return true;
+		    } else {
+		        return false;
+		    }
+		}
+			</script>
 	<div class="col-sm-1">
-			{!! Form::open(['route' => ['status.destroy', $status->id], 'method'=>'DELETE']) !!}
-			{!! Form::submit('Verwijderen', array('class'=>'btn btn-danger')) !!}
-			{!! Form::close() !!}
+		{!! Form::open(['method' => 'DELETE', 'route' => ['status.destroy', $status->id], 'onsubmit' => 'return confirmDelete()']) !!}
+	<button type="submit" name="button" class="btn btn-default btn-sm">
+			<i class="fa fa-trash-o"></i>
+	</button>
 	</div>
 </div>
 @endsection

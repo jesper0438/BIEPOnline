@@ -31,15 +31,15 @@ return [
 	"different"            => ":attribute en :other dienen verschillend te zijn.",
 	"digits"               => ":attribute moet :digits cijfers zijn.",
 	"digits_between"       => ":attribute moet tussen :min en :max cijfers zijn.",
-  "dimensions"           => ":attribute heeft ongeldige afbeelding afmetingen.",
-  "distinct"             => "Het :attribute veld heeft een duplicaat waarde.",
+	"dimensions"           => ":attribute heeft ongeldige afbeelding afmetingen.",
+	"distinct"             => "Het :attribute veld heeft een duplicaat waarde.",
 	"email"                => ":attribute dient een geldige emailadres te zijn.",
-  "file"                 => ":attribute moet een bestand zijn.",
+	"file"                 => ":attribute moet een bestand zijn.",
 	"filled"               => "Het :attribute veld is verplicht.",
 	"exists"               => "Het geselecteerde :attribute is ongeldig.",
 	"image"                => ":attribute dient een afbeelding te zijn.",
 	"in"                   => "Het geselecteerde :attribute is ongeldig.",
-  "in_array"             => "Het :attribute veld bestaat niet in :other.",
+	"in_array"             => "Het :attribute veld bestaat niet in :other.",
 	"integer"              => ":attribute dient een geheel getal te zijn.",
 	"ip"                   => ":attribute dient een geldig IP adres te zijn.",
 	"max"                  => [
@@ -49,7 +49,7 @@ return [
 		"array"   => ":attribute mag niet meer dan :max items bevatten.",
 	],
 	"mimes"                => ":attribute dient een bestand te zijn van het type: :values.",
-  "mimetypes"            => ":attribute moet een bestand zijn van type: :values.",
+	"mimetypes"            => ":attribute moet een bestand zijn van type: :values.",
 	"min"                  => [
 		"numeric" => ":attribute dient minimaal :min te zijn.",
 		"file"    => ":attribute dient minimaal :min kilobytes te zijn.",
@@ -58,11 +58,11 @@ return [
 	],
 	"not_in"               => "Het geselecteerde :attribute is ongeldig.",
 	"numeric"              => "Het :attribute dient een nummer te zijn.",
-  "present"              => "Het :attribute veld moet aanwezig zijn.",
+	"present"              => "Het :attribute veld moet aanwezig zijn.",
 	"regex"                => "Het :attribute formaat is ongeldig.",
 	"required"             => "Het :attribute veld is verplicht.",
 	"required_if"          => "Het :attribute veld is verplicht wanneer :other is :value.",
-  "required_unless"      => "Het :attribute veld is verplicht, tenzij :other is in :values.",
+	"required_unless"      => "Het :attribute veld is verplicht, tenzij :other is in :values.",
 	"required_with"        => "Het :attribute veld is verplicht wanneer :values aanwezig is.",
 	"required_with_all"    => "Het :attribute veld is verplicht wanneer :values aanwezig is.",
 	"required_without"     => "Het :attribute veld is verplicht wanneer :values niet aanwezig is.",
@@ -75,10 +75,11 @@ return [
 		"array"   => ":attribute moet :size items bevatten.",
 	],
 	"string"               => ":attribute moet een tekenreeks zijn.",
-  "unique"               => ":attribute is al bezet.",
-  "uploaded"             => ":attribute uploaden mislukt.",
+	"unique"               => ":attribute is al bezet.",
+	"uploaded"             => ":attribute uploaden mislukt.",
 	"url"                  => ":attribute formaat is ongeldig.",
 	"timezone"             => ":attribute moet een geldige tijdszone zijn.",
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Language Lines
@@ -89,7 +90,9 @@ return [
 	| specify a specific custom language line for a given attribute rule.
 	|
 	*/
+
 	'custom' => [],
+
 	/*
 	|--------------------------------------------------------------------------
 	| Custom Validation Attributes
@@ -100,6 +103,7 @@ return [
 	| of "email". This simply helps us make messages a little cleaner.
 	|
 	*/
+
     'attributes' => [
         'name' => 'naam',
         'expirydate' => 'verloopdatum',
@@ -110,8 +114,8 @@ return [
         'isbn' => 'ISBN',
         'datebought' => 'aanschafdatum',
         'state' => 'straat',
-				'password' => 'wachtwoord',
-				'role_id' => 'rol',
-				'author_id' => 'auteur',
+        'password' => 'wachtwoord',
+        'role_id' => 'rol',
+        'author_id' => 'auteur',
     ],
 ];

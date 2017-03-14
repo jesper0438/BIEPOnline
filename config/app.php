@@ -12,7 +12,14 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'BIEPOnline',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    */
+    'version' => '1.0.0-dev',
 
     /*
     |--------------------------------------------------------------------------
@@ -232,7 +239,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         /*
-         * Laravel Collective aliases
+         * Laravel Collective Aliases
          */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,

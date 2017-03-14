@@ -22,9 +22,9 @@ class AuthorController extends Controller
 
     public function index()
     {
-      return view ( 'author/index', [
-          'author' => Author::orderBy ( 'name', 'asc' )->get (),
-      ] );
+        return view ( 'author/index', [
+            'authors' => Author::orderBy ( 'author', 'asc' )->get (),
+        ] );
     }
 
     /**
@@ -34,7 +34,9 @@ class AuthorController extends Controller
      */
     public function create()
     {
-      return view ( 'author/create' );
+      return view ( 'author/create', [
+          'authors' => Author::orderBy ( 'author', 'asc' )->pluck('author'),
+]);
     }
 
     /**
@@ -43,20 +45,22 @@ class AuthorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      // Check if the form was correctly filled in
-    $this->validate ( $request, [
-        'name' => 'required|max:255',
-    ] );
-    // Create new Author object with the info in the request
-    $author = Author::create ( [
-        'name' => $request ['name'],
-    ] );
-    // Save this object in the database
-    $author->save ();
-    // Redirect to the author.index page with a success message.
-    return redirect ( 'author' )->with( 'success', $author->name.' is toegevoegd.' );
+     public function store(Request $request)
+     {
+         // Check if the form was correctly filled in
+         $this->validate ( $request, [
+             'author' => 'required|max:255',
+         ] );
+         // Create new book object with the info in the request
+         $author = Author::create ( [
+             'author' => $request ['author'],
+
+         ] );
+
+        // Save this object in the database
+        $author->save ();
+        // Redirect to the user.index page with a success message.
+        return redirect ( 'author' )->with( 'success', $author->author.' is toegevoegd.' );
     }
 
     /**
@@ -67,9 +71,9 @@ class AuthorController extends Controller
      */
     public function show($id)
     {
-      return view ( 'author/show', [
-          'author' => Author::findOrFail($id),
-      ] );
+        return view ( 'author/show', [
+            'author' => Author::findOrFail($id),
+        ] );
     }
 
     /**
@@ -80,9 +84,9 @@ class AuthorController extends Controller
      */
     public function edit($id)
     {
-      return view ( 'author/edit', [
-          'author' => Author::findOrFail($id),
-      ] );
+        return view ( 'author/edit', [
+            'author' => Author::findOrFail($id),
+        ] );
     }
 
     /**
@@ -94,19 +98,18 @@ class AuthorController extends Controller
      */
     public function update(Request $request, $id)
     {
-      // Check if the form was correctly filled in
-       $this->validate ( $request, [
-           'name' => 'required|max:255',
-       ] );
+        // Check if the form was correctly filled in
+        $this->validate ( $request, [
+            'author' => 'required|max:255',
+        ] );
 
-       $author = Author::findorfail ( $id );
-       $author->name = $request ['name'];
-       // Save the changes in the database
-       $author->save ();
+        $author = Author::findorfail ( $id );
+        $author->author = $request ['author'];
+        // Save the changes in the database
+        $author->save ();
 
-       // Redirect to the author.index page with a success message.
-       return redirect ( 'author' )->with( 'success', $author->name.' is bijgewerkt.' );
-       //
+        // Redirect to the user.index page with a success message.
+        return redirect ( 'author' )->with( 'success', $author->author.' is bijgewerkt.' );
     }
 
     /**
@@ -117,12 +120,11 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-      // Find the author object in the database
-         $author = Author::findorfail ( $id );
-         // Remove the author from the database
-         $author->delete ();
-         // Redirect to the author.index page with a success message.
-         return redirect ( 'author' )->with( 'success', $author->name.' is verwijderd.' );
-         //
+        // Find the user object in the database
+        $author = Author::findorfail ( $id );
+        // Remove the user from the database
+        $author->delete ();
+        // Redirect to the user.index page with a success message.
+        return redirect ( 'author' )->with( 'success', $author->name.' is verwijderd.' );
     }
 }

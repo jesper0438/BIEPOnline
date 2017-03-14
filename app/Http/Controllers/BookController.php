@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Book;
 use App\Category;
-use App\Author;
 use App\Copy;
 
 class BookController extends Controller
@@ -39,7 +38,6 @@ class BookController extends Controller
     public function create()
     {
         return view ( 'book/create', [
-            'authors' => Author::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
             'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'id', 'color'),
 
         ]);
@@ -58,18 +56,17 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
-            'isbn' => 'required|min:10|max:13|regex:/\978/x',
-            'author_id' => 'required|max:255',
+            'isbn' => 'required|min:10|max:13',
+            'author' => 'required|max:255',
         ] );
         // Create new book object with the info in the request
         $book = Book::create ( [
             'title' => $request ['title'],
             'isbn' => $request ['isbn'],
+			'author' => $request ['author'],
         ] );
 
-        $author = Author::find($request ['author_id']);
         $category = Category::find($request ['category_id']);
-        $book->author()->associate($author);
         $book->category()->associate($category);
 
 
@@ -103,7 +100,6 @@ class BookController extends Controller
     {
         return view ( 'book/edit', [
             'book' => Book::findOrFail($id),
-            'authors' => Author::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
             'categories' => Category::orderBy ( 'name', 'asc' )->pluck('name', 'id', 'color'),
         ] );
     }
@@ -122,18 +118,17 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
-            'ISBN' => 'required|min:10|max:13|regex:/\978/x',
-            'author_id' => 'required|max:255',
+            'ISBN' => 'required|min:10|max:13',
+            'author' => 'required|max:255',
         ] );
 
         $book = Book::findorfail ( $id );
         $book->title = $request ['title'];
         $book->isbn = $request ['ISBN'];
+		$book->author = $request ['author'];
         // Associate the role to the user
 
-        $author = Author::find($request ['author_id']);
         $category = Category::find($request ['category_id']);
-        $book->author()->associate($author);
         $book->category()->associate($category);
 
         // Save the changes in the database

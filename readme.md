@@ -1,5 +1,14 @@
-# BIEPOnline
+![BIEPOnline](https://github.com/Joery/BIEPOnline/raw/staging/public/img/Logo.png)
+
+# Development Branch
 This project is a prototype for a library support system for a specific primary school
+
+# Links
+Productieomgeving
+https://bieponline.herokuapp.com/
+
+Testomgeving
+https://bieponline-staging.herokuapp.com/
 
 # Contributors
 * Daan de Waard

@@ -363,6 +363,7 @@
                 "laravel"
             ],
             "time": "2017-03-02T14:41:40+00:00"
+
         },
         {
             "name": "laravel/tinker",
@@ -561,16 +562,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558"
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bad29cb8d18ab0315e6c477751418a82c850d558",
-                "reference": "bad29cb8d18ab0315e6c477751418a82c850d558",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
                 "shasum": ""
             },
             "require": {
@@ -635,7 +636,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26T00:15:39+00:00"
+            "time": "2017-03-13T07:08:03+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -787,6 +788,7 @@
         },
         {
             "name": "paragonie/random_compat",
+<<<<<<< Updated upstream
             "version": "v2.0.9",
             "source": {
                 "type": "git",
@@ -797,6 +799,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
                 "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
+=======
+            "version": "v2.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -831,7 +845,11 @@
                 "pseudorandom",
                 "random"
             ],
+<<<<<<< Updated upstream
             "time": "2017-03-03T20:43:42+00:00"
+=======
+            "time": "2017-03-13T16:27:32+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "psr/log",
@@ -1091,7 +1109,11 @@
         },
         {
             "name": "symfony/console",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -1207,7 +1229,11 @@
         },
         {
             "name": "symfony/debug",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -1264,7 +1290,11 @@
         },
         {
             "name": "symfony/event-dispatcher",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1324,7 +1354,11 @@
         },
         {
             "name": "symfony/finder",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -1373,7 +1407,11 @@
         },
         {
             "name": "symfony/http-foundation",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -1426,6 +1464,7 @@
         },
         {
             "name": "symfony/http-kernel",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
             "source": {
                 "type": "git",
@@ -1436,6 +1475,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bf1506fd6beb944d8afd052cd2e9ee8ceaf1c253",
                 "reference": "bf1506fd6beb944d8afd052cd2e9ee8ceaf1c253",
+=======
+            "version": "v3.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-kernel.git",
+                "reference": "bc909e85b8585c9edf043d0fca871308c41bb9b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/bc909e85b8585c9edf043d0fca871308c41bb9b4",
+                "reference": "bc909e85b8585c9edf043d0fca871308c41bb9b4",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -1504,7 +1555,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< Updated upstream
             "time": "2017-03-09T02:01:51+00:00"
+=======
+            "time": "2017-03-10T18:35:31+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1567,7 +1622,11 @@
         },
         {
             "name": "symfony/process",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -1616,7 +1675,11 @@
         },
         {
             "name": "symfony/routing",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -1691,7 +1754,11 @@
         },
         {
             "name": "symfony/translation",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -1755,7 +1822,11 @@
         },
         {
             "name": "symfony/var-dumper",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -3286,7 +3357,11 @@
         },
         {
             "name": "symfony/yaml",
+<<<<<<< Updated upstream
             "version": "v3.2.5",
+=======
+            "version": "v3.2.6",
+>>>>>>> Stashed changes
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",

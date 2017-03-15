@@ -21,7 +21,7 @@
 			</thead>
 			<tbody>
 			@foreach ($copies as $copy)
-				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('CopyController@show', ['id' => $copy->id]) }}'">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('CopyController@show', ['id' => $copy->id])}}">
 					<td class="table-text">
 						@if (isset($copy->book))
 							{{ $copy->book->title }}

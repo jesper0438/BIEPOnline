@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\User;
 use App\Role;
 use App\Location;
+use Auth;
+use Image;
 
 class UserController extends Controller
 {
@@ -113,7 +115,7 @@ class UserController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email|max:255',
+            'email' => 'required|email|max:255',
             'password' => 'confirmed|min:6',
             'role_id' => 'required|max:255',
         ] );
@@ -139,6 +141,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function update_avatar(Request $request){
+
+        if($request->hasFile('avatar')){
+          $avatar = $request->file('avatar');
+          $filename = time() . '.' . $avatar->getClientOriginalExtension();
+          Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
+
+          $user = Auth::user();
+          $user->avatar = $filename;
+          $user->save();
+        }
+          return redirect ( 'userprofile' )->with( 'success', 'De avatar is bijgewerkt.' );
+    }
+
+
     public function destroy($id)
     {
         // Find the user object in the database

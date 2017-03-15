@@ -3,10 +3,10 @@
 
 @section('title')
 <div class="row">
-	<div class="col-sm-10">
+	<div class="col-sm-9">
 		{{$book->title}}
 	</div>
-	<div class="col-sm-1">
+	<div class="col-sm-2">
 		 <a class="btn btn-default" href="{{action('BookController@edit', $book->id)}}">Bewerken</a>
 	</div>
 		<script>

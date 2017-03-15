@@ -19,7 +19,7 @@
 			</thead>
 			<tbody>
 				@foreach ($categories as $row)
-				<tr class="row-link" style="cursor: pointer" onclick="document.location = '{{action('CategoryController@show', ['id' => $row->id]) }}'">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('CategoryController@show', ['id' => $row->id])}}">
 					<td class="table-text">{{ $row->name }}</td>
 					<td class="table-text">{{ $row->color }}</td>
 				</tr>

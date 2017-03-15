@@ -8,6 +8,8 @@
 @section('content')
 
 <!-- User Info -->
+<img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"><br>
+<br>
 <table class="table">
 	<tbody>
 		<tr>

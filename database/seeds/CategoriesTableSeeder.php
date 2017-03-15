@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')->insert(
             [
-              'color' => 'roze',
+              'color' => 'Roze',
               'name' => 'AVI 9',
               'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
               'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),

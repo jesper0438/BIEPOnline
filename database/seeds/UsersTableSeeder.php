@@ -12,12 +12,14 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert(
-            [
-                'name' => 'Administrator',
-                'email' => 'Admin@biep.dev',
-                'password' => bcrypt('Admin123!'),
-                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
-                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
-            ]);
+          [
+              'name' => 'Administrator',
+              'email' => 'Admin@biep.dev',
+              'password' => bcrypt('Admin123!'),
+              'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+              'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+              'location_id' => 1,
+              'role_id' => 1,
+          ]);
     }
 }

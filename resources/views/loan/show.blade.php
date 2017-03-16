@@ -7,7 +7,7 @@
 		Uitleen #{{$loan->id}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('LoanController@edit', $loan->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('LoanController@edit', $loan->id)}}">Bewerken</a>
 	</div>
 		<script>
 			function confirmDelete() {

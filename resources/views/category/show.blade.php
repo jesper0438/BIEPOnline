@@ -7,7 +7,7 @@
 		{{$category->name}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('CategoryController@edit', $category->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('CategoryController@edit', $category->id)}}">Bewerken</a>
 	</div>
 		<script>
 			function confirmDelete() {

@@ -9,9 +9,6 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
-			<button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
 			<a class="navbar-brand logo" href="{{ url('home') }}"><img id="header-logo" src="{{ asset('img/Logo.png') }}"></a>
 			<div class="collapse navbar-collapse">
 				@if (Auth::check())
@@ -23,14 +20,14 @@
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Administratie
 						</a>
 						@include('common.adminmenu')
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-user"></i> {{ Auth::user()->name }}
+						<a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img id="thumbnail" src="/uploads/avatars/{{ Auth::user()->avatar }}"> {{ Auth::user()->name }}
 						</a>
 						@include('common.usermenu')
 					</li>

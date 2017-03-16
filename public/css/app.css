@@ -68,3 +68,15 @@ h1 {
 * {
 	color: #636B6F;
 }
+
+#avatar {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+
+#thumbnail {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+}

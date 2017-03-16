@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('pagetitle', 'Reset Wachtwoord')
+@section('pagetitle', 'Reset wachtwoord')
 
 @section('title')
-	Reset Wachtwoord
+	Reset wachtwoord
 @endsection
 @section('content')
 <div class="container">
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Verstuur Wachtwoord Reset Link
+                                    Verstuur wachtwoord reset link
                                 </button>
                             </div>
                         </div>

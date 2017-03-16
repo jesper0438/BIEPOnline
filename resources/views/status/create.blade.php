@@ -18,7 +18,7 @@
 <div class="form-group">
 	<div class="col-sm-6">
 		{!! Form::label('status', 'Status', ['class' => 'control-label']) !!}
-		{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De naam van de status']) !!}
+		{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De status benaming']) !!}
 	</div>
 
 </div>

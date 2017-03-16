@@ -11,7 +11,7 @@
 	</div>
 		<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze auteur wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze auteur wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {

@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('pagetitle', 'Reset Wachtwoord')
+@section('pagetitle', 'Reset wachtwoord')
 
 @section('title')
-	Reset Wachtwoord
+	Reset wachtwoord
 @endsection
 @section('content')
 <div class="container">
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Bevestig Wachtwoord</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Bevestig wachtwoord</label>
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
 
@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Reset Wachtwoord
+                                    Reset wachtwoord
                                 </button>
                             </div>
                         </div>

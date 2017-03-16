@@ -11,7 +11,7 @@
 	</div>
 		<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze categorie wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze categorie wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
@@ -31,8 +31,8 @@
 @section('content')
 <table class="table table-striped table-hover">
 	<thead>
-		<th class="col-sm-2">Naam</th>
-		<th class="col-sm-2">Kleur</th>
+		<th class="col-sm-3">Naam</th>
+		<th class="col-sm-3">Kleur</th>
 	</thead>
 	<tbody>
 		<tr class="row-link" style="cursor: pointer;" data-href="{{action('CategoryController@show', ['id' => $category->id]) }}">

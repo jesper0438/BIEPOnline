@@ -7,7 +7,7 @@
 		{{$status->status}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('StatusController@edit', $status->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('StatusController@edit', $status->id)}}">Bewerken</a>
 	</div>
 		<script>
 			function confirmDelete() {

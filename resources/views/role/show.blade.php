@@ -7,7 +7,7 @@
 		{{$role->name}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('RoleController@edit', $role->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('RoleController@edit', $role->id)}}">Bewerken</a>
 	</div>
 		<script>
 			function confirmDelete() {

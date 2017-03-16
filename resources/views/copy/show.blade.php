@@ -7,7 +7,7 @@
 		{{$copy->book->title}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('CopyController@edit', $copy->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('CopyController@edit', $copy->id)}}">Bewerken</a>
 	</div>
 		<script>
 			function confirmDelete() {

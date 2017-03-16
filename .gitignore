@@ -12,6 +12,3 @@ storage/*.key
 .env
 Homestead.yaml
 Homestead.json
-
-# User Created
-composer.lock

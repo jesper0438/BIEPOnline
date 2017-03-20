@@ -47,11 +47,14 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row">
-				<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-					<ul class="nav nav-pills flex-column">
-						@include('common.leftmenu')
-					</ul>
-				</nav>
+				@if (Auth::check())
+					<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+						<ul class="nav nav-pills flex-column">
+								@include('common.leftmenu')
+						</ul>
+					</nav>
+				@else
+				@endif
 				<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 					<h1>@yield('title')</h1>
 					@include('common.errors')

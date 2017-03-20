@@ -118,7 +118,7 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
-            'ISBN' => 'required|min:10|max:13|unique:books',
+            'ISBN' => 'required|min:10|max:13',
             'author' => 'required|max:255',
         ] );
 

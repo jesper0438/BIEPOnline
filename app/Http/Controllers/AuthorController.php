@@ -100,7 +100,7 @@ class AuthorController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'author' => 'required|max:255|unique:authors',
+            'author' => 'required|max:255',
         ] );
 
         $author = Author::findorfail ( $id );

@@ -2,7 +2,12 @@
 @section('pagetitle', 'Gebruikersprofiel')
 
 @section('title')
+<div class="row">
 	<i class="fa fa-user"></i> {{ Auth::user()->name }}
+</div>
+<div class="col-sm-2">
+	 <a class="btn btn-default" href="{{action('UserProfileController@edit', $user->id)}}">Bewerken</a>
+</div>
 @endsection
 
 @section('content')

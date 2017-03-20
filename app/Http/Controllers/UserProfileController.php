@@ -27,4 +27,7 @@ class UserProfileController extends Controller
     {
         return view('userprofile');
     }
+    public function setPasswordAttribute($password){
+      $this->attributes['password'] = bcrypt($password);
+    }
 }

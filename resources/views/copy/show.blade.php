@@ -3,13 +3,13 @@
 
 @section('title')
 <div class="row">
-	<div class="col-sm-9">
+	<div class="col-sm-8">
 		{{$copy->book->title}}
 	</div>
-	<div class="col-sm-2">
+	<div class="col-sm-1">
 		 <a class="btn btn-primary" href="{{action('CopyController@edit', $copy->id)}}">Bewerken</a>
 	</div>
-		<script>
+	<script>
 			function confirmDelete() {
 		var result = confirm('Weet je zeker dat je dit exemplaar wilt verwijderen?');
 		if (result) {
@@ -18,12 +18,12 @@
 		        return false;
 		    }
 		}
-			</script>
+	</script>
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['copy.destroy', $copy->id], 'onsubmit' => 'return confirmDelete()']) !!}
-	<button type="submit" name="button" class="btn btn-default btn-sm">
-			<i class="fa fa-trash-o"></i>
-	</button>
+		<button type="submit" name="button" class="btn btn-primary">
+			Verwijderen
+		</button>
 	</div>
 </div>
 @endsection

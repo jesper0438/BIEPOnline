@@ -9,8 +9,11 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#responsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<a class="navbar-brand logo" href="{{ url('home') }}"><img id="header-logo" src="{{ asset('img/Logo.png') }}"></a>
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="responsive">
 				@if (Auth::check())
 				<ul class="navbar-nav mr-auto">
 					<form class="form-inline mt-2 mt-md-0">

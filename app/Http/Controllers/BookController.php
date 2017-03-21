@@ -58,6 +58,7 @@ class BookController extends Controller
             'title' => 'required|max:255',
             'isbn' => 'required|min:10|max:13|unique:books',
             'author' => 'required|max:255',
+			'category_id' => 'required|max:255',
         ] );
         // Create new book object with the info in the request
         $book = Book::create ( [
@@ -114,12 +115,12 @@ class BookController extends Controller
 
     public function update(Request $request, $id)
     {
-        echo 'update';
         // Check if the form was correctly filled in
         $this->validate ( $request, [
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
             'author' => 'required|max:255',
+			'category_id' => 'required|max:255',
         ] );
 
         $book = Book::findorfail ( $id );

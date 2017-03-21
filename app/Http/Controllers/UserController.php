@@ -1,16 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\User;
 use App\Role;
 use App\Location;
 use Auth;
 use Image;
-
 class UserController extends Controller
 {
     /**
@@ -18,19 +14,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
      public function __construct()
      {
    $this->middleware('auth');
      }
-
     public function index()
     {
         return view ( 'user/index', [
             'users' => User::orderBy ( 'name', 'asc' )->get (),
         ] );
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +36,6 @@ class UserController extends Controller
             'locations' => Location::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
         ]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -74,7 +66,6 @@ class UserController extends Controller
         // Redirect to the user.index page with a success message.
         return redirect ( 'user' )->with( 'success', $user->name.' is toegevoegd.' );
     }
-
     /**
      * Display the specified resource.
      *
@@ -87,7 +78,6 @@ class UserController extends Controller
             'user' => User::findOrFail($id),
         ] );
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -102,7 +92,6 @@ class UserController extends Controller
             'locations' => Location::orderBy ( 'name', 'asc' )->pluck('name', 'id'),
         ] );
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -119,7 +108,6 @@ class UserController extends Controller
             'password' => 'confirmed|min:6',
             'role_id' => 'required|max:255',
         ] );
-
         $user = User::findorfail ( $id );
         $user->name = $request ['name'];
         $user->email = $request ['email'];
@@ -130,33 +118,58 @@ class UserController extends Controller
         $user->location()->associate($location);
         // Save the changes in the database
         $user->save ();
-
         // Redirect to the user.show page with a success message.
         return redirect ( 'user/'.$user->id )->with( 'success', $user->name.' is bijgewerkt.' );
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update_avatar(Request $request){
+        // code of update_avatar
 
         if($request->hasFile('avatar')){
           $avatar = $request->file('avatar');
           $filename = time() . '.' . $avatar->getClientOriginalExtension();
           Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
-
           $user = Auth::user();
           $user->avatar = $filename;
           $user->save();
         }
         // redirect to user.show page with a success message.
           return redirect ( 'user/'.$user->id )->with( 'success', 'De avatar is bijgewerkt.' );
+
+        // code of updatePassword not completed not tested or checked can still be fully changed!!!
+
+        $user = Auth::user();
+        $password = $this->request->only([
+            'old_password', 'new_password', 'new_password_confirmation'
+        ]);
+        $validator = Validator::make($password, [
+            'old_password' => 'required|current_password_match',
+            'new_password'     => 'required|min:6|confirmed',
+        ]);
+        if ( $validator->fails() )
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+                //checks the password if the password is correct.
+        if ($user->password == bcrypt($request['old_password'])){
+                $user->password = bcrypt($request['new_password']);
+        $updated = $user->update([ 'password' => bcrypt($password['new_password']) ]);
+
+        if($updated)
+            return back()->with('success', 1);
+        return back()->with('success', 0);
+        // save the changes to the database
+         $user->save();
+         $this->auth->login($user);
+         // Redirect to user.show page with a success message.
+         return redirect( 'user/'.$user->id )->with( 'success', 'Het wachtwoord is gewijzigd.' );
+
     }
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    
     public function destroy($id)
     {
         // Find the user object in the database
@@ -165,32 +178,5 @@ class UserController extends Controller
         $user->delete ();
         // Redirect to the user.index page with a success message.
         return redirect ( 'user' )->with( 'success', $user->name.' is verwijderd.' );
-    }
-
-    public function updatePassword(Request $request)
-    {
-          $user = Auth::user();
-
-          $password = $this->request->only([
-              'old_password', 'new_password', 'new_password_confirmation'
-          ]);
-
-          $validator = Validator::make($password, [
-              'old_password' => 'required|current_password_match',
-              'new_password'     => 'required|min:6|confirmed',
-          ]);
-
-          if ( $validator->fails() )
-              return back()
-                  ->withErrors($validator)
-                  ->withInput();
-
-
-          $updated = $user->update([ 'password' => bcrypt($password['new_password']) ]);
-
-          if($updated)
-              return back()->with('success', 1);
-
-          return back()->with('success', 0);
     }
 }

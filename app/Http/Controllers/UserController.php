@@ -131,8 +131,8 @@ class UserController extends Controller
         // Save the changes in the database
         $user->save ();
 
-        // Redirect to the user.index page with a success message.
-        return redirect ( 'user' )->with( 'success', $user->name.' is bijgewerkt.' );
+        // Redirect to the user.show page with a success message.
+        return redirect ( 'user/'.$user->id )->with( 'success', $user->name.' is bijgewerkt.' );
     }
 
     /**
@@ -152,7 +152,8 @@ class UserController extends Controller
           $user->avatar = $filename;
           $user->save();
         }
-          return redirect ( 'userprofile' )->with( 'success', 'De avatar is bijgewerkt.' );
+        // redirect to user.show page with a success message.
+          return redirect ( 'user/'.$user->id )->with( 'success', 'De avatar is bijgewerkt.' );
     }
 
 
@@ -164,5 +165,32 @@ class UserController extends Controller
         $user->delete ();
         // Redirect to the user.index page with a success message.
         return redirect ( 'user' )->with( 'success', $user->name.' is verwijderd.' );
+    }
+
+    public function updatePassword(Request $request)
+    {
+          $user = Auth::user();
+
+          $password = $this->request->only([
+              'old_password', 'new_password', 'new_password_confirmation'
+          ]);
+
+          $validator = Validator::make($password, [
+              'old_password' => 'required|current_password_match',
+              'new_password'     => 'required|min:6|confirmed',
+          ]);
+
+          if ( $validator->fails() )
+              return back()
+                  ->withErrors($validator)
+                  ->withInput();
+
+
+          $updated = $user->update([ 'password' => bcrypt($password['new_password']) ]);
+
+          if($updated)
+              return back()->with('success', 1);
+
+          return back()->with('success', 0);
     }
 }

@@ -28,12 +28,16 @@ Route::resource ( 'copy', 'CopyController');
 Route::resource ( 'role', 'RoleController');
 Route::resource ( 'status', 'StatusController');
 
+
 Auth::routes();
 
 Route::get      ( '/home','HomeController@index');
 Route::get      ( '/help','HelpController@index');
+
 Route::get      ( '/userprofile','UserProfileController@index');
-Route::post     ( '/userprofile','UserController@update_avatar');
+Route::get      ( '/userprofile/edit','UserProfileController@edit');
+Route::post     ( '/user/show','UserController@update_avatar');
+Route::put     ( '/user/edit', 'UserController@updatePassword');
 
 Route::get      ( '/logout', function(){
     Auth::logout();

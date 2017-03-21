@@ -11,13 +11,16 @@
 	<div class="form-group">
 		<div class="col-sm-6">
 				{!! Form::label('password', ['class' => 'control-label']) !!}
-				{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Hier je nieuwe wachtwoord']) !!}
+				{!! Form::password('old_password', ['class'=>'form-control', 'placeholder' => 'Vul hier u oud wachtwoord in']) !!}
+		</div>
+		<div class="col-sm-6">
+				{!! Form::label('password', ['class' => 'control-label']) !!}
+				{!! Form::password('new_password', ['class' => 'form-control', 'placeholder' => 'Vul hier u nieuwe wachtwoord in']) !!}
 		</div>
 		<div class="col-sm-6">
 			{!! Form::label('password_confirmation', ['class' => 'control-label']) !!}
-			{!! Form::password('password_confirmation', ['class'=>'form-control', 'placeholder' => 'Hier nogmaals je nieuwe wachtwoord']) !!}
+			{!! Form::password('new_password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier nogmaals u nieuwe wachtwoord in']) !!}
 		</div>
-
 	</div>
 	<div class="form-group">
 		<div class="col-sm-12">name
@@ -27,5 +30,4 @@
 		</div>
 	</div>
 {!! Form::close() !!}
-
 @endsection

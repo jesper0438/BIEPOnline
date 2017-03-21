@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class UserProfileController extends Controller
 {
@@ -25,9 +26,15 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('userprofile');
+        return view('userprofile/index')->with([
+          'user' => Auth::user(),
+        ]);
     }
-    public function setPasswordAttribute($password){
-      $this->attributes['password'] = bcrypt($password);
+
+    public function edit()
+    {
+      return view('userprofile/edit')->with([
+        'user' => Auth::user(),
+      ]);
     }
 }

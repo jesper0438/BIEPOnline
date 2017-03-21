@@ -6,7 +6,7 @@
 	<i class="fa fa-user"></i> {{ Auth::user()->name }}
 </div>
 <div class="col-sm-2">
-	 <a class="btn btn-default" href="{{action('UserProfileController@setPassword', $user->id)}}">Bewerken</a>
+	 <a class="btn btn-default" href="{{ url('/userprofile/edit') }}">Bewerken</a>
 </div>
 @endsection
 

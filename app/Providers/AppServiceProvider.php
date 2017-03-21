@@ -16,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
     {
         if (env('APP_ENV') === 'heroku') {
         $this->app['request']->server->set('HTTPS', true);
+        Validator::extend('current_password_match', function($attribute, $value, $parameters, $validator) {
+            return Hash::check($value, Auth::user()->password);
+        });
 		}
         Schema::defaultStringLength(191);
     }

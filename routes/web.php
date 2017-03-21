@@ -33,9 +33,6 @@ Auth::routes();
 
 Route::get      ( '/home','HomeController@index');
 Route::get      ( '/help','HelpController@index');
-
-Route::get      ( '/userprofile','UserProfileController@index');
-Route::get      ( '/userprofile/edit','UserProfileController@edit');
 Route::post     ( '/user/show','UserController@update_avatar');
 Route::put     ( '/user/edit', 'UserController@updatePassword');
 

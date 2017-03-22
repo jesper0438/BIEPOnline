@@ -130,17 +130,16 @@ class UserController extends Controller
 		// foreign location
 		$location = Location::find($request ['location_id']);
 		$user->location()->associate($location);
-
+		//check if password field is empty to not save an empty password.
 		if (!$_POST['password']){
 			echo "Er is geen nieuw wachtwoord ingesteld.";
 		}
 		else {
+		//Change password of user
 		$user->password = bcrypt($credentials['password']);
 	}
-
 		// save
 		$user->save ();
-
 		// redirect
 		return redirect ( 'user/'.$user->id )->with( 'success', $user->name.' is bijgewerkt.' );
 	}

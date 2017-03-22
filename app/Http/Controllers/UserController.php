@@ -112,7 +112,7 @@ class UserController extends Controller
 			'email' => 'required|email|max:255',
 			'password' => 'confirmed|min:6',
 			'role_id' => 'required|max:255',
-			'password' => 'required|confirmed',
+			'password' => 'confirmed',
 		] );
 		// password
 		$credentials = $request->only(
@@ -120,9 +120,7 @@ class UserController extends Controller
 		);
 		// find
 		$user = \Auth::user();
-		// literal magic
-		$user->password = bcrypt($credentials['password']);
-		//name
+		// name
 		$user->name = $request ['name'];
 		// email
 		$user->email = $request ['email'];
@@ -132,6 +130,13 @@ class UserController extends Controller
 		// foreign location
 		$location = Location::find($request ['location_id']);
 		$user->location()->associate($location);
+
+		if (!$_POST['password']){
+			echo "Er is geen nieuw wachtwoord ingesteld.";
+		}
+		else {
+		$user->password = bcrypt($credentials['password']);
+	}
 
 		// save
 		$user->save ();

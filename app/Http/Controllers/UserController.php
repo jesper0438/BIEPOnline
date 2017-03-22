@@ -161,7 +161,7 @@ class UserController extends Controller
          $this->auth->login($user);
          // Redirect to user.show page with a success message.
          return redirect( 'user/'.$user->id )->with( 'success', 'Het wachtwoord is gewijzigd.' );
-
+        }
     }
     /**
      * Remove the specified resource from storage.

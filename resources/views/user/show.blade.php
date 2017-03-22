@@ -11,7 +11,7 @@
 	</div>
 	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
@@ -46,7 +46,7 @@
 			<td>
 				@if (isset($user->role))
 					{{ $user->role->name }}
-				@endif			
+				@endif
 			</td>
 		</tr>
 		<tr>

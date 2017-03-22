@@ -27,11 +27,11 @@
 		</div><br>
 		<div class="col-sm-6">
 			{!! Form::label('password', 'Nieuw wachtwoord', ['class' => 'control-label']) !!}
-			{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Vul hier je nieuwe wachtwoord in']) !!}
+			{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Vul hier het nieuwe wachtwoord in']) !!}
 		</div><br>
 		<div class="col-sm-6">
 			{!! Form::label('password_confirmation', 'Bevestiging nieuw wachtwoord', ['class' => 'control-label']) !!}
-			{!! Form::password('password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier nogmaals je nieuwe wachtwoord in']) !!}
+			{!! Form::password('password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier nogmaals het nieuwe wachtwoord in']) !!}
 		</div><br>
 		<div class="col-sm-6">
 			<p>Klik <a href="{!! url('avatar') !!}">hier</a> om de profielafbeelding te wijzigen.</p>

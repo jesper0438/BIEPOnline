@@ -52,7 +52,7 @@ class UserController extends Controller
 		$this->validate ( $request, [
 			'name' => 'required|max:255',
 			'email' => 'required|email|unique:users,email|max:255',
-			'password' => 'confirmed|min:6',
+			'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|confirmed',
 			'role_id' => 'required|max:255',
 		] );
 		// Create new User object with the info in the request

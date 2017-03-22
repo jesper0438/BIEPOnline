@@ -25,8 +25,12 @@
 		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Vul het emailadres hier in']) !!}
 	</div>
 	<div class="col-sm-6">
-		{!! Form::label('password', 'Wachtwoord', ['class' => 'control-label']) !!}
-		{!! Form::text('password', null, ['class' => 'form-control', 'placeholder' => 'Vul het wachtwoord hier in']) !!}
+		{!! Form::label('password', 'Nieuw wachtwoord', ['class' => 'control-label']) !!}
+		{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Vul hier het wachtwoord in']) !!}
+	</div>
+		<div class="col-sm-6">
+		{!! Form::label('password_confirmation', 'Bevestiging wachtwoord', ['class' => 'control-label']) !!}
+		{!! Form::password('new_password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier het wachtwoord opnieuw in']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('role_id', 'Rol', ['class' => 'control-label']) !!}

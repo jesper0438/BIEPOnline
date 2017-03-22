@@ -33,8 +33,8 @@ Auth::routes();
 
 Route::get      ( '/home','HomeController@index');
 Route::get      ( '/help','HelpController@index');
-Route::post     ( '/user/show','UserController@update_avatar');
-Route::put     ( '/user/edit', 'UserController@updatePassword');
+// Route::post     ( '/user/show','UserController@update_avatar');
+// Route::put     ( '/user/edit', 'UserController@updatePassword');
 
 Route::get      ( '/logout', function(){
     Auth::logout();

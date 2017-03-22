@@ -26,22 +26,16 @@
 			{!! Form::select('location_id', $locations, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
 		</div><br>
 		<div class="col-sm-6">
-			{!! Form::label('old_password', 'Huidig wachtwoord', ['class' => 'control-label']) !!}
-			{!! Form::password('old_password', ['class'=> 'form-control', 'placeholder' => 'Vul hier het huidige wachtwoord in']) !!}
-		</div><br>
-		<div class="col-sm-6">
-			{!! Form::label('new_password', 'Nieuw wachtwoord', ['class' => 'control-label']) !!}
-			{!! Form::password('new_password', ['class' => 'form-control', 'placeholder' => 'Vul hier het nieuwe wachtwoord in']) !!}
+			{!! Form::label('password', 'Nieuw wachtwoord', ['class' => 'control-label']) !!}
+			{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Vul hier je nieuwe wachtwoord in']) !!}
 		</div><br>
 		<div class="col-sm-6">
 			{!! Form::label('password_confirmation', 'Bevestiging nieuw wachtwoord', ['class' => 'control-label']) !!}
-			{!! Form::password('new_password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier nogmaals het nieuwe wachtwoord in']) !!}
+			{!! Form::password('password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier nogmaals je nieuwe wachtwoord in']) !!}
 		</div><br>
 		<div class="col-sm-6">
-			<label>Profielafbeelding</label><br>
-			<input type="file" accept="image/*" name="avatar">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-		</div><br>
+			<p>Klik <a href="{!! url('avatar') !!}">hier</a> om de profielafbeelding te wijzigen.</p>
+		</div>
 	</div>
 	<div class="form-group">
 		<div class="col-sm-12">

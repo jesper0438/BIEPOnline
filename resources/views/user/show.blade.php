@@ -59,5 +59,5 @@
 		</tr>
 	</tbody>
 </table>
-<p>Klik op Bewerken om de gegevens te wijzigen.</p>
+<p>Klik op <a href="{{action('UserController@edit', $user->id)}}">Bewerken</a> om de gegevens te wijzigen.</p>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Http\Requests;
 use App\User;
@@ -111,70 +112,48 @@ class UserController extends Controller
 			'email' => 'required|email|max:255',
 			'password' => 'confirmed|min:6',
 			'role_id' => 'required|max:255',
+			'password' => 'required|confirmed',
 		] );
+		// password
+		$credentials = $request->only(
+			'email', 'password', 'password_confirmation'
+		);
 		// find
-		$user = User::findorfail ( $id );
+		$user = \Auth::user();
+		// literal magic
+		$user->password = bcrypt($credentials['password']);
 		//name
 		$user->name = $request ['name'];
 		// email
 		$user->email = $request ['email'];
-		// foreign - role
+		// foreign role
 		$role = Role::find($request ['role_id']);
 		$user->role()->associate($role);
-		// foreign - location
+		// foreign location
 		$location = Location::find($request ['location_id']);
 		$user->location()->associate($location);
+
 		// save
 		$user->save ();
+
 		// redirect
 		return redirect ( 'user/'.$user->id )->with( 'success', $user->name.' is bijgewerkt.' );
-
-		// ---------------------------------------------------------------------------------------------
-		/*
-		// code of update_avatar
-		if($request->hasFile('avatar')){
-		  $avatar = $request->file('avatar');
-		  $filename = time() . '.' . $avatar->getClientOriginalExtension();
-		  Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
-		  $user = Auth::user();
-		  $user->avatar = $filename;
-		  $user->save();
-		}
-		// redirect to user.show page with a success message.
-		  return redirect ( 'user/'.$user->id )->with( 'success', 'De avatar is bijgewerkt.' );
-		*/
-		// ---------------------------------------------------------------------------------------------
-		/*
-		// code of updatePassword not completed not tested or checked can still be fully changed!!!
-		$user = Auth::user();
-		$password = $this->request->only([
-			'old_password', 'new_password', 'new_password_confirmation'
-		]);
-		$validator = Validator::make($password, [
-			'old_password' => 'required|current_password_match',
-			'new_password'     => 'required|min:6|confirmed',
-		]);
-		if ( $validator->fails() )
-			return back()
-				->withErrors($validator)
-				->withInput();
-				//checks the password if the password is correct.
-		if ($user->password == bcrypt($request['old_password'])){
-				$user->password = bcrypt($request['new_password']);
-		$updated = $user->update([ 'password' => bcrypt($password['new_password']) ]);
-		}
-		if($updated) {
-			return back()->with('success', 1);
-		return back()->with('success', 0);
-		// save the changes to the database
-		 $user->save();
-		 $this->auth->login($user);
-		 // Redirect to user.show page with a success message.
-		 return redirect( 'user/'.$user->id )->with( 'success', 'Het wachtwoord is gewijzigd.' );
-		}
-		*/
-
 	}
+	/**
+	 * Update yer avatar.
+	 */
+	public function update_avatar(Request $request) {
+		if($request->hasFile('avatar')) {
+			$avatar = $request->file('avatar');
+			$filename = time() . '.' . $avatar->getClientOriginalExtension();
+			Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
+			$user = Auth::user();
+			$user->avatar = $filename;
+			$user->save();
+		}
+		$user = \Auth::user();
+		return redirect ( 'user/'.$user->id )->with( 'success', 'Je profielafbeelding is bijgewerkt.' );
+    }
 	/**
 	 * Remove the specified resource from storage.
 	 *

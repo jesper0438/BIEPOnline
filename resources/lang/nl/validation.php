@@ -98,8 +98,8 @@ return [
     */
 
     'custom' => [
-        'old_password' => [
-            'old_password_match' => 'Het huidige ingevoerde wachtwoord is incorrect.',
+        'attribute-name' => [
+            'rule-name' => 'custom-message',
         ],
     ],
 

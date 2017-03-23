@@ -96,7 +96,7 @@ class RoleController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255|unique:roles',
+            'name' => 'required|max:255',
         ] );
 
         $role = Role::findorfail ( $id );

@@ -110,9 +110,9 @@ class UserController extends Controller
 		$this->validate ( $request, [
 			'name' => 'required|max:255',
 			'email' => 'required|email|max:255',
-			'password' => 'confirmed|min:6',
+			'password' => 'confirmed|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|min:6',
 			'role_id' => 'required|max:255',
-			'password' => 'confirmed',
+			'password' => 'confirmed|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|min:6',
 		] );
 		// password
 		$credentials = $request->only(

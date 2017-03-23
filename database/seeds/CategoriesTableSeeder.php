@@ -12,41 +12,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-              [ip: "192.168.10.10"
-memory: 2048
-cpus: 1
-provider: virtualbox
-
-authorize: ~/.ssh/id_rsa.pub
-
-keys:
-    - ~/.ssh/id_rsa
-
-folders:
-    - map: ~/Documents/Hz/BIEPonline/BIEPOnline
-      to: /home/vagrant/code/bieponline
-    - map: ~/Documents/Hz/proximitymine
-      to: /home/vagrant/code/proximitymine
-    - map: ~/Documents/Hz/phpmyadmin
-      to: /home/vagrant/code/phpmyadmin
-sites:
-    - map: phpmyadmin.dev
-      to: /home/vagrant/code/phpmyadmin
-    - map: bieponline.dev
-      to: /home/vagrant/code/bieponline/public
-    - map: proximitymine.dev
-      to: /home/vagrant/code/proximitymine/public
-databases:
-    - bieponline
-    - proximitymine
-
-# blackfire:
-#     - id: foo
-#       token: bar
-#       client-id: foo
-#       client-token: bar
-
-
+              [
                 'color' => 'Bruin',
                 'name' => 'Prentenboeken zonder tekst',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),

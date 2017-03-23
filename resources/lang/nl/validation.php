@@ -114,6 +114,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'username' => 'gebruikersnaam',
+      'password' => 'wachtwoord',
+      'characters' => 'karakters',
+      'name' => 'naam',
+      'max characters' => 'karakters',
+
+]
 
 ];

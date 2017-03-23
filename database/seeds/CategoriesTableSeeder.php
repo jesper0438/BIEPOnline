@@ -37,19 +37,19 @@ class CategoriesTableSeeder extends Seeder
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
               ],
               [
-                'color' => 'Geel',
+                'color' => 'Grijs 1',
                 'name' => 'Leesboeken onderbouw',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
               ],
               [
-                'color' => 'Groen',
+                'color' => 'Grijs 2',
                 'name' => 'Leesboeken middenbouw',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
               ],
               [
-                'color' => 'Grijs',
+                'color' => 'Grijs 3',
                 'name' => 'Leesboeken bovenbouw',
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),

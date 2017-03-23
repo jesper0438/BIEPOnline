@@ -121,14 +121,14 @@ class BookController extends Controller
         $this->validate ( $request, [
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
-            'author' => 'required|max:255',
+            'author_id' => 'required|max:255',
 			//'category_id' => 'required|max:255',
         ] );
 
         $book = Book::findorfail ( $id );
         $book->title = $request ['title'];
         $book->isbn = $request ['ISBN'];
-		$book->author = $request ['author'];
+		    $book->author_id = $request ['author_id'];
         // Associate the role to the user
 
         $category = Category::find($request ['category_id']);

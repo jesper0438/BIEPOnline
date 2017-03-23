@@ -150,7 +150,7 @@ class UserController extends Controller
 			$user = \Auth::user();
 		if($request->hasFile('avatar')) {
 			$avatar = $request->file('avatar');
-			$filename = $user->email . '.' . $avatar->getClientOriginalExtension();
+			$filename = $user->id . '.' . $avatar->getClientOriginalExtension();
 			Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
 			$user = Auth::user();
 			$user->avatar = $filename;

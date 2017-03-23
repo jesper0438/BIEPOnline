@@ -97,7 +97,7 @@ class StatusController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'status' => 'required|max:255|unique:statuses',
+            'status' => 'required|max:255',
         ] );
 
         $status = Status::findorfail ( $id );

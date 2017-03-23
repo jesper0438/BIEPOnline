@@ -57,15 +57,16 @@ class BookController extends Controller
         $this->validate ( $request, [
             'title' => 'required|max:255',
             'isbn' => 'required|min:10|max:13|unique:books',
-            'author' => 'required|max:255',
-            'category_id' => 'required'
+            'author_id' => 'required|max:255',
+            'category_id' => 'required',
 			//'category_id' => 'required|max:255',
         ] );
         // Create new book object with the info in the request
         $book = Book::create ( [
             'title' => $request ['title'],
             'isbn' => $request ['isbn'],
-			'author' => $request ['author'],
+			      'author_id' => $request ['author_id'],
+            'category_id' => $request ['category_id'],
         ] );
 
         $category = Category::find($request ['category_id']);

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'password' => 'Wachtwoord moet minimaal zes tekens lang zijn en moeten overeenkomen.',
+    'wachtwoord' => 'Wachtwoord moet minimaal zes tekens lang zijn en moeten overeenkomen.',
     'reset' => 'Het wachtwoord van uw account is gewijzigd.',
     'sent' => 'We hebben een email verstuurd met instructies om een nieuw wachtwoord in te stellen.',
     'token' => 'Deze resettoken is niet geldig.',

@@ -3,27 +3,27 @@
 
 @section('title')
 <div class="row">
-	<div class="col-sm-9">
+	<div class="col-sm-8">
 		{{$role->name}}
 	</div>
-	<div class="col-sm-2">
+	<div class="col-sm-1">
 		 <a class="btn btn-primary" href="{{action('RoleController@edit', $role->id)}}">Bewerken</a>
 	</div>
-		<script>
+	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze rol wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze rol wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
 		        return false;
 		    }
 		}
-			</script>
+	</script>
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['role.destroy', $role->id], 'onsubmit' => 'return confirmDelete()']) !!}
-	<button type="submit" name="button" class="btn btn-default btn-sm">
-			<i class="fa fa-trash-o"></i>
-	</button>
+		<button type="submit" name="button" class="btn btn-primary">
+			Verwijderen
+		</button>
 	</div>
 </div>
 @endsection

@@ -97,7 +97,7 @@ class LocationController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate ( $request, [
-            'name' => 'required|max:255|unique:locations',
+            'name' => 'required|max:255',
         ] );
 
         $location = Location::findorfail ( $id );

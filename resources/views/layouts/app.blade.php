@@ -9,14 +9,17 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#responsive">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<a class="navbar-brand logo" href="{{ url('home') }}"><img id="header-logo" src="{{ asset('img/Logo.png') }}"></a>
-			<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse" id="responsive">
 				@if (Auth::check())
 				<ul class="navbar-nav mr-auto">
-					<form class="form-inline mt-2 mt-md-0">
+					<!-- <form class="form-inline mt-2 mt-md-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Boek, ISBN of Auteur...">
 						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoeken</button>
-					</form>
+					</form> -->
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
@@ -47,11 +50,14 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row">
-				<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-					<ul class="nav nav-pills flex-column">
-						@include('common.leftmenu')
-					</ul>
-				</nav>
+				@if (Auth::check())
+					<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+						<ul class="nav nav-pills flex-column">
+								@include('common.leftmenu')
+						</ul>
+					</nav>
+				@else
+				@endif
 				<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 					<h1>@yield('title')</h1>
 					@include('common.errors')

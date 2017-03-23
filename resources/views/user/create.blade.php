@@ -18,15 +18,19 @@
 <div class="form-group">
 	<div class="col-sm-6">
 		{!! Form::label('name', 'Naam', ['class' => 'control-label']) !!}
-		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'De naam hier']) !!}
+		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Vul de naam hier in']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('email', 'Email', ['class' => 'control-label']) !!}
-		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Het emailadres hier']) !!}
+		{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Vul het emailadres hier in']) !!}
 	</div>
 	<div class="col-sm-6">
-		{!! Form::label('password', 'password', ['class' => 'control-label']) !!}
-		{!! Form::text('password', null, ['class' => 'form-control', 'placeholder' => 'password']) !!}
+		{!! Form::label('password', 'Nieuw wachtwoord', ['class' => 'control-label']) !!}
+		{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Vul hier het wachtwoord in']) !!}
+	</div>
+		<div class="col-sm-6">
+		{!! Form::label('password_confirmation', 'Bevestiging wachtwoord', ['class' => 'control-label']) !!}
+		{!! Form::password('new_password_confirmation', ['class'=>'form-control', 'placeholder' => 'Vul hier het wachtwoord opnieuw in']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('role_id', 'Rol', ['class' => 'control-label']) !!}

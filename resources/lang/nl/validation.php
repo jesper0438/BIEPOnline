@@ -75,16 +75,16 @@ return [
     'required_without_all' => 'De :attribute field is required when none of :values are present.',
     'same'                 => 'De :attribute and :other must match.',
     'size'                 => [
-        'numeric' => 'De :attribute must be :size.',
-        'file'    => 'De :attribute must be :size kilobytes.',
-        'string'  => 'De :attribute must be :size characters.',
-        'array'   => 'De :attribute must contain :size items.',
+        'numeric' => 'De :attribute moet :size zijn.',
+        'file'    => 'De :attribute moet :size kilobytes zijn.',
+        'string'  => 'De :attribute moet :size karakters zijn.',
+        'array'   => 'De :attribute moet :size items bevatten.',
     ],
-    'string'               => 'De :attribute must be a string.',
-    'timezone'             => 'De :attribute must be a valid zone.',
-    'unique'               => 'De :attribute has already been taken.',
-    'uploaded'             => 'De :attribute failed to upload.',
-    'url'                  => 'De :attribute format is invalid.',
+    'string'               => 'De :attribute moet een string zijn.',
+    'timezone'             => 'De :attribute moet een geldige zone zijn.',
+    'unique'               => 'De :attribute is al in gebruik.',
+    'uploaded'             => 'De :attribute kan niet worden geüpload .',
+    'url'                  => 'De :attribute formaat is niet geldig.',
 
     /*
     |--------------------------------------------------------------------------

@@ -17,15 +17,15 @@
 <?php use Carbon\Carbon; ?>
 {!! Form::open(['route' => ['loan.store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
 <div class="form-group">
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 		{!! Form::label('startdate', 'Uitleendatum', ['class' => 'control-label']) !!}
 		{!! Form::date('startdate', $today = Carbon::today(), ['class' => 'form-control']) !!}
 		</div>
-	<div class="col-sm-4">
+	<div class="col-sm-6">
 		{!! Form::label('expirydate', 'Verloopdatum', ['class' => 'control-label']) !!}
 		{!! Form::date('expirydate', $today = Carbon::today()->addWeeks(3), ['class' => 'form-control']) !!}
 	</div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 		{!! Form::label('returndate', 'Terugbrengdatum', ['class' => 'control-label']) !!}
 		{!! Form::date('returndate', null, ['class' => 'form-control']) !!}
 	</div>

@@ -18,11 +18,11 @@
     <div class="form-group">
         <div class="col-sm-6">
             {!! Form::label('datebought', 'Aanschafdatum', ['class' => 'control-label']) !!}
-            {!! Form::date('datebought', null, ['class' => 'form-control', 'placeholder' => 'De naam hier']) !!}
+            {!! Form::date('datebought', null, ['class' => 'form-control', 'placeholder' => 'De naam van het exemplaar']) !!}
         </div>
         <div class="col-sm-6">
             {!! Form::label('state', 'Staat', ['class' => 'control-label']) !!}
-            {!! Form::text('state', null, ['class' => 'form-control', 'placeholder' => 'De staat van het boek hier']) !!}
+            {!! Form::text('state', null, ['class' => 'form-control', 'placeholder' => 'De staat van het boek']) !!}
         </div>
         <div class="col-sm-6">
           {!! Form::label('location_id', 'Locatie', ['class' => 'control-label']) !!}

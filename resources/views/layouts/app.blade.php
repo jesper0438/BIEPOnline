@@ -16,10 +16,10 @@
 			<div class="collapse navbar-collapse" id="responsive">
 				@if (Auth::check())
 				<ul class="navbar-nav mr-auto">
-					<form class="form-inline mt-2 mt-md-0">
+					<!-- <form class="form-inline mt-2 mt-md-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Boek, ISBN of Auteur...">
 						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Zoeken</button>
-					</form>
+					</form> -->
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">

@@ -11,7 +11,7 @@
 	</div>
 	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze status wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze status wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
@@ -31,7 +31,7 @@
 @section('content')
 <table class="table table-striped table-hover">
 	<thead>
-		<th class="col-sm-4">Naam</th>
+		<th class="col-sm-3">Naam</th>
 	</thead>
 	<tbody>
 		<tr class="row-link" style="cursor: pointer;"

@@ -18,7 +18,7 @@
 <div class="form-group">
 	<div class="col-sm-6">
 		{!! Form::label('isbn', 'ISBN', ['class' => 'control-label']) !!}
-		{!! Form::text('isbn', null, ['class' => 'form-control', 'placeholder' => 'ISBN Nummer']) !!}
+		{!! Form::text('isbn', null, ['class' => 'form-control', 'placeholder' => 'ISBN nummer van het boek']) !!}
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">

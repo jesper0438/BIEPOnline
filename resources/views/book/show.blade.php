@@ -11,7 +11,7 @@
 	</div>
 	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je dit boek wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u dit boek wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
@@ -33,7 +33,7 @@
         <h2>Informatie over dit boek:</h2>
             <table class="table table-striped table-hover">
                 <thead>
-                <th class="col-sm-2">ISBN</th>
+                <th class="col-sm-3">ISBN</th>
                 <th class="col-sm-3">Titel</th>
                 <th class="col-sm-3">Auteur</th>
 								<th class="col-sm-3">Categorie</th>

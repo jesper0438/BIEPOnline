@@ -14,10 +14,10 @@
 	@if (count($books) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-2">ISBN</th>
+				<th class="col-sm-3">ISBN</th>
 				<th class="col-sm-3">Titel</th>
 				<th class="col-sm-3">Auteur</th>
-				<th class="col-sm-2">Categorie</th>
+				<th class="col-sm-3">Categorie</th>
 			</thead>
 			<tbody>
 				@foreach ($books as $book)

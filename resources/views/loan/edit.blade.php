@@ -9,15 +9,15 @@
 {!! Form::model($loan, ['route' => ['loan.update', $loan->id], 'method' => 'put', 'class' => 'form-horizontal']) !!}
 <div class="form-group">
 	<div class="form-group">
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			{!! Form::label('startdate', 'Uitleendatum', ['class' => 'control-label']) !!}
 			{!! Form::date('startdate', null, ['class' => 'form-control', 'placeholder' => 'De uitleendatum hier']) !!}
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-6">
 			{!! Form::label('expirydate', 'Verloopdatum', ['class' => 'control-label']) !!}
 			{!! Form::date('expirydate', null, ['class' => 'form-control', 'placeholder' => 'De verloopdatum hier']) !!}
 		</div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
 			{!! Form::label('returndate', 'Terugbrengdatum', ['class' => 'control-label']) !!}
 			{!! Form::date('returndate', null, ['class' => 'form-control', 'placeholder' => 'De terugbrengdatum hier']) !!}
 		</div>

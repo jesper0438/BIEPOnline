@@ -11,7 +11,7 @@
 	</div>
 	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
@@ -29,21 +29,35 @@
 @endsection
 
 @section('content')
-<table class="table table-striped table-hover">
-	<thead>
-		<th class="col-sm-3">Naam</th>
-		<th class="col-sm-3">Email</th>
-		<th class="col-sm-2">Rol</th>
-	</thead>
+<img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"><br>
+<br>
+<table class="table">
 	<tbody>
-		<tr class="row-link" style="cursor: pointer;"
-			data-href="{{action('UserController@show', ['id' => $user->id]) }}">
-			<td class="table-text">{{ $user->name }}</td>
-			<td class="table-text">{{ $user->email }}</td>
-				@if(!empty($user->role->name))
-			<td class="table-text">{{ $user->role->name }}</td>
+		<tr>
+			<td><b>Naam</b></td>
+			<td>{{ Auth::user()->name }}</td>
+		</tr>
+		<tr>
+			<td><b>Email</b></td>
+			<td>{{ Auth::user()->email }}</td>
+		</tr>
+		<tr>
+			<td><b>Rol</b></td>
+			<td>
+				@if (isset($user->role))
+					{{ $user->role->name }}
 				@endif
+			</td>
+		</tr>
+		<tr>
+			<td><b>Locatie</b></td>
+			<td>
+				@if (isset($user->location))
+					{{ $user->location->name }}
+				@endif
+			</td>
 		</tr>
 	</tbody>
 </table>
+<p>Klik op <a href="{{action('UserController@edit', $user->id)}}">Bewerken</a> om de gegevens te wijzigen.</p>
 @endsection

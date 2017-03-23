@@ -30,11 +30,18 @@ Route::resource ( 'status', 'StatusController');
 
 Auth::routes();
 
+// Index-only Routes
 Route::get      ( '/home','HomeController@index');
 Route::get      ( '/help','HelpController@index');
-Route::get      ( '/userprofile','UserProfileController@index');
-Route::post     ( '/userprofile','UserController@update_avatar');
 
+// Update Avatar
+Route::get('/avatar', function () {
+	return view('avatar');
+});
+
+Route::post     ( '/avatar','UserController@update_avatar');
+
+// Logout Route
 Route::get      ( '/logout', function(){
     Auth::logout();
     return redirect()->route('login');

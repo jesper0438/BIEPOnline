@@ -58,6 +58,7 @@ class BookController extends Controller
             'title' => 'required|max:255',
             'isbn' => 'required|min:10|max:13|unique:books',
             'author' => 'required|max:255',
+            'category_id' => 'required'
 			//'category_id' => 'required|max:255',
         ] );
         // Create new book object with the info in the request

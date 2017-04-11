@@ -10,13 +10,13 @@ class Book extends Model
         'title', 'author', 'isbn',
     ];
 
-    protected function copies()
-    {
-        return $this->hasMany('App\Copy');
-    }
-
     public function category()
     {
         return $this->belongsTo('App\Category');
+    }
+
+    protected function copies()
+    {
+        return $this->hasMany('App\Copy');
     }
 }

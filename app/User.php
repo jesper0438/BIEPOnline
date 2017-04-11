@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -31,6 +31,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Role');
     }
+
     public function location()
     {
         return $this->belongsTo('App\Location');

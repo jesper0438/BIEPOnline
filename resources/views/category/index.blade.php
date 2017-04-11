@@ -26,7 +26,9 @@
 				@endforeach
 			</tbody>
 		</table>
-	@endif
+    @else <h2> Er zijn geen Categorieën aangemaakt</h2>
+    @endif
+
 @endsection
 @section('scripts')
 <script>

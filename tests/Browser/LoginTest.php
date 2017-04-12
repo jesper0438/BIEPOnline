@@ -17,7 +17,10 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                    ->assertSee('Login');
+                    ->type('email', 'Admin@biep.dev')
+                    ->type('password', 'Admin123!')
+                    ->press('Login')
+                    ->assertPathIs('/home');
         });
     }
 }

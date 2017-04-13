@@ -6,20 +6,22 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class LoginTest extends DuskTestCase
+class RegisterTest extends DuskTestCase
 {
     /**
      * A basic browser test example.
      *
      * @return void
      */
-    public function testLogin()
+    public function testRegister()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/login')
-                    ->type('email', 'admin@bieponline.local')
+            $browser->visit('/register')
+                    ->type('name', 'Joery')
+                    ->type('email', 'joery@bieponline.local')
                     ->type('password', 'Admin123!')
-                    ->press('Login')
+                    ->type('#password-confirm', 'Admin123!')
+                    ->press('Registreer')
                     ->assertPathIs('/home');
         });
     }

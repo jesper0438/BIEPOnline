@@ -10,7 +10,7 @@
     <!-- Handige links -->
     <div>
         <p><a href="#"><i class="fa fa-fw fa-envelope-o"></i> Stuur een email naar de beheerder</p></a>
-        <p><a href="#"><i class="fa fa-fw fa-file-pdf-o"></i> Bekijk de handleiding</p></a>
+        <p><a href="https://jesper0438.stackstorage.com/s/65CAnTFWu8jyRL4"><i class="fa fa-fw fa-file-pdf-o"></i> Bekijk de handleiding</p></a>
     </div>
 
     <!-- Versie voor ondersteuning, variabele staat in config/app.php -->

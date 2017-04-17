@@ -37,6 +37,8 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     return [
         'color' => $faker->name,
         'name' => $faker->name,
+        ];
+});        
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Location::class, function (Faker\Generator $faker) {

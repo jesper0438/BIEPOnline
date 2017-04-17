@@ -1,7 +1,7 @@
 {
   "name": "BIEPOnline",
   "scripts": {
-    "postdeploy": "php artisan migrate"
+    "postdeploy": "php artisan migrate && php artisan db:seed"
   },
   "env": {
     "APP_ENV": {

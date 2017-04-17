@@ -22,6 +22,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Author::class, function (Faker\Generator $faker) {
 
@@ -36,5 +37,13 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     return [
         'color' => $faker->name,
         'name' => $faker->name,
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Location::class, function (Faker\Generator $faker) {
+
+
+    return [
+        'name' => $faker->name,
+
     ];
 });

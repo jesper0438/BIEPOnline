@@ -29,6 +29,7 @@
 			Opslaan
 		</button>
 	</div>
+	<a href="/location" class="btn btn-warning" role="button">Annuleren</a>
 </div>
 {!! Form::close() !!}
 @endsection

@@ -47,6 +47,7 @@
 		<button type="submit" class="btn btn-primary">
 			Opslaan
 		</button>
+		<a href="/user" class="btn btn-warning" role="button">Annuleren</a>
 	</div>
 </div>
 {!! Form::close() !!}

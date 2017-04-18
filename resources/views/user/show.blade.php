@@ -6,9 +6,11 @@
 	<div class="col-sm-8">
 		{{$user->name}}
 	</div>
-	<div class="col-sm-1">
+	<div class="col-sm-2">
 		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}">Bewerken</a>
 	</div>
+
+@section('script')
 	<script>
 			function confirmDelete() {
 		var result = confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');
@@ -19,9 +21,11 @@
 		    }
 		}
 	</script>
-	<div class="col-sm-1">
+	@endsection('script')
+
+	<div class="col-sm-2">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id], 'onsubmit' => 'return confirmDelete()']) !!}
-		<button type="submit" name="button" class="btn btn-primary">
+		<button type="submit" name="button" class="btn btn-danger">
 			Verwijderen
 		</button>
 	</div>

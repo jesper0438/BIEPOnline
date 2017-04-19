@@ -151,6 +151,9 @@ class UserController extends Controller
      */
     public function update_avatar(Request $request)
     {
+      $this->validate($request, [
+          'avatar' => 'required|max:20000|mimes:jpg,jpeg,png',
+            ]);
         $user = \Auth::user();
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');

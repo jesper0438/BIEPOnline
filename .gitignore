@@ -12,6 +12,9 @@ storage/*.key
 .env
 Homestead.yaml
 Homestead.json
+.vagrant/
+Vagrantfile
+
 
 ### IDE ###
 .idea

@@ -33,8 +33,8 @@
 @endsection
 
 @section('content')
-<img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"><br>
-<br>
+<div title="Klik hier om de profielafbeelding te wijzigen."><a href="{!! url('avatar') !!}"><img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"></a></div>
+<br><br>
 <table class="table">
 	<tbody>
 		<tr>

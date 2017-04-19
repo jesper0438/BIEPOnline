@@ -5,7 +5,7 @@
 	<i class="fa fa-map"></i> Rollen
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('role/create') !!}">
-			Toevoegen...
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection

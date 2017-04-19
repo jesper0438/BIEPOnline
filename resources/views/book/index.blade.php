@@ -5,7 +5,7 @@
 	<i class="fa fa-book"></i> Boeken
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('book/create') !!}">
-			Toevoegen...
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection

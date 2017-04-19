@@ -7,7 +7,7 @@
 		{{$book->title}}
 	</div>
 	<div class="col-sm-1">
-		 <a class="btn btn-primary" href="{{action('BookController@edit', $book->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('BookController@edit', $book->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 	<script>
 			function confirmDelete() {
@@ -22,7 +22,7 @@
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['book.destroy', $book->id], 'onsubmit' => 'return confirmDelete()']) !!}
 		<button type="submit" name="button" class="btn btn-danger">
-			Verwijderen
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>

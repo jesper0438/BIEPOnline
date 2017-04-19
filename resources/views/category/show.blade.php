@@ -7,7 +7,7 @@
 		{{$category->name}}
 	</div>
 	<div class="col-sm-1">
-		 <a class="btn btn-primary" href="{{action('CategoryController@edit', $category->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('CategoryController@edit', $category->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 	<script>
 			function confirmDelete() {
@@ -22,7 +22,7 @@
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['category.destroy', $category->id], 'onsubmit' => 'return confirmDelete()']) !!}
 		<button type="submit" name="button" class="btn btn-danger">
-			Verwijderen
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>

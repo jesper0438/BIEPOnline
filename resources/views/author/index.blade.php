@@ -5,7 +5,7 @@
 	<i class="fa fa-address-card"></i> Auteurs
 	<div style="float:right">
 		<a class="btn btn-primary" href="{!! url('author/create') !!}">
-			Toevoegen...
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection

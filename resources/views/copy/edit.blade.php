@@ -32,7 +32,7 @@
 
 	<div class="form-group">
 		<div class="col-sm-12">
-			<button type="submit" class="btn btn-primary">
+			<button type="submit" class="btn btn-info">
 				Opslaan
 			</button>
 			<a href="/copy" class="btn btn-warning" role="button">Annuleren</a>

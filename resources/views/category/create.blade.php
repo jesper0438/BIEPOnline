@@ -28,7 +28,7 @@
 
 <div class="form-group">
 	<div class="col-sm-12">
-		<button type="submit" class="btn btn-primary">
+		<button type="submit" class="btn btn-info">
 		<a href="/category" class="btn btn-warning" role="button">Annuleren</a>
 			Opslaan
 		</button>

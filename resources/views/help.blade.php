@@ -9,7 +9,7 @@
 
     <!-- Handige links -->
     <div>
-        <p><a href="mailto:admin@bieponline.local?subject=BIEPOnline"><i class="fa fa-fw fa-envelope-o"></i> Stuur een email naar de beheerder</p></a>
+        <p><a href="mailto:{{ config('app.admin') }}?subject=BIEPOnline"><i class="fa fa-fw fa-envelope-o"></i> Stuur een email naar de beheerder</p></a>
         <p><a href="{{ asset('docs/Gebruikershandleiding BIEPonline.pdf') }}"><i class="fa fa-fw fa-file-pdf-o"></i> Bekijk de handleiding</p></a>
     </div>
 

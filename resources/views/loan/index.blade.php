@@ -4,7 +4,7 @@
 @section('title')
 	<i class="fa fa-arrow-circle-right"></i> Uitlenen
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('loan/create') !!}">
+		<a class="btn btn-success" href="{!! url('loan/create') !!}">
 			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>

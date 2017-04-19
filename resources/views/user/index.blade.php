@@ -4,7 +4,7 @@
 @section('title')
 	<i class="fa fa-users"></i> Gebruikers
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('user/create') !!}">
+		<a class="btn btn-success" href="{!! url('user/create') !!}">
 			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>

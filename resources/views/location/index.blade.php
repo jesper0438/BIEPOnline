@@ -4,7 +4,7 @@
 @section('title')
 	<i class="fa fa-map-pin"></i> Locaties
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('location/create') !!}">
+		<a class="btn btn-success" href="{!! url('location/create') !!}">
 			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>

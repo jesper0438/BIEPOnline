@@ -4,7 +4,7 @@
 @section('title')
 	<i class="fa fa-book"></i> Boeken
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('book/create') !!}">
+		<a class="btn btn-success" href="{!! url('book/create') !!}">
 			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>

@@ -4,7 +4,7 @@
 @section('title')
 	<i class="fa fa-tags"></i> Exemplaren
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('copy/create') !!}">
+		<a class="btn btn-success" href="{!! url('copy/create') !!}">
 			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>

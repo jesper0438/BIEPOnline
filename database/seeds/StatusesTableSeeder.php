@@ -11,22 +11,22 @@ class StatusesTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('statuses')->insert([
-          [
-              'status'      => 'Nieuwstaat',
-              'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-              'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-          ],
-          [
-              'status'      => 'Lichtelijk beschadigd',
-              'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-              'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-          ],
-          [
-              'status'      => 'Kapot',
-              'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-              'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-          ],
-      ]);
+        DB::table('statuses')->insert([
+            [
+                'status' => 'in gebruik',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'status' => 'beschadigd',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],
+            [
+                'status' => 'afgeschreven',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+            ],
+        ]);
     }
 }

@@ -4,8 +4,8 @@
 @section('title')
 	<i class="fa fa-university"></i> Categorieën
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('category/create') !!}">
-			Toevoegen...
+		<a class="btn btn-success" href="{!! url('category/create') !!}">
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection

@@ -7,7 +7,7 @@
 		{{$user->name}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 
 @section('script')
@@ -26,7 +26,7 @@
 	<div class="col-sm-2">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id], 'onsubmit' => 'return confirmDelete()']) !!}
 		<button type="submit" name="button" class="btn btn-danger">
-			Verwijderen
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>

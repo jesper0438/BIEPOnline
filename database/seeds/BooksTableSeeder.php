@@ -20,6 +20,7 @@ class BooksTableSeeder extends Seeder
                 'author_id'   => 'J.K. Rowling',
                 'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
+                'category_id' => 1,
             ],
         ]);
     }

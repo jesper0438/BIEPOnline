@@ -44,6 +44,7 @@
 		<button type="submit" class="btn btn-primary">
 			Opslaan
 		</button>
+		<a href="/loan" class="btn btn-warning" role="button">Annuleren</a>
 	</div>
 </div>
 

@@ -21,7 +21,7 @@
 	</script>
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['role.destroy', $role->id], 'onsubmit' => 'return confirmDelete()']) !!}
-		<button type="submit" name="button" class="btn btn-primary">
+		<button type="submit" name="button" class="btn btn-danger">
 			Verwijderen
 		</button>
 	</div>

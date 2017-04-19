@@ -28,6 +28,7 @@
 		<button type="submit" class="btn btn-primary">
 			Opslaan
 		</button>
+		<a href="/author" class="btn btn-warning" role="button">Annuleren</a>
 	</div>
 </div>
 

@@ -19,6 +19,7 @@
 			<button type="submit" class="btn btn-primary">
 				Opslaan
 			</button>
+			<a href="/role" class="btn btn-warning" role="button">Annuleren</a>
 		</div>
 	</div>
 </div>

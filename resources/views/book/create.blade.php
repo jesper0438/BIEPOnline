@@ -41,6 +41,7 @@
 		<button type="submit" class="btn btn-primary">
 			Opslaan
 		</button>
+		<a href="/book" class="btn btn-warning" role="button">Annuleren</a>
 	</div>
 </div>
 {!! Form::close() !!}

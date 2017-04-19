@@ -17,3 +17,4 @@ https://bieponline-staging.herokuapp.com/
 * Jesper Rober
 * Joery Zegers
 * Mariano Kamoen
+* Teun Huibregtse

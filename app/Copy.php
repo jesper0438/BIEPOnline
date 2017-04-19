@@ -19,4 +19,8 @@ class Copy extends Model
     {
         return $this->belongsTo('App\Book');
     }
+    public function status()
+    {
+        return $this->belongsTo('App\Status');
+    }
 }

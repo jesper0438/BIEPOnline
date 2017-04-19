@@ -70,8 +70,7 @@
                     @foreach($book->copies as $copy)
                         <tr>
                             <td> {{$copy->id}} </td>
-                            <td> {{$copy->state}} </td>
-														<td> {{$copy->status}} </td>
+                            <td> {{$copy->status->status}} </td>
 														<td> {{$copy->location->name}} </td>
                         </tr>
                     @endforeach

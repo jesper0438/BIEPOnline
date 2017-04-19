@@ -19,8 +19,8 @@
 					{!! Form::text('title', $book->title, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevuld']) !!}
 				</div>
 				<div class="col-sm-6">
-					{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-					{!! Form::text('author', $book->author, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
+					{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
+					{!! Form::text('author_id', $book->author_id, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}

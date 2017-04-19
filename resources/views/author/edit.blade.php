@@ -15,13 +15,14 @@
                     {!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'Auteur']) !!}
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary">
-                        Opslaan
-                    </button>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-primary">
+						Opslaan
+					</button>
+					<a href="/author" class="btn btn-warning" role="button">Annuleren</a>
+				</div>
+			</div>
         </div>
     </div>
     {!! Form::close() !!}

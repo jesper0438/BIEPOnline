@@ -10,11 +10,12 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
+					<img id="login-logo" src="{{ asset('img/Logo.png') }}">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Email Adres</label>
+                            <label for="email" class="col-md-4 control-label">Emailadres</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -58,7 +59,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Wachtwoord Vergeten?
+                                    Wachtwoord vergeten?
                                 </a>
                             </div>
                         </div>

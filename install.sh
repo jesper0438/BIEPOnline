@@ -9,6 +9,7 @@ do
 			composer install
 			php artisan migrate
 			php artisan key:generate
+			php artisan db:seed
 			read -p "De omgeving is ingesteld, druk op een toets om door te gaan"
 			[[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
 			;;

@@ -18,17 +18,17 @@
 <div class="form-group">
 	<div class="col-sm-6">
 		{!! Form::label('isbn', 'ISBN', ['class' => 'control-label']) !!}
-		{!! Form::text('isbn', null, ['class' => 'form-control', 'placeholder' => 'ISBN Nummer']) !!}
+		{!! Form::text('isbn', null, ['class' => 'form-control', 'placeholder' => 'ISBN nummer van het boek']) !!}
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
 		{!! Form::label('title', 'Titel', ['class' => 'control-label']) !!}
-		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevult', 'readonly' => true]) !!}
+		{!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevuld']) !!}
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
-		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De titel wordt automatisch aangevult', 'readonly' => true]) !!}
+		{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
+		{!! Form::text('author_id', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}
@@ -41,6 +41,7 @@
 		<button type="submit" class="btn btn-primary">
 			Opslaan
 		</button>
+		<a href="/book" class="btn btn-warning" role="button">Annuleren</a>
 	</div>
 </div>
 {!! Form::close() !!}
@@ -53,7 +54,7 @@
 		var isbn = $(this).val();
 		// Controleer of de waarde tussen de 10 - 13 karakters lang is
 		if (isbn.length > 9 && isbn.length < 14) {
-			console.log(isbn);		
+			console.log(isbn);
 			getBookData(isbn);
 		}
 	});

@@ -11,7 +11,7 @@
 	<div class="form-group">
 		<div class="col-sm-6">
 			{!! Form::label('status', 'Naam', ['class' => 'control-label']) !!}
-			{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De naam van de status']) !!}
+			{!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'De status benaming']) !!}
 		</div>
 
 	</div>
@@ -20,6 +20,7 @@
 			<button type="submit" class="btn btn-primary">
 				Opslaan
 			</button>
+			<a href="/status" class="btn btn-warning" role="button">Annuleren</a>
 		</div>
 	</div>
 {!! Form::close() !!}

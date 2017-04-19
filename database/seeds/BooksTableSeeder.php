@@ -14,14 +14,14 @@ class BooksTableSeeder extends Seeder
 
         DB::table('books')->insert([
             [
+
                 'isbn'        => '9780545139700',
                 'title'       => 'Harry Potter and the Deathly Hallows',
-                'author'      => 'J.K. Rowling',
+                'author_id'   => 'J.K. Rowling',
                 'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
                 'category_id' => 1,
             ],
-
         ]);
     }
 }

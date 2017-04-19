@@ -3,47 +3,65 @@
 
 @section('title')
 <div class="row">
-	<div class="col-sm-9">
+	<div class="col-sm-8">
 		{{$user->name}}
 	</div>
 	<div class="col-sm-2">
-		 <a class="btn btn-default" href="{{action('UserController@edit', $user->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}">Bewerken</a>
 	</div>
-		<script>
+
+@section('script')
+	<script>
 			function confirmDelete() {
-		var result = confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');
+		var result = confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');
 		if (result) {
 		        return true;
 		    } else {
 		        return false;
 		    }
 		}
-			</script>
-	<div class="col-sm-1">
+	</script>
+	@endsection('script')
+
+	<div class="col-sm-2">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id], 'onsubmit' => 'return confirmDelete()']) !!}
-	<button type="submit" name="button" class="btn btn-default btn-sm">
-			<i class="fa fa-trash-o"></i>
-	</button>
+		<button type="submit" name="button" class="btn btn-danger">
+			Verwijderen
+		</button>
 	</div>
 </div>
 @endsection
 
 @section('content')
-<table class="table table-striped table-hover">
-	<thead>
-		<th class="col-sm-3">Naam</th>
-		<th class="col-sm-3">Email</th>
-		<th class="col-sm-2">Rol</th>
-	</thead>
+<div title="Klik hier om de profielafbeelding te wijzigen."><a href="{!! url('avatar') !!}"><img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"></a></div>
+<br><br>
+<table class="table">
 	<tbody>
-		<tr class="row-link" style="cursor: pointer;"
-			data-href="{{action('UserController@show', ['id' => $user->id]) }}">
-			<td class="table-text">{{ $user->name }}</td>
-			<td class="table-text">{{ $user->email }}</td>
-				@if(!empty($user->role->name))
-			<td class="table-text">{{ $user->role->name }}</td>
+		<tr>
+			<td><b>Naam</b></td>
+			<td>{{ Auth::user()->name }}</td>
+		</tr>
+		<tr>
+			<td><b>Email</b></td>
+			<td>{{ Auth::user()->email }}</td>
+		</tr>
+		<tr>
+			<td><b>Rol</b></td>
+			<td>
+				@if (isset($user->role))
+					{{ $user->role->name }}
 				@endif
+			</td>
+		</tr>
+		<tr>
+			<td><b>Locatie</b></td>
+			<td>
+				@if (isset($user->location))
+					{{ $user->location->name }}
+				@endif
+			</td>
 		</tr>
 	</tbody>
 </table>
+<p>Klik op <a href="{{action('UserController@edit', $user->id)}}">Bewerken</a> om de gegevens te wijzigen.</p>
 @endsection

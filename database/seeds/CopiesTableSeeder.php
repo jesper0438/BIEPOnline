@@ -13,12 +13,12 @@ class CopiesTableSeeder extends Seeder
     {
         DB::table('copies')->insert(
             [
-                'datebought'  => '2017-02-22',
-                'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-                'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-                'book_id'     => '1',
+                'datebought' => '2017-02-22',
+                'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
+                'book_id' => '1',
                 'location_id' => '1',
-                'status_id'   => '1',
+                'status_id' => '1',
             ]);
     }
 }

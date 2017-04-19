@@ -14,8 +14,8 @@
 	@if (count($categories) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
-				<th class="col-sm-2">Naam</th>
-				<th class="col-sm-2">Kleur</th>
+				<th class="col-sm-3">Naam</th>
+				<th class="col-sm-3">Kleur</th>
 			</thead>
 			<tbody>
 				@foreach ($categories as $row)
@@ -26,7 +26,9 @@
 				@endforeach
 			</tbody>
 		</table>
-	@endif
+    @else <h2> Er zijn geen Categorieën aangemaakt</h2>
+    @endif
+
 @endsection
 @section('scripts')
 <script>

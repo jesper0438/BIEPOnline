@@ -16,8 +16,8 @@
 			<thead>
 				<th class="col-sm-4">Boek</th>
 				<th class="col-sm-2">Datum gekocht</th>
-				<th class="col-sm-2">Staat</th>
-				<th class="col-sm-2">Locatie</th>
+				<th class="col-sm-3">Staat</th>
+				<th class="col-sm-3">Locatie</th>
 			</thead>
 			<tbody>
 			@foreach ($copies as $copy)

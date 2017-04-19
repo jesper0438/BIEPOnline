@@ -30,7 +30,7 @@ return [
         'array'   => 'De :attribute moet tussen de :min en :max aantal items liggen.',
     ],
     'boolean'              => 'Het :attribute veld moet true of false zijn.',
-    'confirmed'            => 'De :attribute confirmatie is niet gelijk.',
+    'confirmed'            => 'Het :attribute is niet gelijk.',
     'date'                 => 'De :attribute is geen geldige datum.',
     'date_format'          => 'De :attribute komt niet overeen met het formaat :format.',
     'different'            => 'De :attribute en :other moeten verschillend zijn.',
@@ -49,42 +49,42 @@ return [
     'ip'                   => 'De :attribute moet een geldig IP adres zijn.',
     'json'                 => 'De :attribute moet een geldige JSON string zijn.',
     'max'                  => [
-        'numeric' => 'De :attribute may not be greater than :max.',
-        'file'    => 'De :attribute may not be greater than :max kilobytes.',
-        'string'  => 'De :attribute may not be greater than :max characters.',
-        'array'   => 'De :attribute may not have more than :max items.',
+        'numeric' => 'De :attribute mag niet groter zijn dan :max.',
+        'file'    => 'De :attribute mag niet groter zijn dan :max kilobytes.',
+        'string'  => 'De :attribute mag niet groter zijn dan :max characters.',
+        'array'   => 'De :attribute mag niet meer items bevatten dan :max items.',
     ],
     'mimes'                => 'De :attribute must be a file of type: :values.',
     'mimetypes'            => 'De :attribute must be a file of type: :values.',
     'min'                  => [
-        'numeric' => 'De :attribute must be at least :min.',
+        'numeric' => 'Het :attribute moet op zijn minst :min bevatten.',
         'file'    => 'De :attribute must be at least :min kilobytes.',
-        'string'  => 'De :attribute must be at least :min characters.',
+        'string'  => 'Het :attribute moet op zijn minst :min karakters bevatten.',
         'array'   => 'De :attribute must have at least :min items.',
     ],
-    'not_in'               => 'De selected :attribute is invalid.',
-    'numeric'              => 'De :attribute must be a number.',
-    'present'              => 'De :attribute field must be present.',
-    'regex'                => 'De :attribute format is invalid.',
-    'required'             => 'De :attribute field is required.',
+    'not_in'               => 'De geselecteerde :attribute is ongeldig.',
+    'numeric'              => 'Het :attribute moet een getal zijn.',
+    'present'              => 'Het :attribute field moet aanwezig zijn.',
+    'regex'                => 'Het :attribute formaat is ongeldig.',
+    'required'             => 'Het :attribute veld is verplicht.',
     'required_if'          => 'De :attribute field is required when :other is :value.',
     'required_unless'      => 'De :attribute field is required unless :other is in :values.',
     'required_with'        => 'De :attribute field is required when :values is present.',
     'required_with_all'    => 'De :attribute field is required when :values is present.',
     'required_without'     => 'De :attribute field is required when :values is not present.',
-    'required_without_all' => 'De :attribute field is required when none of :values are present.',
-    'same'                 => 'De :attribute and :other must match.',
+    'required_without_all' => 'Het :attribute field is required when none of :values are present.',
+    'same'                 => 'Het :attribute en :other moet gelijk zijn.',
     'size'                 => [
-        'numeric' => 'De :attribute must be :size.',
-        'file'    => 'De :attribute must be :size kilobytes.',
-        'string'  => 'De :attribute must be :size characters.',
-        'array'   => 'De :attribute must contain :size items.',
+        'numeric' => 'De :attribute moet :size zijn.',
+        'file'    => 'De :attribute moet :size kilobytes zijn.',
+        'string'  => 'De :attribute moet :size karakters zijn.',
+        'array'   => 'De :attribute moet :size items bevatten.',
     ],
-    'string'               => 'De :attribute must be a string.',
-    'timezone'             => 'De :attribute must be a valid zone.',
-    'unique'               => 'De :attribute has already been taken.',
-    'uploaded'             => 'De :attribute failed to upload.',
-    'url'                  => 'De :attribute format is invalid.',
+    'string'               => 'De :attribute moet een string zijn.',
+    'timezone'             => 'De :attribute moet een geldige zone zijn.',
+    'unique'               => 'De :attribute is al in gebruik.',
+    'uploaded'             => 'De :attribute kan niet worden geüpload .',
+    'url'                  => 'Het :attribute formaat is niet geldig.',
 
     /*
     |--------------------------------------------------------------------------
@@ -98,8 +98,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'attribute-naam' => [
+            'rule-naam' => 'custom-message',
         ],
     ],
 
@@ -114,6 +114,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+      'username' => 'gebruikersnaam',
+      'password' => 'wachtwoord',
+      'characters' => 'karakters',
+      'name' => 'naam',
+      'max characters' => 'karakters',
+
+]
 
 ];

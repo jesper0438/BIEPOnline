@@ -27,8 +27,8 @@
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
-		{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author_id', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
+		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
+		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}

@@ -1,0 +1,6 @@
+[0412/145101.544:ERROR:process_info.cc(343)] VirtualQueryEx: Toegang geweigerd. (0x5)
+[0412/145101.545:ERROR:process_info.cc(564)] ReadMemoryInfo failed
+[0412/145101.545:ERROR:process_reader_win.cc(233)] ReadMemory at 0x50077dc8 of 12 bytes failed: Een ReadProcessMemory- of WriteProcessMemory-opdracht is slechts gedeeltelijk uitgevoerd. (0x12B)
+[0412/145101.545:WARNING:process_snapshot_win.cc(68)] ReadMemory ExceptionInformation failed
+[0412/145101.545:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0412/145101.545:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: Er is geprobeerd toegang te krijgen tot een proces dat wordt afgesloten.  (0xc000010a)

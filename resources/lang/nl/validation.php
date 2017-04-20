@@ -66,7 +66,7 @@ return [
     'numeric'              => 'Het :attribute moet een getal zijn.',
     'present'              => 'Het :attribute field moet aanwezig zijn.',
     'regex'                => 'Het :attribute formaat is ongeldig.',
-    'required'             => 'Het :attribute veld is verplicht.',
+    'required'             => 'Het :attribute veld moet nog ingevuld te worden.',
     'required_if'          => 'De :attribute field is required when :other is :value.',
     'required_unless'      => 'De :attribute field is required unless :other is in :values.',
     'required_with'        => 'De :attribute field is required when :values is present.',
@@ -120,6 +120,11 @@ return [
       'characters' => 'karakters',
       'name' => 'naam',
       'max characters' => 'karakters',
+      'title' => 'titel',
+      'author' => 'auteur',
+      'category_id' => 'categorie',
+      'category' => 'categorie',
+      'isbn'=> 'ISBN',
 
 ]
 

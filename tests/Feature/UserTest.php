@@ -44,6 +44,4 @@ class UserTest extends TestCase
         $this->expectException('Illuminate\Database\QueryException');
         $user = factory(\App\User::class)->create(['password' => null]);
     }
-
-    /** @test */
 }

@@ -44,4 +44,10 @@ class UserTest extends TestCase
         $this->expectException('Illuminate\Database\QueryException');
         $user = factory(\App\User::class)->create(['password' => null]);
     }
+
+    /** @test */
+    function it_requires_a_name(){
+        $this->expectException('Illuminate\Database\QueryException');
+        $user = factory(\App\User::class)->create(['name' => null]);
+    }
 }

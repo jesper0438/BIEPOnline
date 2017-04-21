@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Status;
+use App\Role;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -20,7 +21,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    function it_has_a_email()
+    function it_has_an_email()
     {
         $user = factory(\App\User::class)->create(['email' => 'emailadres']);
         $this->assertEquals('emailadres', $user->email);
@@ -34,7 +35,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    function it_requires_a_email(){
+    function it_requires_an_email(){
         $this->expectException('Illuminate\Database\QueryException');
         $user = factory(\App\User::class)->create(['email' => null]);
     }

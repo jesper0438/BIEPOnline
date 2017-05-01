@@ -16,7 +16,7 @@ class AuthorsTableSeeder extends Seeder
             [
 
                 'author'        => 'J.K. Rowling',
-
+            ],
         ]);
     }
 }

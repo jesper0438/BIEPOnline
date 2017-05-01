@@ -62,8 +62,8 @@
                         <tr>
                             <th>Nummer</th>
                             <th>Staat van het exemplaar</th>
-														<th>Status beschikbaarheid</th>
-														<th>Locatie</th>
+                            <th>Status beschikbaarheid</th>
+                            <th>Locatie</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,7 +71,7 @@
                         <tr>
                             <td> {{$copy->id}} </td>
                             <td> {{$copy->status->status}} </td>
-														<td> {{$copy->location->name}} </td>
+                            <td> {{$copy->location->name}} </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -80,5 +80,4 @@
                 <p>Er zijn geen exemplaren gevonden!</p>
             @endif
         </div>
-    </div>
 @endsection

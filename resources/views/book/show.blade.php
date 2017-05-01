@@ -33,24 +33,23 @@
         <h2>Informatie over dit boek:</h2>
             <table class="table table-striped table-hover">
                 <thead>
-                <th class="col-sm-3">ISBN</th>
-                <th class="col-sm-3">Titel</th>
-                <th class="col-sm-3">Auteur</th>
-								<th class="col-sm-3">Categorie</th>
+                    <th class="col-sm-3">ISBN</th>
+                    <th class="col-sm-3">Titel</th>
+                    <th class="col-sm-3">Auteur</th>
+                    <th class="col-sm-3">Categorie</th>
                 </thead>
                 <tbody>
-                <tr class="row-link" style="cursor: pointer;"
-                    data-href="{{action('BookController@show', ['id' => $book->id]) }}">
-                    <td class="table-text">{{ $book->isbn }}</td>
-                    <td class="table-text">{{ $book->title }}</td>
-                    <td class="table-text">{{ $book->author_id }}</td>
-										<td class="table-text">
+                    <tr class="row-link" style="cursor: pointer;" data-href="{{action('BookController@show', ['id' => $book->id]) }}">
+                        <td class="table-text">{{ $book->isbn }}</td>
+                        <td class="table-text">{{ $book->title }}</td>
+                        <td class="table-text">{{ $book->author_id }}</td>
+                        <td class="table-text">
 											@if (isset($book->category))
 												{{ $book->category->name }}
 
 											@endif
 										</td>
-                </tr>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -16,6 +16,8 @@ class AuthorsTableSeeder extends Seeder
             [
 
                 'author'        => 'J.K. Rowling',
+                'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
+                'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
             ],
         ]);
     }

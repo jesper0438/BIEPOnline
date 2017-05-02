@@ -17,11 +17,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => bcrypt($faker->password),
         'remember_token' => str_random(10),
     ];
 });
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Status::class, function (Faker\Generator $faker) {
+    return [
+        'status' => $faker->name,
+    ];
+});
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Author::class, function (Faker\Generator $faker) {

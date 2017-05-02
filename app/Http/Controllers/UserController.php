@@ -115,7 +115,6 @@ class UserController extends Controller
             'email' => 'required|email|max:255',
             'password' => 'confirmed|min:6',
             'role_id' => 'required|max:255',
-            'password' => 'confirmed',
         ]);
         // password
         $credentials = $request->only(
@@ -136,9 +135,14 @@ class UserController extends Controller
         //check if password field is empty to not save an empty password.
         if (!$_POST['password']) {
             echo "Er is geen nieuw wachtwoord ingesteld.";
-        } else {
+        }
+        elseif (preg_match('/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',['password'])){
             //Change password of user
             $user->password = bcrypt($credentials['password']);
+            echo "Het wachtwoord voldoet aan de gestelde eisen.";
+        }
+        else {
+            echo "Het wachtwoord moet een hoofdletter, nummer en een speciaal karakter bevatten.";
         }
         // save
         $user->save();
@@ -147,7 +151,7 @@ class UserController extends Controller
     }
 
     /**
-     * Update yer avatar.
+     * Update your avatar.
      */
     public function update_avatar(Request $request)
     {

@@ -47,11 +47,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'password.regex' => 'Het wachtwoord moet een hoofdletter, nummer en een speciaal karakter bevatten.',
+        ];
         return Validator::make($data, [
             'name' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|confirmed',
-        ]);
+        ], $messages);
     }
 
     /**

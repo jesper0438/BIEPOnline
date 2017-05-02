@@ -7,7 +7,7 @@
 		{{$copy->book->title}}
 	</div>
 	<div class="col-sm-1">
-		 <a class="btn btn-primary" href="{{action('CopyController@edit', $copy->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('CopyController@edit', $copy->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 	<script>
 			function confirmDelete() {
@@ -21,8 +21,8 @@
 	</script>
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['copy.destroy', $copy->id], 'onsubmit' => 'return confirmDelete()']) !!}
-		<button type="submit" name="button" class="btn btn-primary">
-			Verwijderen
+		<button type="submit" name="button" class="btn btn-danger">
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>

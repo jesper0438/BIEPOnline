@@ -27,8 +27,8 @@
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
-		{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author_id', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
+		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
+		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}
@@ -38,9 +38,10 @@
 
 <div class="form-group">
 	<div class="col-sm-12">
-		<button type="submit" class="btn btn-primary">
-			Opslaan
+		<button type="submit" class="btn btn-info">
+			<i class="fa fa-bt fa-floppy-o" aria-hidden="true"></i> Opslaan
 		</button>
+		<a href="/book" class="btn btn-warning" role="button"><i class="fa fa-bt fa-ban" aria-hidden="true"></i> Annuleren</a>
 	</div>
 </div>
 {!! Form::close() !!}

@@ -55,20 +55,20 @@ class BookController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'isbn' => 'required|min:10|max:13|unique:books',
-            'author' => 'required|max:255',
-            'category_id' => 'required'
-            //'category_id' => 'required|max:255',
+            'author_id' => 'required|max:255',
+            'category_id' => 'required',
         ]);
+
         // Create new book object with the info in the request
         $book = Book::create([
             'title' => $request ['title'],
             'isbn' => $request ['isbn'],
-            'author' => $request ['author'],
+            'author_id' => $request ['author_id'],
+            'category_id' => $request ['category_id'],
         ]);
 
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
-
 
         // Save this object in the database
         $book->save();
@@ -118,14 +118,14 @@ class BookController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
-            'author' => 'required|max:255',
+            'author_id' => 'required|max:255',
             //'category_id' => 'required|max:255',
         ]);
 
         $book = Book::findorfail($id);
         $book->title = $request ['title'];
         $book->isbn = $request ['ISBN'];
-        $book->author = $request ['author'];
+        $book->author_id = $request ['author_id'];
         // Associate the role to the user
 
         $category = Category::find($request ['category_id']);

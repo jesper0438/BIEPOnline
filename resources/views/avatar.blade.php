@@ -13,7 +13,7 @@
             <h3>Kies een afbeelding</h3><br>
             <input type="file" name="avatar"><br>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"><br>
-            <button type="submit" class="btn btn-primary">Opslaan</button>
+            <button type="submit" class="btn btn-info">Opslaan</button>
         </table>
     </form>
 @endsection

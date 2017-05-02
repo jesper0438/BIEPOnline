@@ -50,5 +50,15 @@ class UserTest extends TestCase
     function it_requires_a_name(){
         $this->expectException('Illuminate\Database\QueryException');
         $user = factory(\App\User::class)->create(['name' => null]);
+      
+use Tests\TestCase;
+
+class UserTest extends TestCase
+{
+    /** @test */
+    public function it_has_an_id()
+    {
+        $uut = factory(\App\User::class)->create();
+        $this->assertGreaterThan(0, $uut->id);
     }
 }

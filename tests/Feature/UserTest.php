@@ -47,14 +47,12 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    function it_requires_a_name(){
+    function it_requires_a_name()
+    {
         $this->expectException('Illuminate\Database\QueryException');
         $user = factory(\App\User::class)->create(['name' => null]);
-      
-use Tests\TestCase;
+    }
 
-class UserTest extends TestCase
-{
     /** @test */
     public function it_has_an_id()
     {

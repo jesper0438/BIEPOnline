@@ -44,11 +44,11 @@
                         <td class="table-text">{{ $book->title }}</td>
                         <td class="table-text">{{ $book->author_id }}</td>
                         <td class="table-text">
-											@if (isset($book->category))
-												{{ $book->category->name }}
+                            @if (isset($book->category))
+                                {{ $book->category->name }}
 
-											@endif
-										</td>
+                            @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>

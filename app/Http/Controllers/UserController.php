@@ -136,7 +136,7 @@ class UserController extends Controller
         if (!$_POST['password']) {
             echo "Er is geen nieuw wachtwoord ingesteld.";
         } else {
-            if (preg_match("/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/", $_POST['password'])) {
+            if (preg_match("/^.*(?=.{6,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/", $_POST['password'])) {
                 //Change password of user if correct.
                 $user->password = bcrypt($credentials['password']);
                 echo "Het wachtwoord voldoet aan de gestelde eisen.";

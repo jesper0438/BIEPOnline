@@ -1,7 +1,8 @@
 {
   "name": "BIEPOnline",
   "scripts": {
-    "postdeploy": "php artisan migrate:refresh && php artisan db:seed"
+    "postdeploy": "php artisan migrate:refresh"
+    //"postdeploy": "php artisan migrate:refresh && php artisan db:seed"
   },
   "env": {
     "APP_ENV": {

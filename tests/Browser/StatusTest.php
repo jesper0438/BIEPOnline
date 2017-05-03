@@ -9,43 +9,42 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class StatusTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * Open status page, create a new status
      *
      * @return void
      */
     public function testStatusCreate()
     {
         $this->browse(function (Browser $browser) {
-          $browser->visit('/login')
-                  ->type('email', 'Admin@biep.dev')
-                  ->type('password', 'Admin123!')
-                  ->press('Login')
-                  ->assertPathIs('/home')
-                  ->click('button[type="button"]')
-                  ->clickLink('Administratie')
-                  ->clickLink('Statussen')
-                  ->clickLink('Toevoegen...')
-                  ->type('Status', 'Beschadigd')
-                  ->click('button[type="submit"]');
+            $browser->visit('/login')
+                    ->type('email', 'admin@bieponline.local')
+                    ->type('password', 'Admin123!')
+                    ->press('Login')
+                    ->assertPathIs('/home')
+                    ->click('button[type="button"]')
+                    ->clickLink('Statussen')
+                    ->assertPathIs('/status')
+                    ->press('.btn-success')
+                    ->type('status', 'Nieuw')
+                    ->press('Opslaan')
+                    ->assertSee('is toegevoegd.');
         });
     }
 
+    /**
+     * Open status page, edit an existing status
+     *
+     * @return void
+     */
     public function testStatusEdit()
     {
         $this->browse(function (Browser $browser) {
-          $browser->visit('/login')
-                  ->type('email', 'Admin@biep.dev')
-                  ->type('password', 'Admin123!')
-                  ->press('Login')
-                  ->assertPathIs('/home')
-                  ->click('button[type="button"]')
-                  ->clickLink('Administratie')
-                  ->clickLink('Statussen')
-                  ->press('Beschadigd')
-                  ->clickLink('Bewerken')
-                  ->type('Status', 'Beschadigd/Bekrast')
-                  ->click('button[type="submit"]');
-
+            $browser->assertPathIs('/status')
+                    ->press('.table-text')
+                    ->clickLink('Bewerken')
+                    ->type('status', 'Nieuw/In Gebruik')
+                    ->press('Opslaan')
+                    ->assertSee('is bijgewerkt.');
         });
     }
 }

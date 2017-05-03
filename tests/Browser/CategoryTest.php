@@ -6,14 +6,14 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class BookTest extends DuskTestCase
+class CategoryTest extends DuskTestCase
 {
     /**
-     * Open book page, create a new book
+     * Open category page, create a new category
      *
      * @return void
      */
-    public function testBookCreate()
+    public function testCategoryCreate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
@@ -21,33 +21,31 @@ class BookTest extends DuskTestCase
                     ->type('password', 'Admin123!')
                     ->press('Login')
                     ->assertPathIs('/home')
-                    ->clickLink('Boeken')
-                    ->assertPathIs('/book')
+                    ->click('button[type="button"]')
+                    ->clickLink('Administratie')
+                    ->clickLink('Categorieën')
+                    ->assertPathIs('/category')
                     ->press('.btn-success')
-                    ->type('isbn', '9780141036144')
-                    ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
-                    ->select('category_id', 'Voorleesboeken')
+                    ->type('name', 'Leesboeken voor gevorderden')
+                    ->type('color', 'paars')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
     }
 
     /**
-     * Open book page, edit an existing book
+     * Open category page, edit an existing category
      *
      * @return void
      */
-    public function testBookEdit()
+    public function testCategoryEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/book')
+            $browser->assertPathIs('/category')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('isbn', '9780141036144')
-                    ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
-                    ->select('category_id', 'Voorleesboeken')
+                    ->type('name', 'Leesboeken voor beginners & gevorderden')
+                    ->type('color', 'zwart')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

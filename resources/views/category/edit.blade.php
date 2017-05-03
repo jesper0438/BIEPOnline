@@ -21,11 +21,12 @@
 	<div class="form-group">
 		<div class="col-sm-12">
 			<button type="submit" class="btn btn-info">
-			<a href="/category" class="btn btn-warning" role="button"><i class="fa fa-bt fa-ban" aria-hidden="true"></i> Annuleren</a>
 				<i class="fa fa-bt fa-floppy-o" aria-hidden="true"></i> Opslaan
 			</button>
+			<a href="/category" class="btn btn-warning" role="button"><i class="fa fa-bt fa-ban" aria-hidden="true"></i> Annuleren</a>
 		</div>
 	</div>
+</div>
 {!! Form::close() !!}
 
 @endsection

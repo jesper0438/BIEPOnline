@@ -133,16 +133,26 @@ class UserController extends Controller
         $location = Location::find($request ['location_id']);
         $user->location()->associate($location);
         //check if filled in password is correct.
-        if (preg_match("/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/", $_POST['password'])) {
-            //Change password of user if correct.
-            $user->password = bcrypt($credentials['password']);
-            echo "Het wachtwoord voldoet aan de gestelde eisen.";
+        if (!$_POST['password']) {
+            echo "Er is geen nieuw wachtwoord ingesteld.";
+        } else {
+            if (preg_match("/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/", $_POST['password'])) {
+                //Change password of user if correct.
+                $user->password = bcrypt($credentials['password']);
+                echo "Het wachtwoord voldoet aan de gestelde eisen.";
+                // save
+                $user->save();
+                // redirect
+                return redirect('user/' . $user->id)->with('success', $user->name . ' is bijgewerkt.');
+            } else {
+                //Don't change password of user because incorrect.
+                echo "Het wachtwoord moet een hoofdletter, nummer en een speciaal karakter bevatten.";
+                // redirect
+                return redirect('user/' . $user->id . '/edit')
+                    ->with('failure', 'Het ingevoerde wachtwoord moet uit 6 tekens bestaan, een hoofdletter, nummer en een speciaal karakter bevatten.');
+            }
         }
-        else {
-            //Don't change password of user because incorrect.
-            echo "Het wachtwoord moet een hoofdletter, nummer en een speciaal karakter bevatten.";
-        }
-        // save
+        //Save other information if password is empty.
         $user->save();
         // redirect
         return redirect('user/' . $user->id)->with('success', $user->name . ' is bijgewerkt.');

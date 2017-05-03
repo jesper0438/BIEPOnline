@@ -18,3 +18,5 @@ Vagrantfile
 
 ### IDE ###
 .idea
+phpcbf.phar
+phpcs.phar

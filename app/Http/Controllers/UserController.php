@@ -53,7 +53,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users,email|max:255',
-            'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/|confirmed',
+            'password' => 'min:6|confirmed',
             'role_id' => 'required|max:255',
         ]);
         // Create new User object with the info in the request
@@ -113,7 +113,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
-            'password' => 'confirmed|min:6',
+            'password' => 'confirmed',
             'role_id' => 'required|max:255',
         ]);
         // password
@@ -132,16 +132,14 @@ class UserController extends Controller
         // foreign location
         $location = Location::find($request ['location_id']);
         $user->location()->associate($location);
-        //check if password field is empty to not save an empty password.
-        if (!$_POST['password']) {
-            echo "Er is geen nieuw wachtwoord ingesteld.";
-        }
-        elseif (preg_match('/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',['password'])){
-            //Change password of user
+        //check if filled in password is correct.
+        if (preg_match("/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/", $_POST['password'])) {
+            //Change password of user if correct.
             $user->password = bcrypt($credentials['password']);
             echo "Het wachtwoord voldoet aan de gestelde eisen.";
         }
         else {
+            //Don't change password of user because incorrect.
             echo "Het wachtwoord moet een hoofdletter, nummer en een speciaal karakter bevatten.";
         }
         // save
@@ -155,9 +153,9 @@ class UserController extends Controller
      */
     public function update_avatar(Request $request)
     {
-      $this->validate($request, [
-          'avatar' => 'required|max:20000|mimes:jpg,jpeg,png',
-            ]);
+        $this->validate($request, [
+            'avatar' => 'required|max:20000|mimes:jpg,jpeg,png',
+        ]);
         $user = \Auth::user();
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');

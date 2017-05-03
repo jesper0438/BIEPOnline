@@ -5,17 +5,15 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use App\User;
-use Tests\TestCase;
 
-class UserTest extends TestCase
+class CategoryTest extends DuskTestCase
 {
     /**
-     * Open user page, create a new user
+     * Open category page, create a new category
      *
      * @return void
      */
-    public function testUserCreate()
+    public function testCategoryCreate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
@@ -24,27 +22,30 @@ class UserTest extends TestCase
                     ->press('Login')
                     ->assertPathIs('/home')
                     ->click('button[type="button"]')
-                    ->clickLink('Gebruikers')
-                    ->assertPathIs('/user')
+                    ->clickLink('Administratie')
+                    ->clickLink('Categorieën')
+                    ->assertPathIs('/category')
                     ->press('.btn-success')
-                    // ->type('location', 'HZ University')
+                    ->type('name', 'Leesboeken voor gevorderden')
+                    ->type('color', 'paars')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
     }
 
     /**
-     * Open user page, edit an existing user
+     * Open category page, edit an existing category
      *
      * @return void
      */
-    public function testUserEdit()
+    public function testCategoryEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/user')
+            $browser->assertPathIs('/category')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    // ->type('location', 'HZ')
+                    ->type('name', 'Leesboeken voor beginners & gevorderden')
+                    ->type('color', 'zwart')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

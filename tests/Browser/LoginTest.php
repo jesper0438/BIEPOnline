@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class LoginTest extends DuskTestCase
 {
     /**
-     * A basic browser test example.
+     * Login with admin account
      *
      * @return void
      */

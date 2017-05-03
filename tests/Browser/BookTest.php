@@ -9,15 +9,47 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class BookTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * Open book page, create a new book
      *
      * @return void
      */
-    public function testExample()
+    public function testBookCreate()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/')
-                    ->assertSee('Laravel');
+            $browser->visit('/login')
+                    ->type('email', 'admin@bieponline.local')
+                    ->type('password', 'Admin123!')
+                    ->press('Login')
+                    ->assertPathIs('/home')
+                    ->clickLink('Boeken')
+                    ->assertPathIs('/book')
+                    ->press('.btn-success')
+                    ->type('isbn', '9780141036144')
+                    ->type('title', 'Nineteen Eighty-Four')
+                    ->type('author', 'George Orwell')
+                    ->select('category_id', 'Voorleesboeken')
+                    ->press('Opslaan')
+                    ->assertSee('is toegevoegd.');
+        });
+    }
+
+    /**
+     * Open book page, edit an existing book
+     *
+     * @return void
+     */
+    public function testBookEdit()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/book')
+                    ->press('.table-text')
+                    ->clickLink('Bewerken')
+                    ->type('isbn', '9780141036144')
+                    ->type('title', 'Nineteen Eighty-Four')
+                    ->type('author', 'George Orwell')
+                    ->select('category_id', 'Voorleesboeken')
+                    ->press('Opslaan')
+                    ->assertSee('is bijgewerkt.');
         });
     }
 }

@@ -5,17 +5,15 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use App\User;
-use Tests\TestCase;
 
-class UserTest extends TestCase
+class RoleTest extends DuskTestCase
 {
     /**
-     * Open user page, create a new user
+     * Open role page, create a new role
      *
      * @return void
      */
-    public function testUserCreate()
+    public function testRoleCreate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
@@ -24,27 +22,27 @@ class UserTest extends TestCase
                     ->press('Login')
                     ->assertPathIs('/home')
                     ->click('button[type="button"]')
-                    ->clickLink('Gebruikers')
-                    ->assertPathIs('/user')
+                    ->clickLink('Rollen')
+                    ->assertPathIs('/role')
                     ->press('.btn-success')
-                    // ->type('location', 'HZ University')
+                    ->type('name', 'Student')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
     }
 
     /**
-     * Open user page, edit an existing user
+     * Open role page, edit an existing role
      *
      * @return void
      */
-    public function testUserEdit()
+    public function testRoleEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/user')
+            $browser->assertPathIs('/role')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    // ->type('location', 'HZ')
+                    ->type('name', 'Leerling')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

@@ -5,10 +5,8 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use App\User;
-use Tests\TestCase;
 
-class UserTest extends TestCase
+class UserTest extends DuskTestCase
 {
     /**
      * Open user page, create a new user
@@ -27,7 +25,12 @@ class UserTest extends TestCase
                     ->clickLink('Gebruikers')
                     ->assertPathIs('/user')
                     ->press('.btn-success')
-                    // ->type('location', 'HZ University')
+                    ->type('name', 'Joery Zegers')
+                    ->type('email', 'joery@fabulous.nl')
+                    ->type('password', 'Admin123!')
+                    ->type('new_password_confirmation', 'Admin123!')
+                    ->select('role_id', 'Leerling')
+                    ->select('location_id', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
@@ -44,7 +47,12 @@ class UserTest extends TestCase
             $browser->assertPathIs('/user')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    // ->type('location', 'HZ')
+                    ->type('name', 'Joery Zegers')
+                    ->type('email', 'joery@fabulous.nl')
+                    ->type('password', 'Admin123!')
+                    ->type('new_password_confirmation', 'Admin123!')
+                    ->select('role_id', 'Leerling')
+                    ->select('location_id', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

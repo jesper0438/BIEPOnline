@@ -4,7 +4,7 @@
 @section('title')
 <div class="row">
 	<div class="col-sm-8">
-		{{$author->author}}
+		{{$author->name}}
 	</div>
 	<div class="col-sm-1">
 		 <a class="btn btn-primary" href="{{action('AuthorController@edit', $author->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
@@ -36,7 +36,7 @@
 	</thead>
 	<tbody>
 		<tr class="row-link" style="cursor: pointer;" data-href="{{action('AuthorController@show', ['id' => $author->id]) }}">
-			<td class="table-text">{{ $author->author }}</td>
+			<td class="table-text">{{ $author->name }}</td>
 		</tr>
 	</tbody>
 </table>

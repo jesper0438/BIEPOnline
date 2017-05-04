@@ -56,7 +56,7 @@ class LoanController extends Controller
         $loan = Loan::create([
             'startdate' => $request ['startdate'],
             'expirydate' => $request ['expirydate'],
-            'returndate' => $request ['returndate']
+            'returndate' => $request ['returndate'],
         ]);
 
         $copy = Copy::find($request ['copy_id']);
@@ -84,7 +84,7 @@ class LoanController extends Controller
         $this->validate($request, [
             'startdate' => 'required|date|max:255',
             'expirydate' => 'required|date|max:255',
-            'returndate' => 'date|max:255'
+            'returndate' => 'date|max:255',
         ]);
     }
 

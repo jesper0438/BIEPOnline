@@ -6,7 +6,7 @@
 	<div class="col-sm-8">
 		{{$user->name}}
 	</div>
-	<div class="col-sm-2">
+	<div class="col-sm-1">
 		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 

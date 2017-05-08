@@ -37,9 +37,9 @@ class LoanController extends Controller
     public function create()
     {
         return view('loan/create', [
-            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status.id', 'books.title', 'copies.id'),
+            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status_id', 'books.title', 'copies.id'),
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
-
+            'status' => Status::orderBy('status', 'asc')->pluck('status', 'id'),
         ]);
     }
 
@@ -62,6 +62,7 @@ class LoanController extends Controller
 
         $copy = Copy::find($request ['copy_id']);
         $user = User::find($request ['user_id']);
+        $status = Status::find($request ['status_id']);
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
         $startDate = $request ['startdate'];
@@ -114,7 +115,7 @@ class LoanController extends Controller
             'loan' => Loan::findOrFail($id),
             'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status_id', 'books.title', 'copies.id'),
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
-            'statuses' => Status::orderBy('status', 'asc')->pluck('status'),
+            'statuses' => Status::orderBy('status', 'asc')->pluck('status', 'id'),
         ]);
     }
 
@@ -136,8 +137,10 @@ class LoanController extends Controller
         $loan->returndate = $request ['returndate'];
         $copy = Copy::find($request ['copy_id']);
         $user = User::find($request ['user_id']);
+        $user = Status::find($request ['status_id']);
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
+        $loan->status()->associate($status);
         // Save the changes in the database
         $loan->save();
 

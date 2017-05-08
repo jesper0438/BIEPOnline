@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class Updateloanwithstatus extends Migration
+class UpdateLoanWithStatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class Updateloanwithstatus extends Migration
      */
     public function up()
     {
-         Schema::table('statuses', function (Blueprint $table) {
-            $table->integer('statuses.status')->nullable();
+        Schema::table('loans', function (Blueprint $table) {
+            $table->integer('status_id')->nullable();
         });
     }
 

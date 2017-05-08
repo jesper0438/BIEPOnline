@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Copy;
 use App\Loan;
 use App\User;
+use App\Status;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -36,7 +37,7 @@ class LoanController extends Controller
     public function create()
     {
         return view('loan/create', [
-            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('books.title', 'copies.id'),
+            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status.id', 'books.title', 'copies.id'),
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
 
         ]);
@@ -111,8 +112,9 @@ class LoanController extends Controller
     {
         return view('loan/edit', [
             'loan' => Loan::findOrFail($id),
-            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('books.title', 'copies.id'),
+            'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status_id', 'books.title', 'copies.id'),
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
+            'statuses' => Statuses::orderBy('status', 'asc')->pluck('status'),
         ]);
     }
 

@@ -14,6 +14,7 @@
 	@if (count($loans) > 0)
 		<table class="table table-striped table-hover">
 			<thead>
+				<th class="col-sm-3">Status</th>
 				<th class="col-sm-2">Uitleendatum</th>
 				<th class="col-sm-2">Verloopdatum</th>
 				<th class="col-sm-3">Gebruiker</th>
@@ -23,6 +24,7 @@
 			<tbody>
 				@foreach ($loans as $loan)
 				<tr class="row-link" style="cursor: pointer" data-href="{{action('LoanController@show', ['id' => $loan->id])}}">
+				<tr class="row-link" style="cursor: pointer" data-href="{{action('StatusController@show', ['id' => $status->status])}}">	
 					<td class="table-text">{{ $loan->startdate }}</td>
 					<td class="table-text">{{ $loan->expirydate }}</td>
 					<td class="table-text">

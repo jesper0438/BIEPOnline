@@ -118,7 +118,6 @@ class BookController extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
-            'author' => 'required|max:255',
             'category_id' => 'required|max:255',
         ]);
 

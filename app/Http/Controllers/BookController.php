@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Category;
+use App\Author;
 use App\Copy;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,7 @@ class BookController extends Controller
     {
         return view('book/create', [
             'categories' => Category::orderBy('name', 'asc')->pluck('name', 'color'),
+            'authors' => author::orderBy('name', 'asc')->pluck('name'),
 
         ]);
         //een boek toevoegen
@@ -67,10 +69,18 @@ class BookController extends Controller
             'category_id' => $request ['category_id'],
         ]);
 
+        //find Category in Categories
+
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
 
+        //Find author in Authors
+
+        $author = Author::find($request ['author_id']);
+        $book->author()->associate($author);
+
         // Save this object in the database
+
         $book->save();
         // Redirect to the book.index page with a success message.
         return redirect('book')->with('success', $book->title . ' is toegevoegd.');
@@ -101,6 +111,7 @@ class BookController extends Controller
         return view('book/edit', [
             'book' => Book::findOrFail($id),
             'categories' => Category::orderBy('name', 'asc')->pluck('name', 'color'),
+            'authors' => Author::orderBy('name', 'asc')->pluck('name'),
         ]);
     }
 
@@ -119,17 +130,23 @@ class BookController extends Controller
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
             'author_id' => 'required|max:255',
-            //'category_id' => 'required|max:255',
+            'category_id' => 'required|max:255',
         ]);
 
         $book = Book::findorfail($id);
         $book->title = $request ['title'];
         $book->isbn = $request ['ISBN'];
-        $book->author_id = $request ['author_id'];
         // Associate the role to the user
+
+        //find Category in Categories
 
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
+
+        //find author in Authors
+
+        $author = Author::find($request ['author_id']);
+        $book->author()->associate($author);
 
         // Save the changes in the database
         $book->save();

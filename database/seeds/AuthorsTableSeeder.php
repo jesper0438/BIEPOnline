@@ -15,7 +15,7 @@ class AuthorsTableSeeder extends Seeder
         DB::table('authors')->insert([
             [
 
-                'author'        => 'J.K. Rowling',
+                'name'        => 'J.K. Rowling',
                 'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
             ],

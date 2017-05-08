@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
-					{!! Form::text('author_id', $book->author_id, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
+					{!! Form::text('author_id', $authors, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}

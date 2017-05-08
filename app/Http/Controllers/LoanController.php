@@ -114,7 +114,7 @@ class LoanController extends Controller
             'loan' => Loan::findOrFail($id),
             'copies' => Copy::join('books', 'books.id', '=', 'copies.book_id')->orderBy('books.title', 'asc')->pluck('status_id', 'books.title', 'copies.id'),
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
-            'statuses' => Statuses::orderBy('status', 'asc')->pluck('status'),
+            'statuses' => Status::orderBy('status', 'asc')->pluck('status'),
         ]);
     }
 

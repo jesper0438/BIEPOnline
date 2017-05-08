@@ -25,8 +25,8 @@
 				@foreach ($loans as $loan)
 				<tr class="row-link" style="cursor: pointer" data-href="{{action('LoanController@show', ['id' => $loan->id])}}">
 				<td class="table-text">
-						@if (isset($status->statuses))
-							{{ $status->status->status }}
+						@if (isset($loan->status))
+							{{ $loan->status->statusses_id }}
 
 						@endif
 					</td>

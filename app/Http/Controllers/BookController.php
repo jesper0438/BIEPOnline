@@ -38,7 +38,7 @@ class BookController extends Controller
     {
         return view('book/create', [
             'categories' => Category::orderBy('name', 'asc')->pluck('name', 'color'),
-            'authors' => author::orderBy('name', 'asc')->pluck('name'),
+            'authors' => Author::orderBy('name', 'asc')->pluck('name'),
 
         ]);
         //een boek toevoegen

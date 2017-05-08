@@ -11,7 +11,6 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-
         DB::table('books')->insert([
             [
 

@@ -37,8 +37,8 @@ class BookController extends Controller
     public function create()
     {
         return view('book/create', [
-            'categories' => Category::orderBy('name', 'asc')->pluck('name', 'color'),
-            'authors' => Author::orderBy('name', 'asc')->pluck('name'),
+            'categories' => Category::orderBy('name', 'asc')->pluck('name', 'id'),
+            'authors' => Author::orderBy('name', 'asc')->pluck('name', 'id'),
 
         ]);
         //een boek toevoegen
@@ -69,12 +69,12 @@ class BookController extends Controller
             'category_id' => $request ['category_id'],
         ]);
 
-        //find Category in Categories
+        //Associate the Category to book
 
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
 
-        //Find author in Authors
+        //Associate the Author to book
 
         $author = Author::find($request ['author_id']);
         $book->author()->associate($author);
@@ -110,8 +110,8 @@ class BookController extends Controller
     {
         return view('book/edit', [
             'book' => Book::findOrFail($id),
-            'categories' => Category::orderBy('name', 'asc')->pluck('name', 'color'),
-            'authors' => Author::orderBy('name', 'asc')->pluck('name'),
+            'categories' => Category::orderBy('name', 'asc')->pluck('name', 'id'),
+            'authors' => Author::orderBy('name', 'asc')->pluck('name', 'id'),
         ]);
     }
 
@@ -130,7 +130,7 @@ class BookController extends Controller
             'title' => 'required|max:255',
             'ISBN' => 'required|min:10|max:13',
             'author_id' => 'required|max:255',
-            'category_id' => 'required|max:255',
+            'category_id' => 'required',
         ]);
 
         $book = Book::findorfail($id);
@@ -138,12 +138,12 @@ class BookController extends Controller
         $book->isbn = $request ['ISBN'];
         // Associate the role to the user
 
-        //find Category in Categories
+        //Associate the Category to book
 
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
 
-        //find author in Authors
+        //Associate the Author to book
 
         $author = Author::find($request ['author_id']);
         $book->author()->associate($author);

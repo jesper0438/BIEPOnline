@@ -15,7 +15,12 @@ class Book extends Model
         return $this->belongsTo('App\Category');
     }
 
-    protected function copies()
+    public function author()
+    {
+        return $this->belongsTo('App\Author');
+    }
+
+    protected function copy()
     {
         return $this->hasMany('App\Copy');
     }

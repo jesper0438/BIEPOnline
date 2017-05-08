@@ -18,7 +18,7 @@
     <div class="form-group">
         <div class="col-sm-6">
             {!! Form::label('datebought', 'Aanschafdatum', ['class' => 'control-label']) !!}
-            {!! Form::date('datebought', null, ['class' => 'form-control', 'placeholder' => 'De naam van het exemplaar']) !!}
+            {!! Form::date('datebought', null, ['class' => 'form-control', 'placeholder' => 'De aanschafdatum']) !!}
         </div>
         <div class="col-sm-6">
             {!! Form::label('state', 'Staat', ['class' => 'control-label']) !!}

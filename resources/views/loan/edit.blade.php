@@ -29,6 +29,10 @@
 			{!! Form::label('copy_id', 'Exemplaar', ['class' => 'control-label']) !!}
 			{!! Form::select('copy_id', $copies, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
 		</div>
+		<div class="col-sm-6">
+			{!! Form::label('status_id', 'Status', ['class' => 'control-label']) !!}
+			{!! Form::select('status_id', $statuses, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
+		</div>
 	</div>
 	<div class="form-group">
 		<div class="col-sm-12">

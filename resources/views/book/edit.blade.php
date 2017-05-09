@@ -11,8 +11,8 @@
 		<div class="form-group">
 			<div class="form-group">
 				<div class="col-sm-6">
-					{!! Form::label('ISBN', 'ISBN', ['class' => 'control-label']) !!}
-					{!! Form::text('ISBN', $book->isbn, ['class' => 'form-control', 'placeholder' => 'ISBN nummer van het boek']) !!}
+					{!! Form::label('isbn', 'ISBN', ['class' => 'control-label']) !!}
+					{!! Form::text('isbn', $book->isbn, ['class' => 'form-control', 'placeholder' => 'ISBN nummer van het boek']) !!}
 				</div>
 				<div class="col-sm-6">
 					{!! Form::label('title', 'Titel', ['class' => 'control-label']) !!}
@@ -54,7 +54,7 @@
         url: "https://www.googleapis.com/books/v1/volumes?q="+isbn
     }).then(function(data) {
        $('#title').val(data.items[0].volumeInfo.title);
-       $('#author').val(data.items[0].volumeInfo.authors);
+       //$('#author_id').val(data.items[0].volumeInfo.authors);
     });
 	}
 </script>

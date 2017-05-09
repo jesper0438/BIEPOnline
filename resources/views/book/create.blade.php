@@ -65,7 +65,7 @@
 	// Haal de relevante data uit de JSON en zet deze in de juiste velden
     }).then(function(data) {
        $('#title').val(data.items[0].volumeInfo.title);
-       $('#author_id').val(data.items[0].volumeInfo.authors);
+       //$('#author_id').val(data.items[0].volumeInfo.authors);
     });
 	}
 </script>

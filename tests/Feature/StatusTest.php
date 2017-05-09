@@ -15,8 +15,9 @@ class StatusTest extends TestCase
     /** @test */
     function it_has_an_id()
     {
-        $status = factory(\App\Status::class)->create();
-        $this->assertEquals(0, $status->id);
+        $unit = factory(\App\Status::class)->create();
+        $this->assertGreatherThan(0, $unit->id);
+        
     }
 
     /** @test */

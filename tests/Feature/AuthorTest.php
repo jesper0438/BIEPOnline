@@ -10,16 +10,18 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AuthorTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    use DatabaseTransactions;
+
     /** @test */
-    public function testit_has_an_id()
+    function testit_has_an_id()
     {
         $unit = factory(\App\Author::class)->create();
         $this->assertGreaterThan(0, $unit->id);
     }
 
+function testIt_has_a_name()
+    {
+        $author = factory(\App\Author::class)->create(['author' => 'authorname']);
+        $this->assertEquals('authorname', $author->author);
+    }
 }

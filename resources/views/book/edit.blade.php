@@ -54,7 +54,6 @@
         url: "https://www.googleapis.com/books/v1/volumes?q="+isbn
     }).then(function(data) {
        $('#title').val(data.items[0].volumeInfo.title);
-       //$('#author_id').val(data.items[0].volumeInfo.authors);
     });
 	}
 </script>

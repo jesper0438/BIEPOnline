@@ -41,7 +41,7 @@ class BookController extends Controller
             'authors' => Author::orderBy('name', 'asc')->pluck('name', 'id'),
 
         ]);
-        //een boek toevoegen
+        //Create a new book
 
     }
 
@@ -69,19 +69,28 @@ class BookController extends Controller
             'category_id' => $request ['category_id'],
         ]);
 
-        //Associate the Category to book
-
+        //Find request of category_id
         $category = Category::find($request ['category_id']);
+
+        //Associate the Category to book
         $book->category()->associate($category);
 
-        //Associate the Author to book
-
+        //Find request of author_id
         $author = Author::find($request ['author_id']);
+
+        //If author does not exists create new author
+        if (empty($author)) {
+            $author = Author::firstOrCreate([
+                'name' => $request ['author_id']
+            ]);
+        }
+
+        //Associate the Author to the book
         $book->author()->associate($author);
 
         // Save this object in the database
-
         $book->save();
+
         // Redirect to the book.index page with a success message.
         return redirect('book')->with('success', $book->title . ' is toegevoegd.');
         //
@@ -128,23 +137,20 @@ class BookController extends Controller
         // Check if the form was correctly filled in
         $this->validate($request, [
             'title' => 'required|max:255',
-            'ISBN' => 'required|min:10|max:13',
+            'isbn' => 'required|min:10|max:13',
             'author_id' => 'required|max:255',
             'category_id' => 'required',
         ]);
 
         $book = Book::findorfail($id);
         $book->title = $request ['title'];
-        $book->isbn = $request ['ISBN'];
-        // Associate the role to the user
+        $book->isbn = $request ['isbn'];
 
         //Associate the Category to book
-
         $category = Category::find($request ['category_id']);
         $book->category()->associate($category);
 
         //Associate the Author to book
-
         $author = Author::find($request ['author_id']);
         $book->author()->associate($author);
 
@@ -166,10 +172,13 @@ class BookController extends Controller
     {
         // Find the book object in the database
         $book = Book::findorfail($id);
+
         // Remove the book from the database
         $book->delete();
+
         // Remove all copies with book id $id
         $deleteCopies = Copy::where('book_id', '=', $id)->delete();
+
         // Redirect to the book.index page with a success message.
         return redirect('book')->with('success', $book->title . ' is verwijderd.');
         //

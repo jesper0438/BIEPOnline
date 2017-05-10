@@ -18,8 +18,8 @@
 {!! Form::open(['route' => ['author.store'], 'method' => 'post', 'class' => 'form-horizontal']) !!}
 <div class="form-group">
 	<div class="col-sm-6">
-		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'Naam van de auteur']) !!}
+		{!! Form::label('name', 'Auteur', ['class' => 'control-label']) !!}
+		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Naam van de auteur']) !!}
 	</div>
 </div>
 

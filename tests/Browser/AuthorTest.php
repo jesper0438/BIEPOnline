@@ -26,7 +26,7 @@ class AuthorTest extends DuskTestCase
                     ->clickLink('Auteurs')
                     ->assertPathIs('/author')
                     ->press('.btn-success')
-                    ->type('author', 'Dyon Altena')
+                    ->type('name', 'Dyon Altena')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
@@ -43,7 +43,7 @@ class AuthorTest extends DuskTestCase
             $browser->assertPathIs('/author')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('author', 'Jepper de Pepper')
+                    ->type('name', 'Jepper de Pepper')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

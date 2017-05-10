@@ -60,7 +60,7 @@ class AuthorTest extends DuskTestCase
             $browser->assertPathIs('/author')
                     ->press('.table-text')
                     ->clickLink('Verwijderen')
-                    ->assertSee('Weet u zeker dat u deze auteur wilt verwijderen?')
+                    ->assertDialogOpened('Weet u zeker dat u deze auteur wilt verwijderen?')
                     ->acceptDialog()
                     ->assertSee('is verwijderd.');
     });

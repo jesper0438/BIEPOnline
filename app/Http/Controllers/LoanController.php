@@ -6,6 +6,7 @@ use App\Copy;
 use App\Loan;
 use App\User;
 use App\Status;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -25,7 +26,7 @@ class LoanController extends Controller
     public function index()
     {
         return view('loan/index', [
-            'loans' => Loan::orderBy('expirydate', 'asc')->get(),
+            'loans' => Loan::orderBy('expirydate', 'asc')->whereNull('returndate')->get(),
         ]);
     }
 
@@ -57,7 +58,10 @@ class LoanController extends Controller
         $loan = Loan::create([
             'startdate' => $request ['startdate'],
             'expirydate' => $request ['expirydate'],
-            'returndate' => $request ['returndate']
+            'returndate' => $request ['returndate'],
+            'copy_id' => $request ['copy_id'],
+            'user_id' => $request ['user_id'],
+            'status_id' => $request ['status_id'],
         ]);
 
         $copy = Copy::find($request ['copy_id']);
@@ -65,6 +69,7 @@ class LoanController extends Controller
         $status = Status::find($request ['status_id']);
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
+        $status->status()->associate($status);
         $startDate = $request ['startdate'];
         $expiryDate = $request ['expirydate'];
 
@@ -75,6 +80,7 @@ class LoanController extends Controller
 
             // Save this object in the database
             $loan->save();
+
             // Redirect to the loans.index page with a success message.
             return redirect('loan')->with('success', 'Uitlening toegevoegd!');
         }
@@ -86,7 +92,7 @@ class LoanController extends Controller
         $this->validate($request, [
             'startdate' => 'required|date|max:255',
             'expirydate' => 'required|date|max:255',
-            'returndate' => 'date|max:255'
+            'returndate' => 'date|After:startdate|max:255',
         ]);
     }
 
@@ -137,10 +143,11 @@ class LoanController extends Controller
         $loan->returndate = $request ['returndate'];
         $copy = Copy::find($request ['copy_id']);
         $user = User::find($request ['user_id']);
-        $user = Status::find($request ['status_id']);
+        $status = Status::find($request ['status_id']);
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
         $loan->status()->associate($status);
+
         // Save the changes in the database
         $loan->save();
 
@@ -158,9 +165,30 @@ class LoanController extends Controller
     {
         // Find the loans object in the database
         $loan = Loan::findorfail($id);
+
         // Remove the loans from the database
         $loan->delete();
+
         // Redirect to the loans.index page with a success message.
         return redirect('loan')->with('success', $loan->copy->book->title . ' is verwijderd.');
+    }
+
+    public function handin(Request $request, $id)
+    {
+        // Check if the form was correctly filled in
+        $this->validate($request, [
+            'returndate' => 'date|After:startdate|max:255',
+        ]);
+
+        $loan = Loan::findorfail($id);
+
+        //filling in returndate
+        $loan->returndate = Carbon::today();
+
+        // Save the changes in the database
+        $loan->save();
+
+        // Redirect to the loan.index page with a success message.
+        return redirect('loan')->with('success', $loan->copy->book->title . ' is ingeleverd.');
     }
 }

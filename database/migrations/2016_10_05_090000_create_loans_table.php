@@ -17,7 +17,7 @@ class CreateLoansTable extends Migration
             $table->increments('id');
             $table->date('startdate');
             $table->date('expirydate');
-            $table->text('returndate')->nullable();
+            $table->date('returndate')->nullable();
             $table->timestamps();
         });
     }

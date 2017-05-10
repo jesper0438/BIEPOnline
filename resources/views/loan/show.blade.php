@@ -33,7 +33,7 @@
 	<thead>
 		<th class="col-sm-3">Uitleendatum</th>
 		<th class="col-sm-3">Verloopdatum</th>
-		<th class="col-sm-3">Terugbrengdatum</th>
+		<th class="col-sm-3">Datum ingeleverd</th>
 	</thead>
 	<tbody>
 		<tr class="row-link" style="cursor: pointer;"

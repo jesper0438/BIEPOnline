@@ -27,6 +27,7 @@ Route::resource('location', 'LocationController');
 Route::resource('copy', 'CopyController');
 Route::resource('role', 'RoleController');
 Route::resource('status', 'StatusController');
+Route::put('Loans/{id}/handin', 'LoanController@handin')->name('loan.handin');
 
 Auth::routes();
 

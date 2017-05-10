@@ -26,7 +26,7 @@ class AuthorTest extends DuskTestCase
                     ->clickLink('Auteurs')
                     ->assertPathIs('/author')
                     ->press('.btn-success')
-                    ->type('author', 'George Orwell')
+                    ->type('author', 'Dyon Altena')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
@@ -43,9 +43,26 @@ class AuthorTest extends DuskTestCase
             $browser->assertPathIs('/author')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('author', 'George J.J. Orwell')
+                    ->type('author', 'Jepper de Pepper')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });
     }
+    
+    /**
+     * Open author page, edit an existing author
+     *
+     * @return void
+     */
+    public function testAuthorDelete()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/author')
+                    ->press('.table-text')
+                    ->clickLink('Verwijderen')
+                    ->assertSee('Weet u zeker dat u deze auteur wilt verwijderen?')
+                    ->acceptDialog()
+                    ->assertSee('is verwijderd.');
+    });
+}
 }

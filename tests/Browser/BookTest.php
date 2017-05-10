@@ -27,7 +27,7 @@ class BookTest extends DuskTestCase
                     ->type('isbn', '9780141036144')
                     ->type('title', 'Nineteen Eighty-Four')
                     ->type('author', 'George Orwell')
-                    ->select('category_id', 'Voorleesboeken')
+                    ->click('.form-control')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });

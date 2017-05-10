@@ -36,7 +36,7 @@
                 <th class="col-sm-3">ISBN</th>
                 <th class="col-sm-3">Titel</th>
                 <th class="col-sm-3">Auteur</th>
-								<th class="col-sm-3">Categorie</th>
+                <th class="col-sm-3">Categorie</th>
                 </thead>
                 <tbody>
                 <tr class="row-link" style="cursor: pointer;"

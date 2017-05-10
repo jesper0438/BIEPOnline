@@ -56,7 +56,7 @@
                     </script>
                     <td class="table-text">{!! Form::open(['method' => 'put', 'route' => ['loan.handin', $loan->id], 'onsubmit' => 'return confirmDelete()']) !!}
                         <button type="submit" name="button" class="btn btn-success">
-                            <i class="fa fa-bars" aria-hidden="true"></i> Book inleveren
+                            <i class="fa fa-bars" aria-hidden="true"></i> Boek inleveren
                         </button></td>
                 </tr>
             @endforeach

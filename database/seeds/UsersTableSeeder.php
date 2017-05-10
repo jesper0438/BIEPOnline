@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert(
             [
                 'name' => 'Administrator',
-                'email' => 'admin@bieponline.local',
+                'email' => env('APP_EMAIL', 'admin@bieponline.local'),
                 'password' => bcrypt('Admin123!'),
                 'created_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),

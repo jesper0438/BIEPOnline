@@ -6,14 +6,14 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class UserTest extends DuskTestCase
+class CopyTest extends DuskTestCase
 {
     /**
      * Open user page, create a new user
      *
      * @return void
      */
-    public function testUserCreate()
+    public function testCopyCreate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
@@ -21,16 +21,14 @@ class UserTest extends DuskTestCase
                     ->type('password', 'Admin123!')
                     ->press('Login')
                     ->assertPathIs('/home')
-                    ->click('button[type="button"]')
-                    ->clickLink('Gebruikers')
-                    ->assertPathIs('/user')
+                    ->clickLink('Exemplaren')
+                    ->assertPathIs('/copy')
                     ->press('.btn-success')
-                    ->type('name', 'Joery Zegers')
-                    ->type('email', 'joery@fabulous.nl')
-                    ->type('password', 'Admin123!')
-                    ->type('new_password_confirmation', 'Admin123!')
-                    ->select('role_id', 'Leerling')
-                    ->select('location_id', 'HZ University')
+                    ->type('datebought', '2017-05-01')
+                    ->type('state', 'nieuw')
+                    ->select('location_id', 'Bibliotheek de Stroming')
+                    ->select('book_id', 'Harry Potter and the Deathly Hallows')
+                    ->select('status_id', 'in gebruik')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
@@ -41,18 +39,17 @@ class UserTest extends DuskTestCase
      *
      * @return void
      */
-    public function testUserEdit()
+    public function testCopyEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/user')
+            $browser->assertPathIs('/copy')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('name', 'Joery Zegers')
-                    ->type('email', 'joery@fabulous.nl')
-                    ->type('password', 'Admin123!')
-                    ->type('new_password_confirmation', 'Admin123!')
-                    ->select('role_id', 'Leerling')
-                    ->select('location_id', 'HZ University')
+                    ->type('datebought', '2017-05-01')
+                    ->type('state', 'beschadigd')
+                    ->select('location_id', 'Bibliotheek de Stroming')
+                    ->select('book_id', 'Harry Potter and the Deathly Hallows')
+                    ->select('status_id', 'in gebruik')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

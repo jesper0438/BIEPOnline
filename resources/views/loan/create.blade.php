@@ -25,10 +25,6 @@
 		{!! Form::label('expirydate', 'Verloopdatum', ['class' => 'control-label']) !!}
 		{!! Form::date('expirydate', $today = Carbon::today()->addWeeks(3), ['class' => 'form-control']) !!}
 	</div>
-    <div class="col-sm-6">
-		{!! Form::label('returndate', 'Terugbrengdatum', ['class' => 'control-label']) !!}
-		{!! Form::date('returndate', null, ['class' => 'form-control']) !!}
-	</div>
 	<div class="col-sm-6">
 		{!! Form::label('user_id', 'Gebruiker', ['class' => 'control-label']) !!}
 		{!! Form::select('user_id', $users, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
@@ -36,6 +32,10 @@
 	<div class="col-sm-6">
 		{!! Form::label('copy_id', 'Exemplaar', ['class' => 'control-label']) !!}
 		{!! Form::select('copy_id', $copies, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
+	</div>
+	<div class="col-sm-6">
+		{!! Form::label('status_id', 'Status', ['class' => 'control-label']) !!}
+		{!! Form::select('status_id', $status, null, ['class' => 'form-control', 'placeholder' => 'Maak een keuze uit de lijst']) !!}
 	</div>
 </div>
 

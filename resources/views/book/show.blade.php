@@ -45,13 +45,11 @@
                         <td class="table-text">
                             @if (isset($book->author))
                                 {{ $book->author->name }}
-
                             @endif
                         </td>
                         <td class="table-text">
                             @if (isset($book->category))
                                 {{ $book->category->name }}
-
                             @endif
                         </td>
                     </tr>

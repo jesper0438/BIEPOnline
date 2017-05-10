@@ -10,12 +10,13 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CategoryTest extends TestCase
 {
-    /**
+  /**
      * A basic test example.
      *
      * @return void
      */
     /** @test */
+
     public function testit_has_an_id()
     {
         $unit = factory(\App\Author::class)->create();

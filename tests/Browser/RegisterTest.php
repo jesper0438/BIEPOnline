@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class RegisterTest extends DuskTestCase
 {
     /**
-     * A basic browser test example.
+     * Create new account
      *
      * @return void
      */

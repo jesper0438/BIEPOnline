@@ -6,14 +6,14 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class BookTest extends DuskTestCase
+class RoleTest extends DuskTestCase
 {
     /**
-     * Open book page, create a new book
+     * Open role page, create a new role
      *
      * @return void
      */
-    public function testBookCreate()
+    public function testRoleCreate()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
@@ -21,33 +21,28 @@ class BookTest extends DuskTestCase
                     ->type('password', 'Admin123!')
                     ->press('Login')
                     ->assertPathIs('/home')
-                    ->clickLink('Boeken')
-                    ->assertPathIs('/book')
+                    ->click('button[type="button"]')
+                    ->clickLink('Rollen')
+                    ->assertPathIs('/role')
                     ->press('.btn-success')
-                    ->type('isbn', '9780141036144')
-                    ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
-                    ->select('category_id', 'Voorleesboeken')
+                    ->type('name', 'Student')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
     }
 
     /**
-     * Open book page, edit an existing book
+     * Open role page, edit an existing role
      *
      * @return void
      */
-    public function testBookEdit()
+    public function testRoleEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/book')
+            $browser->assertPathIs('/role')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('isbn', '9780141036144')
-                    ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
-                    ->select('category_id', 'Voorleesboeken')
+                    ->type('name', 'Leerling')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

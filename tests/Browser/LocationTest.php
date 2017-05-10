@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class LocationTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * Open location page, create a new location
      *
      * @return void
      */
@@ -17,30 +17,34 @@ class LocationTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                    ->type('email', 'Admin@biep.dev')
+                    ->type('email', 'admin@bieponline.local')
                     ->type('password', 'Admin123!')
                     ->press('Login')
-                    ->visit('/location')
-                    ->visit('/location/create')
-                    ->type('name', 'De Stroming')
+                    ->assertPathIs('/home')
+                    ->click('button[type="button"]')
+                    ->clickLink('Locaties')
+                    ->assertPathIs('/location')
+                    ->press('.btn-success')
+                    ->type('name', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
     }
+
+    /**
+     * Open location page, edit an existing location
+     *
+     * @return void
+     */
     public function testLocationEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('/login')
-                    ->type('email', 'Admin@biep.dev')
-                    ->type('password', 'Admin123!')
-                    ->press('Login')
-                    ->visit('/location')
-                    ->press('De Stroming')
-                    ->press('Bewerken')
-                    ->type('name', 'De Stroming geedit')
+            $browser->assertPathIs('/location')
+                    ->press('.table-text')
+                    ->clickLink('Bewerken')
+                    ->type('name', 'HZ')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });
     }
-
 }

@@ -14,7 +14,7 @@ Homestead.yaml
 Homestead.json
 .vagrant/
 Vagrantfile
-
+debug.log
 
 ### IDE ###
 .idea

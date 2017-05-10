@@ -96,8 +96,8 @@ class CategoryController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate($request, [
-            'name' => 'required|max:255|categories',
-            'color' => 'required|max:255|categories',
+            'name' => 'required|max:255',
+            'color' => 'required|max:255',
         ]);
 
         $category = Category::findorfail($id);

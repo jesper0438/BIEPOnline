@@ -42,6 +42,7 @@ class LoanController extends Controller
             'users' => User::orderBy('name', 'asc')->pluck('name', 'id'),
             'status' => Status::orderBy('status', 'asc')->pluck('status', 'id'),
         ]);
+        // create a new Loan
     }
 
     /**
@@ -53,7 +54,15 @@ class LoanController extends Controller
     public function store(Request $request)
     {
         // Check if the form was correctly filled in
-        $this->validation($request);
+        $this->validate($request, [
+            'startdate' => 'required|date|max:255',
+            'expirydate' => 'required|date|max:255',
+            'returndate' => 'date|After:startdate|max:255',
+            'copy_id' => 'required|max:255',
+            'user_id' => 'required|max:255',
+            'status_id' => 'required|max:255',
+        ]);
+
         // Create new loans object with the info in the request
         $loan = Loan::create([
             'startdate' => $request ['startdate'],
@@ -64,36 +73,22 @@ class LoanController extends Controller
             'status_id' => $request ['status_id'],
         ]);
 
+        // Find requests of copy_id, user_id and status_id
         $copy = Copy::find($request ['copy_id']);
         $user = User::find($request ['user_id']);
         $status = Status::find($request ['status_id']);
+
+        // Associate the copy, user and status to loan
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
-        $status->status()->associate($status);
-        $startDate = $request ['startdate'];
-        $expiryDate = $request ['expirydate'];
+        $loan->status()->associate($status);
 
-        if ($expiryDate < $startDate) {
+        // Save this object in the database
+        $loan->save();
 
-            return redirect('loan/create')->withErrors(['De verloopdatum is ongeldig.', 'Kies een datum na de uitleendatum.']);
-        } else {
-
-            // Save this object in the database
-            $loan->save();
-
-            // Redirect to the loans.index page with a success message.
-            return redirect('loan')->with('success', 'Uitlening toegevoegd!');
-        }
-
-    }
-
-    public function validation($request)
-    {
-        $this->validate($request, [
-            'startdate' => 'required|date|max:255',
-            'expirydate' => 'required|date|max:255',
-            'returndate' => 'date|After:startdate|max:255',
-        ]);
+        // Redirect to the loans.index page with a success message.
+        return redirect('loan')->with('success', 'Uitlening toegevoegd!');
+        //
     }
 
     /**
@@ -135,15 +130,26 @@ class LoanController extends Controller
     public function update(Request $request, $id)
     {
         // Check if the form was correctly filled in
-        $this->validation($request);
+        $this->validate($request, [
+            'startdate' => 'required|date|max:255',
+            'expirydate' => 'required|date|After:startdate|max:255',
+            'returndate' => 'date|After:startdate|max:255',
+            'copy_id' => 'required|max:255',
+            'user_id' => 'required|max:255',
+            'status_id' => 'required|max:255',
+        ]);
 
         $loan = Loan::findorfail($id);
         $loan->startdate = $request ['startdate'];
         $loan->expirydate = $request ['expirydate'];
         $loan->returndate = $request ['returndate'];
+
+        // Find requests of copy_id, user_id and status_id
         $copy = Copy::find($request ['copy_id']);
         $user = User::find($request ['user_id']);
         $status = Status::find($request ['status_id']);
+
+        // Associate the copy, user and status to loan
         $loan->copy()->associate($copy);
         $loan->user()->associate($user);
         $loan->status()->associate($status);

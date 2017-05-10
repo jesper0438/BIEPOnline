@@ -18,9 +18,9 @@
             <th class="col-sm-2">Status</th>
             <th class="col-sm-2">Uitleendatum</th>
             <th class="col-sm-2">Verloopdatum</th>
-            <th class="col-sm-3">Gebruiker</th>
-            <th class="col-sm-3">Titel</th>
-
+            <th class="col-sm-2">Gebruiker</th>
+            <th class="col-sm-2">Titel</th>
+            <th class="col-sm-2">Exemplaar</th>
             </thead>
             <tbody>
             @foreach ($loans as $loan)
@@ -28,8 +28,7 @@
                     data-href="{{action('LoanController@show', ['id' => $loan->id])}}">
                     <td class="table-text">
                         @if (isset($loan->status))
-                            {{ $loan->status->statusses_id }}
-
+                            {{ $loan->status->status }}
                         @endif
                     </td>
                     <td class="table-text">{{ $loan->startdate }}</td>
@@ -40,8 +39,13 @@
                         @endif
                     </td>
                     <td class="table-text">
-                        @if (isset($loan->copy))
+                        @if (isset($loan->book))
                             {{ $loan->copy->book->title }}
+                        @endif
+                    </td>
+                    <td class="table-text">
+                        @if (isset($loan->copy))
+                            {{ $loan->copy->id }}
                         @endif
                     </td>
                     <script>
@@ -55,9 +59,10 @@
                         }
                     </script>
                     <td class="table-text">{!! Form::open(['method' => 'put', 'route' => ['loan.handin', $loan->id], 'onsubmit' => 'return confirmDelete()']) !!}
-                        <button type="submit" name="button" class="btn btn-success">
-                            <i class="fa fa-bt fa-bars" aria-hidden="true"></i> Boek inleveren
-                        </button></td>
+                        <button type="submit" name="button" class="btn btn-secondary">
+                            <i class="fa fa-bars" aria-hidden="true"></i> Inleveren
+                        </button>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

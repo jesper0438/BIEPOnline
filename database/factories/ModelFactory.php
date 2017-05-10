@@ -33,7 +33,7 @@ $factory->define(App\Status::class, function (Faker\Generator $faker) {
 $factory->define(App\Author::class, function (Faker\Generator $faker) {
 
     return [
-        'author' => $faker->name,
+        'name' => $faker->name,
     ];
 });
 

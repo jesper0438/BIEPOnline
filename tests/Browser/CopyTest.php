@@ -44,10 +44,10 @@ class CopyTest extends DuskTestCase
             $browser->assertPathIs('/copy')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('datebought', '2017-05-01')
+                    ->type('datebought', '2017-05-02')
                     ->select('location_id', 'Bibliotheek de Stroming')
                     ->select('book_id', 'Harry Potter and the Deathly Hallows')
-                    ->select('status_id', 'in gebruik')
+                    ->select('status_id', 'afgeschreven')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });

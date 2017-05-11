@@ -47,7 +47,6 @@ class LoanTest extends DuskTestCase
                     ->clickLink('Bewerken')
                     ->type('startdate', '2017-05-08')
                     ->type('expirydate', '2017-05-15')
-                    ->type('returndate', '2017-05-14')
                     ->select('user_id', 'Administrator')
                     ->select('copy_id', '1')
                     ->select('status_id', 'in gebruik')

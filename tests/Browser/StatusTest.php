@@ -47,4 +47,21 @@ class StatusTest extends DuskTestCase
                     ->assertSee('is bijgewerkt.');
         });
     }
+
+    /**
+     * Open author page, edit an existing author
+     *
+     * @return void
+     */
+    public function testStatusDelete()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/status')
+                ->press('.table-text')
+                ->clickLink('Verwijderen')
+                ->assertDialogOpened('Weet u zeker dat u deze status wilt verwijderen?')
+                ->acceptDialog()
+                ->assertSee('is verwijderd.');
+        });
+    }
 }

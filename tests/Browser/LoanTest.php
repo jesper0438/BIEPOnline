@@ -54,4 +54,21 @@ class LoanTest extends DuskTestCase
                     ->assertSee('is bijgewerkt.');
         });
     }
+
+    /**
+     * Open author page, edit an existing author
+     *
+     * @return void
+     */
+    public function testLoanDelete()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/loan')
+                ->press('.table-text')
+                ->clickLink('Verwijderen')
+                ->assertDialogOpened('Weet u zeker dat u deze uitleen wilt verwijderen?')
+                ->acceptDialog()
+                ->assertSee('is verwijderd.');
+        });
+    }
 }

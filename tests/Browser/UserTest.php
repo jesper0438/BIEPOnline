@@ -29,7 +29,7 @@ class UserTest extends DuskTestCase
                     ->type('email', 'joery@fabulous.nl')
                     ->type('password', 'Admin123!')
                     ->type('new_password_confirmation', 'Admin123!')
-                    ->select('role_id', 'Leerling')
+                    ->click('role_id', 'Leerling')
                     ->select('location_id', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
@@ -51,10 +51,28 @@ class UserTest extends DuskTestCase
                     ->type('email', 'joery@fabulous.nl')
                     ->type('password', 'Admin123!')
                     ->type('new_password_confirmation', 'Admin123!')
+                    ->cli('role_id', 'Leerling')
+                    ->select('location_id', 'HZ University')
+                    ->press('Opslaan')
+                    ->assertSee('is bijgewerkt.');
+        });
+    }
+
+     public function testUserWegwezen()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/user')
+                    ->press('.table-text')
+                    ->clickLink('Verwijderen')
+                    ->type('name', 'Joery Zegers')
+                    ->type('email', 'joery@fabulous.nl')
+                    ->type('password', 'Admin123!')
+                    ->type('new_password_confirmation', 'Admin123!')
                     ->select('role_id', 'Leerling')
                     ->select('location_id', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });
     }
+
 }

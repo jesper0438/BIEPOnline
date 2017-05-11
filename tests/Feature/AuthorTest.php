@@ -19,9 +19,16 @@ class AuthorTest extends TestCase
         $this->assertGreaterThan(0, $unit->id);
     }
 
-function testIt_has_a_name()
+    function test_a_name_is_required()
     {
-        $author = factory(\App\Author::class)->create(['author' => 'authorname']);
-        $this->assertEquals('authorname', $author->author);
+        $this->expectException('Illuminate\Database\QueryException');
+        $author = factory(\App\Author::class)->create(['authorname' => null]);
     }
+
+    function test_it_has_a_name()
+    {
+        $author = factory(\App\Author::class)->create(['name' => 'authorname']);
+        $this->assertEquals('authorname', $author->name);
+    }
+
 }

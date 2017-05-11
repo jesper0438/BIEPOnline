@@ -33,24 +33,26 @@
         <h2>Informatie over dit boek:</h2>
             <table class="table table-striped table-hover">
                 <thead>
-                <th class="col-sm-3">ISBN</th>
-                <th class="col-sm-3">Titel</th>
-                <th class="col-sm-3">Auteur</th>
-								<th class="col-sm-3">Categorie</th>
+                    <th class="col-sm-3">ISBN</th>
+                    <th class="col-sm-3">Titel</th>
+                    <th class="col-sm-3">Auteur</th>
+                    <th class="col-sm-3">Categorie</th>
                 </thead>
                 <tbody>
-                <tr class="row-link" style="cursor: pointer;"
-                    data-href="{{action('BookController@show', ['id' => $book->id]) }}">
-                    <td class="table-text">{{ $book->isbn }}</td>
-                    <td class="table-text">{{ $book->title }}</td>
-                    <td class="table-text">{{ $book->author }}</td>
-										<td class="table-text">
-											@if (isset($book->category))
-												{{ $book->category->name }}
-
-											@endif
-										</td>
-                </tr>
+                    <tr class="row-link" style="cursor: pointer;" data-href="{{action('BookController@show', ['id' => $book->id]) }}">
+                        <td class="table-text">{{ $book->isbn }}</td>
+                        <td class="table-text">{{ $book->title }}</td>
+                        <td class="table-text">
+                            @if (isset($book->author))
+                                {{ $book->author->name }}
+                            @endif
+                        </td>
+                        <td class="table-text">
+                            @if (isset($book->category))
+                                {{ $book->category->name }}
+                            @endif
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -62,8 +64,8 @@
                         <tr>
                             <th>Nummer</th>
                             <th>Staat van het exemplaar</th>
-														<th>Status beschikbaarheid</th>
-														<th>Locatie</th>
+                            <th>Status beschikbaarheid</th>
+                            <th>Locatie</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,7 +73,7 @@
                         <tr>
                             <td> {{$copy->id}} </td>
                             <td> {{$copy->status->status}} </td>
-														<td> {{$copy->location->name}} </td>
+                            <td> {{$copy->location->name}} </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -80,5 +82,4 @@
                 <p>Er zijn geen exemplaren gevonden!</p>
             @endif
         </div>
-    </div>
 @endsection

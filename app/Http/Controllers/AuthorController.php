@@ -21,7 +21,7 @@ class AuthorController extends Controller
     public function index()
     {
         return view('author/index', [
-            'authors' => Author::orderBy('author', 'asc')->get(),
+            'authors' => Author::orderBy('name', 'asc')->get(),
         ]);
     }
 
@@ -33,7 +33,7 @@ class AuthorController extends Controller
     public function create()
     {
         return view('author/create', [
-            'authors' => Author::orderBy('author', 'asc')->pluck('author'),
+            'authors' => Author::orderBy('name', 'asc')->pluck('name'),
         ]);
     }
 
@@ -47,18 +47,18 @@ class AuthorController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate($request, [
-            'author' => 'required|max:255|unique:authors',
+            'name' => 'required|max:255|unique:authors',
         ]);
         // Create new book object with the info in the request
         $author = Author::create([
-            'author' => $request ['author'],
+            'name' => $request ['name'],
 
         ]);
 
         // Save this object in the database
         $author->save();
         // Redirect to the user.index page with a success message.
-        return redirect('author')->with('success', $author->author . ' is toegevoegd.');
+        return redirect('author')->with('success', $author->name . ' is toegevoegd.');
     }
 
     /**
@@ -98,16 +98,16 @@ class AuthorController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate($request, [
-            'author' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
 
         $author = Author::findorfail($id);
-        $author->author = $request ['author'];
+        $author->name = $request ['name'];
         // Save the changes in the database
         $author->save();
 
         // Redirect to the user.index page with a success message.
-        return redirect('author')->with('success', $author->author . ' is bijgewerkt.');
+        return redirect('author')->with('success', $author->name . ' is bijgewerkt.');
     }
 
     /**

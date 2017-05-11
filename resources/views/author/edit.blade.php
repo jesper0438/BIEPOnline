@@ -11,8 +11,8 @@
         <div class="form-group">
             <div class="form-group">
                 <div class="col-sm-6">
-                    {!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-                    {!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'Auteur']) !!}
+                    {!! Form::label('name', 'Auteur', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Auteur']) !!}
                 </div>
             </div>
 			<div class="form-group">

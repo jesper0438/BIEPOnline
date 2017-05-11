@@ -21,18 +21,15 @@ class UserTest extends DuskTestCase
                     ->type('password', 'Admin123!')
                     ->press('Login')
                     ->assertPathIs('/home')
-                    ->click('button[type="button"]')
-                    ->clickLink('Gebruikers')
+                    ->visit('/user')
                     ->assertPathIs('/user')
                     ->press('.btn-success')
-                    ->type('name', 'Joery Zegers')
-                    ->type('email', 'joery@fabulous.nl')
+                    ->type('name', 'Geffrey de Winter')
+                    ->type('email', 'Geffrey@fabulous.nl')
                     ->type('password', 'Admin123!')
                     ->type('new_password_confirmation', 'Admin123!')
-                    ->click('role_id', 'Leerling')
-                    ->select('location_id', 'HZ University')
                     ->press('Opslaan')
-                    ->assertSee('is toegevoegd.');
+                    ->assertPathIs('/user/create');
         });
     }
 
@@ -44,28 +41,30 @@ class UserTest extends DuskTestCase
     public function testUserEdit()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/user')
+            $browser->visit('/user')
                     ->press('.table-text')
                     ->clickLink('Bewerken')
-                    ->type('name', 'Joery Zegers')
-                    ->type('email', 'joery@fabulous.nl')
+                    ->type('name', 'Geffrey de Winter')
+                    ->type('email', 'Geffrey@fabulous.nl')
                     ->type('password', 'Admin123!')
                     ->type('new_password_confirmation', 'Admin123!')
-                    ->cli('role_id', 'Leerling')
+                    ->click('role_id')
+                    ->type('Le')
                     ->select('location_id', 'HZ University')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
         });
     }
 
-     public function testUserWegwezen()
+     public function testUserDelete()
     {
         $this->browse(function (Browser $browser) {
-            $browser->assertPathIs('/user')
+            $browser->assertPathIs('/user/1/edit')
+                    ->visit('/user')
                     ->press('.table-text')
                     ->clickLink('Verwijderen')
-                    ->type('name', 'Joery Zegers')
-                    ->type('email', 'joery@fabulous.nl')
+                    ->type('name', 'Geffrey de Winter')
+                    ->type('email', 'Geffrey@fabulous.nl')
                     ->type('password', 'Admin123!')
                     ->type('new_password_confirmation', 'Admin123!')
                     ->select('role_id', 'Leerling')

@@ -27,8 +27,8 @@ class AuthorTest extends TestCase
 
     function test_it_has_a_name()
     {
-        $author = factory(\App\Author::class)->create(['author' => 'authorname']);
-        $this->assertEquals('authorname', $author->author);
+        $author = factory(\App\Author::class)->create(['name' => 'authorname']);
+        $this->assertEquals('authorname', $author->name);
     }
 
 }

@@ -18,3 +18,5 @@ debug.log
 
 ### IDE ###
 .idea
+phpcbf.phar
+phpcs.phar

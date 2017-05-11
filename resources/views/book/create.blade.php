@@ -27,8 +27,8 @@
 	</div>
 	<!-- Read Only, deze wordt aangevuld door de API -->
 	<div class="col-sm-6">
-		{!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-		{!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
+		{!! Form::label('author_id', 'Auteur', ['class' => 'control-label']) !!}
+		{!! Form::text('author_id', null, ['class' => 'form-control', 'placeholder' => 'De auteur wordt automatisch aangevuld']) !!}
 	</div>
 	<div class="col-sm-6">
 		{!! Form::label('category_id', 'Categorie', ['class' => 'control-label']) !!}
@@ -65,7 +65,7 @@
 	// Haal de relevante data uit de JSON en zet deze in de juiste velden
     }).then(function(data) {
        $('#title').val(data.items[0].volumeInfo.title);
-       $('#author').val(data.items[0].volumeInfo.authors);
+       $('#author_id').val(data.items[0].volumeInfo.authors);
     });
 	}
 </script>

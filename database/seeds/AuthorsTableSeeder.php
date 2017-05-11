@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class BooksTableSeeder extends Seeder
+class AuthorsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,16 +11,13 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('books')->insert([
+        DB::table('authors')->insert([
             [
 
-                'isbn'        => '9780545139700',
-                'title'       => 'Harry Potter and the Deathly Hallows',
-                'author_id'   => 1,
+                'name'        => 'J.K. Rowling',
                 'created_at'  => \Carbon\Carbon::now()->toDateTimeString(),
                 'updated_at'  => \Carbon\Carbon::now()->toDateTimeString(),
-                'category_id' => 1,
-            ]
+            ],
         ]);
     }
 }

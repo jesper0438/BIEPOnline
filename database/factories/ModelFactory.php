@@ -61,7 +61,7 @@ $factory->define(App\Location::class, function (Faker\Generator $faker) {
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Role::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->jobTitle,
+        'name' => $faker->word,
     ];
 });
 

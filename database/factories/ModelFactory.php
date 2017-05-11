@@ -14,7 +14,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Author::class, function (Faker\Generator $faker) {
     return [
-        'author' => $faker->name,
+        'name' => $faker->name,
     ];
 });
 
@@ -23,7 +23,7 @@ $factory->define(App\Book::class, function (Faker\Generator $faker) {
     return [
         'isbn' => $faker->isbn13,
         'title' => $faker->text($maxNbChars = 20),
-        'author' => $faker->name,
+        'name' => $faker->name,
     ];
 });
 

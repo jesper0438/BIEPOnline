@@ -2,8 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Status;
-use App\Role;
+use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;

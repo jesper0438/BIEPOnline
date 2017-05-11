@@ -19,6 +19,7 @@ class LoansTableSeeder extends Seeder
                 'updated_at' => \Carbon\Carbon::now()->toDateTimeString(),
                 'copy_id' => '1',
                 'user_id' => '1',
+                'status_id' => '1',
             ]);
     }
 }

@@ -47,12 +47,28 @@ class LoanTest extends DuskTestCase
                     ->clickLink('Bewerken')
                     ->type('startdate', '2017-05-08')
                     ->type('expirydate', '2017-05-15')
-                    ->type('returndate', '2017-05-14')
                     ->select('user_id', 'Administrator')
                     ->select('copy_id', '1')
                     ->select('status_id', 'in gebruik')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');
+        });
+    }
+
+    /**
+     * Open author page, edit an existing author
+     *
+     * @return void
+     */
+    public function testLoanDelete()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/loan')
+                ->press('.table-text')
+                ->clickLink('Verwijderen')
+                ->assertDialogOpened('Weet u zeker dat u deze uitleen wilt verwijderen?')
+                ->acceptDialog()
+                ->assertSee('is verwijderd.');
         });
     }
 }

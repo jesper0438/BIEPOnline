@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class RolesTest extends TestCase
+class RoleTest extends TestCase
 {
     use DatabaseTransactions;
 
@@ -22,6 +22,7 @@ class RolesTest extends TestCase
     function it_has_a_name()
     {
         $unit = factory(\App\Role::class)->create(['name' => 'Testrol']);
-        $this->assertEquals('Testrol', $unit->role);
+        $this->assertEquals('Testrol', $unit->name);
     }
+
 }

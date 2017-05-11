@@ -22,7 +22,7 @@
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['status.destroy', $status->id], 'onsubmit' => 'return confirmDelete()']) !!}
 		<button type="submit" name="button" class="btn btn-danger">
-			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
+			<a><i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen</a>
 		</button>
 	</div>
 </div>

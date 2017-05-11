@@ -17,7 +17,6 @@ class StatusTest extends TestCase
     {
         $unit = factory(\App\Status::class)->create();
         $this->assertGreaterThan(0, $unit->id);
-        
     }
 
     /** @test */

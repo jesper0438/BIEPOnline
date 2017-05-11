@@ -26,8 +26,8 @@ class BookTest extends DuskTestCase
                     ->press('.btn-success')
                     ->type('isbn', '9780141036144')
                     ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
-                    ->click('.form-control')
+                    ->type('author_id', 'George Orwell')
+                    ->select('category_id', 'Voorleesboeken')
                     ->press('Opslaan')
                     ->assertSee('is toegevoegd.');
         });
@@ -46,7 +46,7 @@ class BookTest extends DuskTestCase
                     ->clickLink('Bewerken')
                     ->type('isbn', '9780141036144')
                     ->type('title', 'Nineteen Eighty-Four')
-                    ->type('author', 'George Orwell')
+                    ->type('author_id', 'George Orwell')
                     ->select('category_id', 'Voorleesboeken')
                     ->press('Opslaan')
                     ->assertSee('is bijgewerkt.');

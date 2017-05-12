@@ -7,7 +7,7 @@
 		{{$location->name}}
 	</div>
 	<div class="col-sm-1">
-		 <a class="btn btn-primary" href="{{action('LocationController@edit', $location->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('LocationController@edit', $location->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
 	<script>
 			function confirmDelete() {
@@ -21,8 +21,8 @@
 	</script>
 	<div class="col-sm-1">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['location.destroy', $location->id], 'onsubmit' => 'return confirmDelete()']) !!}
-		<button type="submit" name="button" class="btn btn-primary">
-			Verwijderen
+		<button type="submit" name="button" class="btn btn-danger">
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>

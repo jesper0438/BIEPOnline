@@ -4,8 +4,8 @@
 @section('title')
 	<i class="fa fa-book"></i> Boeken
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('book/create') !!}">
-			Toevoegen...
+		<a class="btn btn-success" href="{!! url('book/create') !!}">
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection
@@ -24,7 +24,12 @@
 				<tr class="row-link" style="cursor: pointer" data-href="{{action('BookController@show', ['id' => $book->id])}}">
 					<td class="table-text">{{ $book->isbn }}</td>
 					<td class="table-text">{{ $book->title }}</td>
-					<td class="table-text">{{ $book->author }}</td>
+					<td class="table-text">
+						@if (isset($book->author))
+							{{ $book->author->name }}
+
+						@endif
+					</td>
 					<td class="table-text">
 						@if (isset($book->category))
 							{{ $book->category->name }}

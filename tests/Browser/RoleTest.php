@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class RoleTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * Open role page, create a new role
      *
      * @return void
      */
@@ -60,4 +60,20 @@ class RoleTest extends DuskTestCase
         });
     }
 
+    /**
+     * Open role page, edit an existing role
+     *
+     * @return void
+     */
+    public function testRoleEdit()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/role')
+                    ->press('.table-text')
+                    ->clickLink('Bewerken')
+                    ->type('name', 'Leerling')
+                    ->press('Opslaan')
+                    ->assertSee('is bijgewerkt.');
+        });
+    }
 }

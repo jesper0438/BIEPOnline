@@ -16,7 +16,6 @@ class CopyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -42,7 +41,7 @@ class CopyController extends Controller
             'books' => Book::orderBy('title', 'asc')->pluck('title', 'id', 'isbn'),
             'statuses' => Status::orderBy('status', 'asc')->pluck('status', 'id'),
         ]);
-
+        //create a new copy
     }
 
     /**
@@ -55,23 +54,27 @@ class CopyController extends Controller
     {
         // Check if the form was correctly filled in
         $this->validate($request, [
-            'id' => 'max:255',
             'datebought' => 'required|date',
         ]);
+
         // Create new Copy object with the info in the request
         $copy = Copy::create([
-            'id' => $request ['id'],
             'datebought' => $request ['datebought'],
         ]);
 
+        //find requests of location_id, book_id and status_id
         $location = Location::find($request ['location_id']);
         $book = Book::find($request ['book_id']);
         $status = Status::find($request ['status_id']);
-        $copy->location()->associate($location);
 
+        //Associate the location, book and status to copy
+        $copy->location()->associate($location);
         $copy->book()->associate($book);
+        $copy->status()->associate($status);
+
         // Save this object in the database
         $copy->save();
+
         // Redirect to the copy.index page with a success message.
         return redirect('copy')->with('success', 'Het exemplaar is toegevoegd.');
     }
@@ -121,16 +124,20 @@ class CopyController extends Controller
         ]);
         $copy = Copy::findorfail($id);
         $copy->datebought = $request ['datebought'];
-        $copy->state = $request['state'];
+
+        //find requests of location_id, book_id and status_id
         $location = Location::find($request ['location_id']);
         $book = Book::find($request ['book_id']);
         $status = Status::find($request ['status_id']);
+
+        //Associate the location, book and status to copy
         $copy->book()->associate($book);
         $copy->location()->associate($location);
         $copy->status()->associate($status);
 
         // Save the changes in the database
         $copy->save();
+
         // Redirect to the copy.index page with a success message.
         return redirect('copy')->with('success', 'Het exemplaar is bijgewerkt.');
     }
@@ -145,11 +152,12 @@ class CopyController extends Controller
     {
         // Find the copy object in the database
         $copy = Copy::findorfail($id);
+
         // Remove the copy from the database
         $copy->delete();
+
         // Redirect to the copy.index page with a success message.
         return redirect('copy')->with('success', 'Het exemplaar is verwijderd.');
+        //
     }
-
-
 }

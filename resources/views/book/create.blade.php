@@ -38,9 +38,10 @@
 
 <div class="form-group">
 	<div class="col-sm-12">
-		<button type="submit" class="btn btn-primary">
-			Opslaan
+		<button type="submit" class="btn btn-info">
+			<i class="fa fa-bt fa-floppy-o" aria-hidden="true"></i> Opslaan
 		</button>
+		<a href="/book" class="btn btn-warning" role="button"><i class="fa fa-bt fa-ban" aria-hidden="true"></i> Annuleren</a>
 	</div>
 </div>
 {!! Form::close() !!}
@@ -64,7 +65,7 @@
 	// Haal de relevante data uit de JSON en zet deze in de juiste velden
     }).then(function(data) {
        $('#title').val(data.items[0].volumeInfo.title);
-       $('#author').val(data.items[0].volumeInfo.authors);
+       $('#author_id').val(data.items[0].volumeInfo.authors);
     });
 	}
 </script>

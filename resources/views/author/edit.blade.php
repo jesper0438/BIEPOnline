@@ -11,17 +11,18 @@
         <div class="form-group">
             <div class="form-group">
                 <div class="col-sm-6">
-                    {!! Form::label('author', 'Auteur', ['class' => 'control-label']) !!}
-                    {!! Form::text('author', null, ['class' => 'form-control', 'placeholder' => 'Auteur']) !!}
+                    {!! Form::label('name', 'Auteur', ['class' => 'control-label']) !!}
+                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Auteur']) !!}
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary">
-                        Opslaan
-                    </button>
-                </div>
-            </div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button type="submit" class="btn btn-info">
+						<i class="fa fa-bt fa-floppy-o" aria-hidden="true"></i> Opslaan
+					</button>
+					<a href="/author" class="btn btn-warning" role="button"><i class="fa fa-bt fa-ban" aria-hidden="true"></i> Annuleren</a>
+				</div>
+			</div>
         </div>
     </div>
     {!! Form::close() !!}

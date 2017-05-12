@@ -7,8 +7,10 @@
 		{{$user->name}}
 	</div>
 	<div class="col-sm-1">
-		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}">Bewerken</a>
+		 <a class="btn btn-primary" href="{{action('UserController@edit', $user->id)}}"><i class="fa fa-bt fa-pencil" aria-hidden="true"></i> Bewerken</a>
 	</div>
+
+@section('script')
 	<script>
 			function confirmDelete() {
 		var result = confirm('Weet u zeker dat u deze gebruiker wilt verwijderen?');
@@ -19,18 +21,20 @@
 		    }
 		}
 	</script>
-	<div class="col-sm-1">
+	@endsection('script')
+
+	<div class="col-sm-2">
 		{!! Form::open(['method' => 'DELETE', 'route' => ['user.destroy', $user->id], 'onsubmit' => 'return confirmDelete()']) !!}
-		<button type="submit" name="button" class="btn btn-primary">
-			Verwijderen
+		<button type="submit" name="button" class="btn btn-danger">
+			<i class="fa fa-bt fa-trash" aria-hidden="true"></i> Verwijderen
 		</button>
 	</div>
 </div>
 @endsection
 
 @section('content')
-<img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"><br>
-<br>
+<div title="Klik hier om de profielafbeelding te wijzigen."><a href="{!! url('avatar') !!}"><img id="avatar" src="/uploads/avatars/{{ Auth::user()->avatar }}"></a></div>
+<br><br>
 <table class="table">
 	<tbody>
 		<tr>

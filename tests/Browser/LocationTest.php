@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class LocationTest extends DuskTestCase
 {
     /**
-     * A Dusk test example.
+     * Open location page, create a new location
      *
      * @return void
      */
@@ -45,7 +45,24 @@ class LocationTest extends DuskTestCase
                 ->press('.table-text', 'De Stroming geedit')
                 ->press('Verwijderen')
                 ->acceptDialog('Weet u zeker dat u deze locatie wilt verwijderen?')
-                ->assertSee('De Stroming geedit is verwijderd.');
+                ->assertSee('De Stroming is verwijderd.');
+        });
+    }
+
+    /**
+     * Open location page, edit an existing location
+     *
+     * @return void
+     */
+    public function testLocationEdit()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->assertPathIs('/location')
+                    ->press('.table-text')
+                    ->clickLink('Bewerken')
+                    ->type('name', 'HZ')
+                    ->press('Opslaan')
+                    ->assertSee('is bijgewerkt.');
         });
     }
 }

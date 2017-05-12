@@ -6,18 +6,21 @@ use Tests\DuskTestCase;
 use Laravel\Dusk\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class ExampleTest extends DuskTestCase
+class LoginTest extends DuskTestCase
 {
     /**
-     * A basic browser test example.
+     * Login with admin account
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testLogin()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                    ->assertSee('Login');
+                    ->type('email', 'admin@bieponline.local')
+                    ->type('password', 'Admin123!')
+                    ->press('Login')
+                    ->assertPathIs('/home');
         });
     }
 }

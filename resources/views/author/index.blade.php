@@ -4,8 +4,8 @@
 @section('title')
 	<i class="fa fa-address-card"></i> Auteurs
 	<div style="float:right">
-		<a class="btn btn-primary" href="{!! url('author/create') !!}">
-			Toevoegen...
+		<a class="btn btn-success" href="{!! url('author/create') !!}">
+			<i class="fa fa-bt fa-plus" aria-hidden="true"></i> Toevoegen
 		</a>
 	</div>
 @endsection
@@ -19,7 +19,7 @@
 			<tbody>
 				@foreach ($authors as $row)
 					<tr class="row-link" style="cursor: pointer" data-href="{{action('AuthorController@show', ['id' => $row->id])}}">
-						<td class="table-text">{{ $row->author }}</td>
+						<td class="table-text">{{ $row->name }}</td>
 					</tr>
 				@endforeach
 			</tbody>

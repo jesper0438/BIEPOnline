@@ -20,14 +20,32 @@ class LocationTest extends DuskTestCase
                     ->type('email', 'admin@bieponline.local')
                     ->type('password', 'Admin123!')
                     ->press('Login')
-                    ->assertPathIs('/home')
-                    ->click('button[type="button"]')
-                    ->clickLink('Locaties')
-                    ->assertPathIs('/location')
-                    ->press('.btn-success')
-                    ->type('name', 'HZ University')
+                    ->visit('/location')
+                    ->visit('/location/create')
+                    ->type('name', 'De Stroming')
                     ->press('Opslaan')
-                    ->assertSee('is toegevoegd.');
+                    ->assertSee('De Stroming is toegevoegd.');
+        });
+    }
+    public function testLocationEdit()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/location')
+                    ->press('.table-text', 'De Stroming')
+                    ->press('.btn-primary', 'Bewerken')
+                    ->type('name', 'De Stroming geedit')
+                    ->press('Opslaan')
+                    ->assertSee('De Stroming geedit is bijgewerkt.');
+        });
+    }
+    public function testLocationDelete()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/location')
+                ->press('.table-text', 'De Stroming geedit')
+                ->press('Verwijderen')
+                ->acceptDialog('Weet u zeker dat u deze locatie wilt verwijderen?')
+                ->assertSee('De Stroming is verwijderd.');
         });
     }
 
